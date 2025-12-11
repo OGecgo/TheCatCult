@@ -27,7 +27,7 @@ public class FOVDetectionEditor: Editor
         if (fov.isTarget)
         {
             Handles.color = Color.green;
-            Handles.DrawLine(fov.transform.position, fov.target.transform.position);
+            Handles.DrawLine(fov.transform.position, fov.posTarget);
         }
     }
 }

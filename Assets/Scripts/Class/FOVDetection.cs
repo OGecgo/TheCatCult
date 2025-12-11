@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
+
+
 public class FOVDetection: MonoBehaviour, IFOVDetection
 {
     private float _radius;
     [Range(0, 360)]
     private float _angle;
     private bool _isTarget;
-    private GameObject _target;
+    private Vector3 _posTarget;
     private LayerMask targetMask;
     private LayerMask obstructionMask;
     // private int lengthReadTargets; if i want to recognize more objects than one
@@ -14,21 +16,22 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
     public float radius { get { return _radius; } set { _radius = value; } }
     public float angle { get { return _angle; } set { _angle = value; } }
     public bool isTarget { get { return _isTarget; } set { _isTarget = value; } }
-    public GameObject target { get { return _target; } set { _target = value; } }
+    public Vector3 posTarget { get { return _posTarget;  }  set { _posTarget = value; } }
 
 
 
 
 
-    public void Initialize(GameObject target, LayerMask targetMask, LayerMask obstructionMask, Transform transform, float radius, float angle)
+    public void Initialize(LayerMask targetMask, LayerMask obstructionMask, Transform transform, float radius, float angle)
     {
-        this.target = target;
         this.targetMask = targetMask;
         this.obstructionMask = obstructionMask;
         this.transform.position = transform.position;
         this.isTarget = false;
+        this.posTarget = Vector3.zero;
         this.radius = radius;
         this.angle = angle;
+
     }
     
     // updated after 0.2 seconds
@@ -61,20 +64,24 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                 {
                     isTarget = true;
+                    posTarget = targetTransfrom.position;
                 }
                 else
                 {
                     isTarget = false;
+                    posTarget = Vector3.zero;
                 }
             }
             else
             {
                 isTarget = false;
+                posTarget = Vector3.zero;
             }
         }
         else
         {
             isTarget = false;
+            posTarget = Vector3.zero;
         }
     }
 }

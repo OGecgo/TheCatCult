@@ -1,26 +1,36 @@
 using UnityEngine;
 
-public class EnemyCatRotation: IEnemyCatRotation
+public class EnemyCatRotation : IEnemyCatRotation
 {
+
+    private Vector3 _posTarget;
+    public Vector3 posTarget { get { return _posTarget; } set { _posTarget = value; }}
+    
     private IRotationControll contrl;
-    private GameObject target;
-    private bool _rotationOn;
-    public bool rotationOn {get {return _rotationOn;} set {_rotationOn = value;}}
-    public void Initialize( float sensitivity, Transform transform, GameObject target)
+    private Transform posCatEnemy;
+
+    
+    public void Initialize(float sensitivity, Transform transform)
     {
         contrl = new RotationControll();
         contrl.Initialize(sensitivity, Directions.Yaw, transform);
-        contrl.pitchSpeed = 1f;// that be not harded writed
+        contrl.yawSpeed = 1f;// that be not hard writed
+        posTarget = Vector3.zero;
+        posCatEnemy = transform;
     }
     public void ChangeSensitivity(float newSensitivity)
     {
         contrl.sensitivity = newSensitivity;
     }
+
     public void Update()
     {
-        if (rotationOn)
-        {
-            contrl.RotateTo(Vector3.left);
+        if (posTarget != Vector3.zero){
+            Quaternion targerot = Quaternion.LookRotation((posTarget - posCatEnemy.position).normalized);
+            Quaternion q = new Quaternion(posTarget.x, posTarget.y, posTarget.z, 0f);
+            Quaternion lerp = Quaternion.Lerp(q, targerot, Time.deltaTime);
+            Vector3 temp = new Vector3(lerp.x, lerp.y, lerp.z);
+            contrl.RotateTo(temp);
             contrl.Update();
         }
     }

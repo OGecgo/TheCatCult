@@ -5,7 +5,6 @@ public class EnemyCatUpdateManager : MonoBehaviour
     [Header("Parrent Obj with child")]
     public GameObject parentObj;
     [Header("Enemy Cat Config FOV Detection")]
-    public GameObject target; // player
     public float radius;
     [Range(0, 360)]
     public float angle;
@@ -25,9 +24,9 @@ public class EnemyCatUpdateManager : MonoBehaviour
         objs = parentObj.GetComponentsInChildren<EnemyCat>();
         foreach (IUpdateManagerObjectEnemyCat obj in objs)
         {
-            obj.InitializeFOVDirection(target, targetMask, obstructionMask, radius, angle);
+            obj.InitializeFOVDirection(targetMask, obstructionMask, radius, angle);
             obj.InitializeMovement(heightJump, speedMove);
-            obj.InitializeRotation(target, sensitivityRotat);
+            obj.InitializeRotation(sensitivityRotat);
             obj.ManualAwake();
         }
     }
