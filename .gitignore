@@ -43,6 +43,8 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+# --- i added that ---
+*.slnx 
 *.suo
 *.tmp
 *.user
