@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCatUpdateManager
   parentObj: {fileID: 36558940}
   radius: 20
-  angle: 84
+  angle: 105
   targetMask:
     serializedVersion: 2
     m_Bits: 2147483648
