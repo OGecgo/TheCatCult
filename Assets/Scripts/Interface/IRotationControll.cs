@@ -22,7 +22,7 @@ public interface IRotationControll
     public float yawSpeed { get; set; }
     public float pitchSpeed { get; set; }
     public float rollSpeed { get; set; }
-    public void Initialize(float sensitivity, Directions direction, Transform playerTransform);
+    public void Initialize(float sensitivity, Directions direction, Vector3 speedDirections, Transform playerTransform);
     public void RotateTo(Vector3 delta);
     public void Update();
 }

@@ -10,11 +10,10 @@ public class EnemyCatRotation : IEnemyCatRotation
     private Transform posCatEnemy;
 
     
-    public void Initialize(float sensitivity, Transform transform)
+    public void Initialize(float sensitivity, float speedDirections, Transform transform)
     {
         contrl = new RotationControll();
-        contrl.Initialize(sensitivity, Directions.Yaw, transform);
-        contrl.yawSpeed = 1f;// that be not hard writed
+        contrl.Initialize(sensitivity, Directions.Yaw, new Vector3(speedDirections, 0f, 0f), transform);
         posTarget = Vector3.zero;
         posCatEnemy = transform;
     }
@@ -26,11 +25,12 @@ public class EnemyCatRotation : IEnemyCatRotation
     public void Update()
     {
         if (posTarget != Vector3.zero){
-            Quaternion targerot = Quaternion.LookRotation((posTarget - posCatEnemy.position).normalized);
-            Quaternion q = new Quaternion(posTarget.x, posTarget.y, posTarget.z, 0f);
-            Quaternion lerp = Quaternion.Lerp(q, targerot, Time.deltaTime);
-            Vector3 temp = new Vector3(lerp.x, lerp.y, lerp.z);
-            contrl.RotateTo(temp);
+            // Quaternion targerot = Quaternion.LookRotation((posTarget - posCatEnemy.position).normalized);
+            // Quaternion q = new Quaternion(posTarget.x, posTarget.y, posTarget.z, 0f);
+            // Quaternion lerp = Quaternion.Lerp(q, targerot, Time.deltaTime);
+            // Vector3 temp = new Vector3(lerp.x, lerp.y, lerp.z);
+            Vector3 rotate = posTarget - posCatEnemy.position;
+            contrl.RotateTo(rotate);
             contrl.Update();
         }
     }

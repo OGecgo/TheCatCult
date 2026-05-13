@@ -5,18 +5,18 @@ public class RotationControll : IRotationControll
     private Transform _transform;
     private float _sensitivity;
     private Directions _directions;
-    private bool _max_min_yaw_on = false;
+    private bool _max_min_yaw_on;
     private Vector2 _max_min_yaw;
-    private bool _max_min_pitch_on = false;
+    private bool _max_min_pitch_on;
     private Vector2 _max_min_pitch;
-    private bool _max_min_roll_on = false;
+    private bool _max_min_roll_on;
     private Vector2 _max_min_roll;
     [Range(0, 1)]
-    private float _yawSpeed = 0f;
+    private float _yawSpeed;
     [Range(0, 1)]
-    private float _pitchSpeed = 0f;
+    private float _pitchSpeed;
     [Range(0, 1)]
-    private float _rollSpeed = 0f;
+    private float _rollSpeed;
 
 
     public float sensitivity { get { return _sensitivity; } set { _sensitivity = value; } }
@@ -34,15 +34,26 @@ public class RotationControll : IRotationControll
     
 
 
-    private float pitch = 0f;
-    private float yaw = 0f;
-    private float roll = 0f;
+    private float pitch;
+    private float yaw;
+    private float roll;
 
 
 
 
-    public void Initialize(float sensitivity, Directions direction, Transform playerTransform)
+    public void Initialize(float sensitivity, Directions direction, Vector3 speedDirections, Transform playerTransform)
     {
+        this.max_min_yaw_on = false;
+        this.max_min_pitch_on = false;
+        this.max_min_roll_on = false;
+        this.yawSpeed = speedDirections.x;
+        this.pitchSpeed = speedDirections.y;
+        this.rollSpeed = speedDirections.z;
+        this.pitch = 0f;
+        this.yaw = 0f;
+        this.roll = 0f;
+
+
         this.sensitivity = sensitivity;
         this.directions = direction;
         this.transform = playerTransform;

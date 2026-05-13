@@ -251,7 +251,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHead
   lookAction: {fileID: 3814661625021189917, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  sensitivityLook: 0.5
 --- !u!1001 &45641688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -648,7 +647,8 @@ MonoBehaviour:
   rotationAction: {fileID: 3814661625021189917, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   speedMove: 10
   heightJump: 1.5
-  sensitivityLook: 0.5
+  sensitivity: 1
+  speedDirections: {x: 1, y: 1}
 --- !u!143 &438485734
 CharacterController:
   m_ObjectHideFlags: 0

@@ -6,7 +6,9 @@ public class EnemyCat : MonoBehaviour, IUpdateManagerObject
     [Header("Enemy Cat Config Movement")]
     public float speedMove = 5f;
     public float heightJump = 1f;
-    public float sensitivityRotation = 4f;
+    public float sensitivity = 4f;
+    public float speedDirections = 1f;
+
 
 
 
@@ -21,7 +23,7 @@ public class EnemyCat : MonoBehaviour, IUpdateManagerObject
         movement = new EnemyCatMovement();
         movement.Initialize(gameObject.GetComponent<CharacterController>(), Vector3.zero, heightJump, speedMove);
         rotation = new EnemyCatRotation();
-        rotation.Initialize(sensitivityRotation, gameObject.GetComponent<Transform>());
+        rotation.Initialize(sensitivity, speedDirections, gameObject.GetComponent<Transform>());
     }
     public void ManualStart()
     {

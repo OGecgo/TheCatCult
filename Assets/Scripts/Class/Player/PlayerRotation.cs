@@ -6,15 +6,13 @@ public class PlayerRotation: IPlayerRotation
     private InputActionReference rotationAction;
     private IRotationControll playerRotationControll;
 
-    public void Initialize(InputActionReference rotation, float sensitivity, Directions direction, Transform playerTransform)
+    public void Initialize(InputActionReference rotation, float sensitivity, Directions direction, Vector3 speedDirections, Transform playerTransform)
     {
         rotationAction = rotation;
         playerRotationControll = new RotationControll();
-        playerRotationControll.Initialize(sensitivity, direction, playerTransform);
+        playerRotationControll.Initialize(sensitivity, direction, speedDirections, playerTransform);
         playerRotationControll.max_min_pitch_on = true;
         playerRotationControll.max_min_pitch = new Vector2(80f, -80f);
-        playerRotationControll.yawSpeed = 1f; // that non be hard writed
-        playerRotationControll. pitchSpeed = 1f;
     }
 
     public void ChangeSensitivity(float newSensitivity)
