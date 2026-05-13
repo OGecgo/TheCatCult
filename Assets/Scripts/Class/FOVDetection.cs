@@ -7,9 +7,10 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
 
 
     [Header("FOV Config")]
-    public float radius = 1;
+    public float radius = 10f;
+    public float close_radius = 3f;
     [Range(0, 360)]
-    public float angle = 70;
+    public float angle = 70f;
     public LayerMask targetMask;
     public LayerMask obstructionMask;
 
@@ -47,8 +48,9 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
 
     public void FOVCheck()
     {
+        Collider[] rangeCheck;
         // work only for first detection.
-        Collider[] rangeCheck = Physics.OverlapSphere(transform.position, radius, targetMask);
+        rangeCheck = Physics.OverlapSphere(transform.position, radius, targetMask);
         if (rangeCheck.Length != 0)
         {
             Transform targetTransfrom = rangeCheck[0].transform;
@@ -57,20 +59,30 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
             {
                 float distanceToTarget = Vector3.Distance(transform.position, targetTransfrom.position);
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
-                {
+                { 
                     isTarget = true;
                     posTarget = targetTransfrom.position;
-                }
+                } 
                 else
                 {
                     isTarget = false;
                     posTarget = Vector3.zero;
                 }
             }
-            else
+            else 
             {
-                isTarget = false;
-                posTarget = Vector3.zero;
+                // if player too close. see it
+                rangeCheck = Physics.OverlapSphere(transform.position, close_radius, targetMask); 
+                if (rangeCheck.Length != 0)
+                { 
+                    isTarget = true;
+                    posTarget = targetTransfrom.position;
+                } 
+                else
+                {
+                    isTarget = false;
+                    posTarget = Vector3.zero;
+                }
             }
         }
         else
