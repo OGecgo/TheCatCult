@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Σελίδα-1" id="RHhtozIAqVEN69dNCovi">
-        <mxGraphModel dx="8254" dy="4264" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
+        <mxGraphModel dx="3691" dy="1733" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -14,7 +14,7 @@
                     <mxGeometry x="210" y="770" width="530" height="430" as="geometry"/>
                 </mxCell>
                 <mxCell id="ZG-F9SP70XecIczTaAMY-31" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFE1F5;strokeColor=#9673a6;" parent="1" vertex="1">
-                    <mxGeometry x="-2120" y="-510" width="930" height="830" as="geometry"/>
+                    <mxGeometry x="-1760" y="-510" width="520" height="830" as="geometry"/>
                 </mxCell>
                 <mxCell id="ZG-F9SP70XecIczTaAMY-25" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFE1F5;strokeColor=#9673a6;" parent="1" vertex="1">
                     <mxGeometry x="2240" y="180" width="830" height="820" as="geometry"/>
@@ -396,13 +396,13 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="b_KqgzWkU3Ee5OLE3nvf-1" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;EnemyCatUpdateManager&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-                    <mxGeometry x="-1210" y="-890" width="330" height="262" as="geometry"/>
+                    <mxGeometry x="-1147.5" y="-865" width="210" height="132" as="geometry"/>
                 </mxCell>
-                <mxCell id="b_KqgzWkU3Ee5OLE3nvf-2" value="public GameObject parentObj;&lt;div&gt;&lt;div&gt;public float radius;&lt;/div&gt;&lt;div&gt;public float angle;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;public LayerMask targetMask;&lt;/div&gt;&lt;div&gt;public LayerMask obstructionMask;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;public float speedMove;&lt;/div&gt;&lt;div&gt;public float heightJump;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;priate IUpdateManagerObject[] objs;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="b_KqgzWkU3Ee5OLE3nvf-1" vertex="1">
-                    <mxGeometry y="40" width="330" height="160" as="geometry"/>
+                <mxCell id="b_KqgzWkU3Ee5OLE3nvf-2" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;priate IUpdateManagerObject[] objs;&lt;/span&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="b_KqgzWkU3Ee5OLE3nvf-1" vertex="1">
+                    <mxGeometry y="40" width="210" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="b_KqgzWkU3Ee5OLE3nvf-4" value="&lt;div&gt;public void Awake();&lt;/div&gt;&lt;div&gt;void Start();&lt;/div&gt;&lt;div&gt;void Update();&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="b_KqgzWkU3Ee5OLE3nvf-1" vertex="1">
-                    <mxGeometry y="200" width="330" height="62" as="geometry"/>
+                    <mxGeometry y="70" width="210" height="62" as="geometry"/>
                 </mxCell>
                 <mxCell id="b_KqgzWkU3Ee5OLE3nvf-35" value="statemove -&amp;gt; statewalk and staterun" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" parent="1" vertex="1">
                     <mxGeometry x="-1780" y="2430" width="360" height="50" as="geometry"/>
@@ -411,13 +411,13 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="b_KqgzWkU3Ee5OLE3nvf-46" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;FOVDetection&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-                    <mxGeometry x="-2055" y="-119" width="830" height="282" as="geometry"/>
+                    <mxGeometry x="-1620" y="-108" width="240" height="260" as="geometry"/>
                 </mxCell>
-                <mxCell id="b_KqgzWkU3Ee5OLE3nvf-47" value="private float _radius;&lt;br&gt;private float _angle;&lt;br&gt;private bool _isTarget;&lt;br&gt;private Transform _target;&lt;br&gt;private LayerMask targetMask;&lt;br&gt;private LayerMask obstructionMask;&amp;nbsp; &amp;nbsp;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="b_KqgzWkU3Ee5OLE3nvf-46" vertex="1">
-                    <mxGeometry y="40" width="830" height="110" as="geometry"/>
+                <mxCell id="b_KqgzWkU3Ee5OLE3nvf-47" value="public float radius;&lt;br&gt;public float angle;&lt;br&gt;public LayerMask targetMask;&lt;br&gt;public LayerMask obstructionMask;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;span style=&quot;color: rgb(51, 51, 51);&quot;&gt;private bool _isTarget;&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(51, 51, 51); background-color: transparent;&quot;&gt;private Transform _target;&lt;/span&gt;&amp;nbsp; &amp;nbsp;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="b_KqgzWkU3Ee5OLE3nvf-46" vertex="1">
+                    <mxGeometry y="40" width="240" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="b_KqgzWkU3Ee5OLE3nvf-49" value="&lt;div&gt;public void StartDetection();&lt;/div&gt;&lt;div&gt;public float radius {get; set;}&lt;/div&gt;&lt;div&gt;public bool isTarget {get; set;}&lt;/div&gt;&lt;div&gt;public GameObject target {get; set;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;public void Initialize(GameObject target, LayerMask targetMask, LayerMask obstructionMask, Transform transform, float radius, float angle);&lt;/div&gt;&lt;div&gt;public void FOVCheck();&lt;/div&gt;&lt;div&gt;&lt;div&gt;private IEnumerator FOVRoutine();&lt;/div&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="b_KqgzWkU3Ee5OLE3nvf-46" vertex="1">
-                    <mxGeometry y="150" width="830" height="132" as="geometry"/>
+                <mxCell id="b_KqgzWkU3Ee5OLE3nvf-49" value="&lt;div&gt;public void StartDetection();&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;public bool isTarget {get; set;}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;public GameObject target {get; set;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;public void FOVCheck();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;private IEnumerator FOVRoutine();&lt;/div&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="b_KqgzWkU3Ee5OLE3nvf-46" vertex="1">
+                    <mxGeometry y="150" width="240" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="b_KqgzWkU3Ee5OLE3nvf-54" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;StateWalk&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
                     <mxGeometry x="390" y="1428" width="330" height="142" as="geometry"/>
@@ -438,22 +438,21 @@
                     <mxGeometry y="110" width="330" height="32" as="geometry"/>
                 </mxCell>
                 <mxCell id="iA_9_lWAkeXp4u_nswqy-1" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;IFOVDetection&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-                    <mxGeometry x="-2055" y="-449" width="830" height="152" as="geometry"/>
+                    <mxGeometry x="-1610" y="-314" width="220" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="iA_9_lWAkeXp4u_nswqy-4" value="&lt;div&gt;public void StartDetection();&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;public float radius {get; set;}&lt;/div&gt;&lt;div&gt;public bool isTarget {get; set;}&lt;/div&gt;&lt;div&gt;public Transform posTarget {get; set;}&lt;/div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;public void Initialize(GameObject target, LayerMask targetMask, LayerMask obstructionMask, Transform transform, float radius, float angle);&lt;/div&gt;&lt;div&gt;public void FOVCheck();&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="iA_9_lWAkeXp4u_nswqy-1" vertex="1">
-                    <mxGeometry y="40" width="830" height="112" as="geometry"/>
+                <mxCell id="iA_9_lWAkeXp4u_nswqy-4" value="&lt;div&gt;public void StartDetection();&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;public bool isTarget {get; set;}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;public Transform posTarget {get; set;}&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;public void FOVCheck();&lt;/span&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="iA_9_lWAkeXp4u_nswqy-1" vertex="1">
+                    <mxGeometry y="40" width="220" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="iA_9_lWAkeXp4u_nswqy-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endSize=12;endArrow=block;endFill=0;" parent="1" source="iA_9_lWAkeXp4u_nswqy-9" target="iA_9_lWAkeXp4u_nswqy-15" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="-2190" y="-185"/>
-                            <mxPoint x="-2190" y="-920"/>
+                            <mxPoint x="-1500" y="-920"/>
                             <mxPoint x="-750" y="-920"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="iA_9_lWAkeXp4u_nswqy-9" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;FOVDetectionEditor&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-                    <mxGeometry x="-2100" y="-239" width="430" height="82" as="geometry"/>
+                    <mxGeometry x="-1715" y="-451" width="430" height="82" as="geometry"/>
                 </mxCell>
                 <mxCell id="iA_9_lWAkeXp4u_nswqy-12" value="&lt;div&gt;private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees);&lt;/div&gt;&lt;div&gt;void OnScreeGUI();&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="iA_9_lWAkeXp4u_nswqy-9" vertex="1">
                     <mxGeometry y="40" width="430" height="42" as="geometry"/>
@@ -497,16 +496,18 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="iA_9_lWAkeXp4u_nswqy-19" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;EnemyCat(Prefabs)&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-                    <mxGeometry x="-820" y="-496" width="770" height="170" as="geometry"/>
+                    <mxGeometry x="-552.5" y="-520" width="240" height="220" as="geometry"/>
                 </mxCell>
-                <mxCell id="iA_9_lWAkeXp4u_nswqy-20" value="&lt;div&gt;private IFOVDetection fovD;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="iA_9_lWAkeXp4u_nswqy-19" vertex="1">
-                    <mxGeometry y="40" width="770" height="30" as="geometry"/>
+                <mxCell id="iA_9_lWAkeXp4u_nswqy-20" value="&lt;div&gt;public float speedMove;&lt;/div&gt;&lt;div&gt;public float heightJump;&lt;/div&gt;&lt;div&gt;public float sensitivityRotation;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;private IFOVDetection fovD;&lt;/div&gt;&lt;div&gt;private IEnemyCatRotation rotation;&lt;/div&gt;&lt;div&gt;private IEnemyCatMovement movement;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="iA_9_lWAkeXp4u_nswqy-19" vertex="1">
+                    <mxGeometry y="40" width="240" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="iA_9_lWAkeXp4u_nswqy-22" value="&lt;div&gt;&lt;div&gt;public void InitializeFOVDirection(LayerMask targetMask, LayerMask obstructionMask, float radius, float angle);&lt;/div&gt;&lt;div&gt;public void InitializeMovement(CharacterController cc, Transform transform, float heightJump, float speedMove);&lt;/div&gt;&lt;/div&gt;&lt;div&gt;public void InitializeRotation(float sensitivity);&lt;/div&gt;&lt;div&gt;public void ManualAwake();&lt;/div&gt;&lt;div&gt;public void ManualUpdate();&lt;/div&gt;&lt;div&gt;public void ManualStart();&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="iA_9_lWAkeXp4u_nswqy-19" vertex="1">
-                    <mxGeometry y="70" width="770" height="100" as="geometry"/>
+                <mxCell id="iA_9_lWAkeXp4u_nswqy-22" value="&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;public void ManualAwake();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;public void ManualUpdate();&lt;/div&gt;&lt;div&gt;public void ManualStart();&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="iA_9_lWAkeXp4u_nswqy-19" vertex="1">
+                    <mxGeometry y="150" width="240" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="iA_9_lWAkeXp4u_nswqy-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=12;endArrow=open;endFill=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="b_KqgzWkU3Ee5OLE3nvf-2" target="ZG-F9SP70XecIczTaAMY-1" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="iA_9_lWAkeXp4u_nswqy-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=12;endArrow=open;endFill=0;" parent="1" source="b_KqgzWkU3Ee5OLE3nvf-2" target="iA_9_lWAkeXp4u_nswqy-26" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-822.5" y="-645" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="iA_9_lWAkeXp4u_nswqy-26" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;IUpdateManagerObject&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-597.5" y="-850" width="330" height="102" as="geometry"/>
@@ -514,9 +515,10 @@
                 <mxCell id="iA_9_lWAkeXp4u_nswqy-29" value="public void ManualAwake()&lt;div&gt;public void ManualUpdate();&lt;/div&gt;&lt;div&gt;public void ManualStart();&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="iA_9_lWAkeXp4u_nswqy-26" vertex="1">
                     <mxGeometry y="40" width="330" height="62" as="geometry"/>
                 </mxCell>
-                <mxCell id="iA_9_lWAkeXp4u_nswqy-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;dashed=1;endSize=12;" parent="1" source="iA_9_lWAkeXp4u_nswqy-19" target="ZG-F9SP70XecIczTaAMY-1" edge="1">
+                <mxCell id="iA_9_lWAkeXp4u_nswqy-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;dashed=1;endSize=12;" parent="1" source="iA_9_lWAkeXp4u_nswqy-19" target="iA_9_lWAkeXp4u_nswqy-26" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points"/>
+                        <mxPoint x="-435" y="-570" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="iA_9_lWAkeXp4u_nswqy-34" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;LayerMask&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
@@ -541,15 +543,6 @@
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="435" y="-20" as="sourcePoint"/>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="ZG-F9SP70XecIczTaAMY-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=12;endArrow=block;endFill=0;dashed=1;" parent="1" source="ZG-F9SP70XecIczTaAMY-1" target="iA_9_lWAkeXp4u_nswqy-26" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="ZG-F9SP70XecIczTaAMY-1" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;IUpdateManagerObjectEnemyCat&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-                    <mxGeometry x="-822.5" y="-670" width="775" height="100" as="geometry"/>
-                </mxCell>
-                <mxCell id="ZG-F9SP70XecIczTaAMY-3" value="&lt;div&gt;public void InitializeFOVDirection(LayerMask targetMask, LayerMask obstructionMask, float radius, float angle);&lt;/div&gt;&lt;div&gt;public void InitializeMovement(CharacterController cc, Transform transform, float heightJump, float speedMove);&lt;/div&gt;&lt;div&gt;&lt;div&gt;public void InitializeRotation(float sensitivity);&lt;/div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="ZG-F9SP70XecIczTaAMY-1" vertex="1">
-                    <mxGeometry y="40" width="775" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="ZG-F9SP70XecIczTaAMY-5" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;InputActionReference&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
                     <mxGeometry x="1800" y="-174" width="250" height="48" as="geometry"/>
@@ -594,7 +587,7 @@
                     <mxGeometry x="800" y="2228" width="410" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="ZG-F9SP70XecIczTaAMY-32" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;FOV Detection Object&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="-1860" y="220" width="410" height="70" as="geometry"/>
+                    <mxGeometry x="-1700" y="200" width="410" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="ZG-F9SP70XecIczTaAMY-37" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;StageMachine&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="360" y="800" width="250" height="50" as="geometry"/>
@@ -634,6 +627,9 @@
                 </mxCell>
                 <mxCell id="DxEnxW-M1bLUlQFw1ajg-6" value="fov direction target einai transform wste na doulevw me quaternios. genika na skeftomai me quaternios kai ohi me vector3" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" parent="1" vertex="1">
                     <mxGeometry x="-1410" y="3260" width="400" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="vlepw oti to rotation einai ligo halasmeno sta enemy cat.&lt;br&gt;&lt;br&gt;prepei na girnaei ston pekti pio apotoma&lt;br&gt;akoma pio apotoma na stamataei (min pw kai kateftian den peirazei)" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="-1880" y="3210" width="400" height="120" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

@@ -89,6 +89,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &8281555356038583110
 BoxCollider:
@@ -124,6 +125,7 @@ GameObject:
   - component: {fileID: 23380895908210791}
   - component: {fileID: 778045751529129376}
   - component: {fileID: 479892611266382827}
+  - component: {fileID: 8299205379077572272}
   - component: {fileID: 2244095048656362813}
   m_Layer: 0
   m_Name: EnemyCat
@@ -203,6 +205,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &778045751529129376
 CapsuleCollider:
@@ -252,6 +255,26 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8299205379077572272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190442579273531434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e046484baa1aa56cb6676d761385eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FOVDetection
+  radius: 8
+  angle: 40
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 2147483648
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 1073741824
 --- !u!114 &2244095048656362813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,3 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1d9d8a9190594fa92c942543ddd240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCat
+  speedMove: 5
+  heightJump: 1
+  sensitivityRotation: 4

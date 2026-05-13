@@ -1,31 +1,27 @@
 using UnityEngine;
 
-public class EnemyCat : MonoBehaviour, IUpdateManagerObjectEnemyCat
+public class EnemyCat : MonoBehaviour, IUpdateManagerObject
 {
+
+    [Header("Enemy Cat Config Movement")]
+    public float speedMove = 5f;
+    public float heightJump = 1f;
+    public float sensitivityRotation = 4f;
+
+
+
     private IFOVDetection fovD;
     private IEnemyCatRotation rotation;
     private IEnemyCatMovement movement;
 
-    public void InitializeFOVDirection(LayerMask targetMask, LayerMask obstructionMask, float radius, float angle)
-    {
-        fovD = GetComponent<FOVDetection>();
-        // fovD = gameObject.AddComponent<FOVDetection>();
-        fovD.Initialize(targetMask, obstructionMask, gameObject.transform, radius, angle);
-    }
-    public void InitializeMovement(float heightJump, float speedMove)
-    {
-        movement = new EnemyCatMovement();
-        movement.Initialize(gameObject.GetComponent<CharacterController>(), Vector3.zero, heightJump, speedMove);
-    }
-    public void InitializeRotation(float sensitivity)
-    {
-        rotation = new EnemyCatRotation();
-        rotation.Initialize(sensitivity, gameObject.GetComponent<Transform>());
-    }
 
     public void ManualAwake()
     {
-        
+        fovD = this.GetComponent<FOVDetection>();
+        movement = new EnemyCatMovement();
+        movement.Initialize(gameObject.GetComponent<CharacterController>(), Vector3.zero, heightJump, speedMove);
+        rotation = new EnemyCatRotation();
+        rotation.Initialize(sensitivityRotation, gameObject.GetComponent<Transform>());
     }
     public void ManualStart()
     {
