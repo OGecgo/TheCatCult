@@ -57,17 +57,7 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
             Vector3 directionToTarget = (targetTransfrom.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
             {
-                float distanceToTarget = Vector3.Distance(transform.position, targetTransfrom.position);
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
-                { 
-                    isTarget = true;
-                    posTarget = targetTransfrom.position;
-                } 
-                else
-                {
-                    isTarget = false;
-                    posTarget = Vector3.zero;
-                }
+                checkObjectsBetween(targetTransfrom.position, directionToTarget);
             }
             else 
             {
@@ -75,20 +65,45 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
                 rangeCheck = Physics.OverlapSphere(transform.position, close_radius, targetMask); 
                 if (rangeCheck.Length != 0)
                 { 
-                    isTarget = true;
-                    posTarget = targetTransfrom.position;
+                    checkObjectsBetween(targetTransfrom.position, directionToTarget);
                 } 
                 else
                 {
-                    isTarget = false;
-                    posTarget = Vector3.zero;
+                    checkFalse();
                 }
             }
         }
         else
         {
-            isTarget = false;
-            posTarget = Vector3.zero;
+            checkFalse();
         }
     }
+
+    private void checkFalse()
+    {
+        isTarget = false;
+        posTarget = Vector3.zero;
+    } 
+
+    private void checkTrue(Vector3 position)
+    {
+        isTarget = true;
+        posTarget = position;
+    }
+
+    private void checkObjectsBetween(Vector3 positionTarget, Vector3 directionToTarget)
+    {
+        float distanceToTarget = Vector3.Distance(transform.position, positionTarget);
+        if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+        { 
+            checkTrue(positionTarget);
+        }
+        else
+        {
+            checkFalse();
+        }
+    }
+
 }
+
+
