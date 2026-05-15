@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IUpdateManagerObject
+public interface IUpdateManagerMonoBehaviour
 {
     public void ManualAwake();
     public void ManualUpdate();

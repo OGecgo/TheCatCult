@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         rotationAction.action.Enable();
 
     } 
-    public void OnDisable()
+    public void OnDisable() 
     {
         moveAction.action.Disable();
         jumpAction.action.Disable();

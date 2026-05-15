@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyCat : MonoBehaviour, IUpdateManagerObject
+public class EnemyCat : MonoBehaviour, IUpdateManagerMonoBehaviour
 {
 
     [Header("Enemy Cat Config Movement")]

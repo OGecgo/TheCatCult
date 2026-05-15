@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IPlayerHead: IUpdateManagerObject
+public interface IPlayerHead: IUpdateManagerMonoBehaviour
 {
     public float sensitivity{get; set;}
 }
