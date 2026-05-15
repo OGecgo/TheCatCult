@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
     public float heightJump = 1.5f;
     [Header("Player view")]
     public float sensitivity = 2f;
-    public Vector2 speedDirections = new Vector2(1f, 1f);
+    public Vector2 speedDirections = new Vector2(1f, 1f); 
+    [Range (0, 1)]
 
 
     private IPlayerMovement playerMovement;
@@ -29,7 +30,7 @@ public class Player : MonoBehaviour
         jumpAction.action.Enable();
         rotationAction.action.Enable();
 
-    }
+    } 
     public void OnDisable()
     {
         moveAction.action.Disable();
@@ -43,14 +44,13 @@ public class Player : MonoBehaviour
         playerMovement.Initialize(gameObject.GetComponent<CharacterController>(), moveAction, jumpAction, heightJump, speedMove);
         
         playerRotation = new PlayerRotation(); 
-        playerRotation.Initialize(rotationAction, sensitivity, Directions.Yaw, new Vector2(speedDirections.x, 0f), transform);
+        playerRotation.Initialize(rotationAction, sensitivity * speedDirections.x, new Vector3(1, 0, 0), transform);
 
         playerHead = GetComponentInChildren<PlayerHead>();
-        playerHead.speedDirections = speedDirections.y;
-        playerHead.sensitivity = sensitivity; 
+        playerHead.sensitivity = sensitivity * speedDirections.y; 
         playerHead.ManualAwake();
     }
-
+ 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -70,8 +70,4 @@ public class Player : MonoBehaviour
         playerRotation.ChangeSensitivity(sensitivity);
     }
 
-
-    void FixedUpdate()
-    {
-    }
 }

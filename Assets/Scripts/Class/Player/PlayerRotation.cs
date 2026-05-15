@@ -6,13 +6,17 @@ public class PlayerRotation: IPlayerRotation
     private InputActionReference rotationAction;
     private IRotationControll playerRotationControll;
 
-    public void Initialize(InputActionReference rotation, float sensitivity, Directions direction, Vector3 speedDirections, Transform playerTransform)
+    public void Initialize(InputActionReference rotation, float sensitivity, Vector3 onDirections, Transform playerTransform)
     {
         rotationAction = rotation;
         playerRotationControll = new RotationControll();
-        playerRotationControll.Initialize(sensitivity, direction, speedDirections, playerTransform);
-        playerRotationControll.max_min_pitch_on = true;
-        playerRotationControll.max_min_pitch = new Vector2(80f, -80f);
+        playerRotationControll.Initialize(sensitivity, onDirections, playerTransform);
+        if (onDirections.y == 1) // if camera. work only for y axi else free
+        {
+            playerRotationControll.onMinMaxValues[1] = true;
+            playerRotationControll.maxValues = new Vector3(0f, 80f, 0f);
+            playerRotationControll.minValues = new Vector3(0f, -80f, 0f);
+        }
     }
 
     public void ChangeSensitivity(float newSensitivity)
@@ -23,9 +27,7 @@ public class PlayerRotation: IPlayerRotation
     public void Update()
     {
         Vector2 rotationDelta = rotationAction.action.ReadValue<Vector2>();
-        playerRotationControll.RotateTo(rotationDelta);
-
-        playerRotationControll.Update();
+        playerRotationControll.UpdateLocalRotation(rotationDelta);
     }
 
-}
+} 

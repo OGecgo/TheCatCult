@@ -8,10 +8,8 @@ public class PlayerHead : MonoBehaviour, IPlayerHead
 
     private IPlayerRotation playerRotation;
 
-    private float _speedDirections;
     private float _sensitivity;
 
-    public float speedDirections{ get{return _speedDirections;} set{_speedDirections = value;} }
     public float sensitivity{ get{return _sensitivity;} set{_sensitivity = value;} }
 
 
@@ -24,15 +22,16 @@ public class PlayerHead : MonoBehaviour, IPlayerHead
         lookAction.action.Disable();
     }
 
-    public void ManualStart()
-    {
-        
-    }
+
     public void ManualAwake()
     {
         playerRotation = new PlayerRotation();
-        playerRotation.Initialize(lookAction, sensitivity, Directions.Pitch, new Vector3(0f, speedDirections, 0f), this.transform);
+        playerRotation.Initialize(lookAction, sensitivity, new Vector3(0, 1, 0), this.transform);
     }
+    public void ManualStart()
+    {
+        
+    } 
     public void ManualUpdate()
     {
         playerRotation.Update();

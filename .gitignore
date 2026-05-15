@@ -43,7 +43,9 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+
 # --- i added that ---
+.vscode/
 *.slnx 
 *.suo
 *.tmp
