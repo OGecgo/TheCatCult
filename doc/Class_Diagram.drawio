@@ -594,18 +594,6 @@
                         <mxPoint x="2587.2727272727275" y="-370" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="DxEnxW-M1bLUlQFw1ajg-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="DxEnxW-M1bLUlQFw1ajg-4" target="DxEnxW-M1bLUlQFw1ajg-6" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="DxEnxW-M1bLUlQFw1ajg-4" value="https://www.youtube.com/watch?v=2XEiHf1N_EY&lt;br&gt;&lt;br&gt;vasi aftou tou video ftiahnw to rotation me quaternios" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" parent="1" vertex="1">
-                    <mxGeometry x="-890" y="2030" width="400" height="120" as="geometry"/>
-                </mxCell>
-                <mxCell id="DxEnxW-M1bLUlQFw1ajg-6" value="fov direction target einai transform wste na doulevw me quaternios. genika na skeftomai me quaternios kai ohi me vector3" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" parent="1" vertex="1">
-                    <mxGeometry x="-890" y="2230" width="400" height="120" as="geometry"/>
-                </mxCell>
-                <mxCell id="2" value="vlepw oti to rotation einai ligo halasmeno sta enemy cat.&lt;br&gt;&lt;br&gt;prepei na girnaei ston pekti pio apotoma&lt;br&gt;akoma pio apotoma na stamataei (min pw kai kateftian den peirazei)" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" parent="1" vertex="1">
-                    <mxGeometry x="-1360" y="2180" width="400" height="120" as="geometry"/>
-                </mxCell>
                 <mxCell id="3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=12;endArrow=block;endFill=0;" parent="1" source="b_KqgzWkU3Ee5OLE3nvf-46" target="iA_9_lWAkeXp4u_nswqy-15" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
@@ -659,10 +647,7 @@
                     <mxGeometry x="-835" y="1310" width="345" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="&lt;div&gt;FOV prosthetw upsos&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" vertex="1" parent="1">
-                    <mxGeometry x="-770" y="1740" width="310" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="19" value="&lt;div&gt;rotation periorismo&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" vertex="1" parent="1">
-                    <mxGeometry x="-1180" y="1970" width="310" height="50" as="geometry"/>
+                    <mxGeometry x="-1370" y="1830" width="310" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="20" value="Kapoia fasi katharizw to diagrama" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" vertex="1" parent="1">
                     <mxGeometry x="-1780" y="1100" width="360" height="50" as="geometry"/>
