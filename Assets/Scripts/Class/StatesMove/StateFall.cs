@@ -24,7 +24,16 @@ public class StateFall: IStateMove
     }
     public void Update()
     {
-        // here add very slow movement
+        // // move when on air
+        // if (_moveTo != Vector3.zero)
+        // {
+        //     data.velocity  += Time.deltaTime * config.speedMoveNotGrounded;
+        //     data.lastMoveTo = _moveTo; // update last move direction with new direction 
+        
+        //     Vector3 movement = Vector3.ClampMagnitude(data.lastMoveTo, 1f) * data.velocity;
+        //     characterGravity.PushX(movement.x);
+        //     characterGravity.PushZ(movement.z);
+        // }
     }
     public void Exit()
     {

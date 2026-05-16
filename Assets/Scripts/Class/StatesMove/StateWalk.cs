@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class StateWalk : IStateWalk
 {
@@ -30,31 +29,31 @@ public class StateWalk : IStateWalk
         
     }
 
-    // very bad movement. need be rewrited
     public void Update()
     {
+        // move to
+        float targetVelocityX = _moveTo.x * maxSpeed;
+        float targetVelocityZ = _moveTo.z * maxSpeed;
 
-        // stop move
+        // stop move or move 
+        float acceleration = config.speedUpMoveWalk;
         if (_moveTo == Vector3.zero)
-        {
-            if (data.velocity > 0) data.velocity-= maxSpeed * Time.deltaTime * config.declarationMove;
-            else data.velocity= 0f;
+            acceleration = config.declarationMove;
+        float speedChange = maxSpeed * Time.deltaTime * acceleration;
 
-        }
-        // move
-        else
-        {
-            if (data.velocity< maxSpeed) data.velocity+= maxSpeed * Time.deltaTime * config.speedUpMoveWalk;
-            else data.velocity= maxSpeed;
-            // update last move direction with new direction
+        // smooth change
+        data.velocity_x = Mathf.MoveTowards(data.velocity_x, targetVelocityX, speedChange);
+        data.velocity_z = Mathf.MoveTowards(data.velocity_z, targetVelocityZ, speedChange);
+
+        // save last movement
+        if (_moveTo != Vector3.zero)
             data.lastMoveTo = _moveTo;
-        }
 
-        Vector3 movement = Vector3.ClampMagnitude(data.lastMoveTo, 1f) * data.velocity;
-        characterGravity.PushX(movement.x);
-        characterGravity.PushZ(movement.z);
-
+        // do move
+        characterGravity.PushX(data.velocity_x);
+        characterGravity.PushZ(data.velocity_z);
     }
+
     public void Exit()
     {
         

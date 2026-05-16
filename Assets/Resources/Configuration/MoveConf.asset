@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpeedUpMoveConf
   speedUpMoveWalk: 5
   speedUpMoveRun: 2
-  speedUpMoveNotGrounded: 0.5
-  declarationMove: 8
-  declarationMoveNotGrounded: 0.5
-  maxSpeedMoveNotGrounded: 1
-  maxSpeedFall: 1
   howManyTimesWalkIsRun: 2
+  declarationMove: 8
+  speedMoveNotGrounded: 0.5
+  maxSpeedFall: 1

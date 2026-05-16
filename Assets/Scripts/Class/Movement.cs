@@ -41,7 +41,7 @@ public class Movement: IMovement
         StateMoveSyncronizeData data = new StateMoveSyncronizeData();
         sWalk = new StateWalk(gravity, speedMove, data);
         sRun = new StateRun(gravity, speedMove, data);
-        sJump = new StateJump(gravity, heightJump, data);
+        sJump = new StateJump(gravity, heightJump);
         sFall = new StateFall(gravity, data);
 
         // state machine

@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Σελίδα-1" id="RHhtozIAqVEN69dNCovi">
-        <mxGraphModel dx="2751" dy="1055" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
+        <mxGraphModel dx="2090" dy="688" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -473,7 +473,7 @@
                     <mxGeometry y="110" width="500" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="161" value="vazw elahisti alagi tou move sto jump kai to fall gia efhristia" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" vertex="1" parent="1">
-                    <mxGeometry x="500" y="2390" width="310" height="50" as="geometry"/>
+                    <mxGeometry x="500" y="2310" width="310" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="E7wMHDKLe313tNfW4-cY-45" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;StateJump&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="1960" y="2338" width="510" height="230" as="geometry"/>
@@ -668,13 +668,13 @@
                     <mxGeometry x="190" y="2617" width="70" height="33.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="197" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;StateMoveSynchronizeData&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;" vertex="1" parent="1">
-                    <mxGeometry x="1295" y="1920" width="210" height="160" as="geometry"/>
+                    <mxGeometry x="1295" y="1900" width="210" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="198" value="&lt;div&gt;private float[] _velocity;&lt;/div&gt;&lt;div&gt;private Vector3 _lastMoveTo;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="197">
+                <mxCell id="198" value="&lt;div&gt;private Vector2 _velocity;&lt;/div&gt;&lt;div&gt;private Vector3 _lastMoveTo;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="197">
                     <mxGeometry y="40" width="210" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="199" value="&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;public float[] velocity;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;public Vector3 lastMoveTo;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;public StateMoveSyncronizeData();&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="197">
-                    <mxGeometry y="90" width="210" height="70" as="geometry"/>
+                <mxCell id="199" value="&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;public flaot velocity_x {get; set;};&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;public flaot velocity_z {get; set;};&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;public Vector3 lastMoveTo {get; set;};&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;public StateMoveSyncronizeData();&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="197">
+                    <mxGeometry y="90" width="210" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="202" value="&lt;font style=&quot;color: rgb(65, 65, 65);&quot;&gt;Node: StateMoveSynchronize use by&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(65, 65, 65);&quot;&gt;{StateMachine, StateWalk, StateJump, StateRun, StateFall&lt;span style=&quot;background-color: transparent;&quot;&gt;}&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#bac8d3;strokeColor=#23445d;" vertex="1" parent="1">
                     <mxGeometry x="1230" y="2146" width="340" height="54" as="geometry"/>
@@ -684,6 +684,9 @@
                         <mxPoint x="1660" y="2078" as="sourcePoint"/>
                         <mxPoint x="1660" y="2120" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="207" value="dexia aristera diaforetiki tahitita apo to brosta&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;to idio kai gia to pisw&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="2420" width="310" height="50" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
