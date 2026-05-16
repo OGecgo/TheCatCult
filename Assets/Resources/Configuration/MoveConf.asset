@@ -16,5 +16,5 @@ MonoBehaviour:
   speedUpMoveRun: 2
   howManyTimesWalkIsRun: 2
   declarationMove: 8
-  speedMoveNotGrounded: 0.5
+  speedMoveNotGrounded: 5
   maxSpeedFall: 1

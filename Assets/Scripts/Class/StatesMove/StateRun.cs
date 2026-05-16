@@ -45,7 +45,7 @@ public class StateRun: IStateRun
         data.velocity_x = Mathf.MoveTowards(data.velocity_x, targetVelocityX, speedChange);
         data.velocity_z = Mathf.MoveTowards(data.velocity_z, targetVelocityZ, speedChange);
 
-        // save last movement
+        // save last movement  
         if (_moveTo != Vector3.zero)
             data.lastMoveTo = _moveTo;
 

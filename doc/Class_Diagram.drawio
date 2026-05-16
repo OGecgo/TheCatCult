@@ -688,6 +688,9 @@
                 <mxCell id="207" value="dexia aristera diaforetiki tahitita apo to brosta&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;to idio kai gia to pisw&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" vertex="1" parent="1">
                     <mxGeometry x="500" y="2420" width="310" height="50" as="geometry"/>
                 </mxCell>
+                <mxCell id="208" value="&lt;div&gt;vrika provlima stin kamera. borei na anapodogirisei kai ola na fenode anapoda&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="2560" width="240" height="120" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
