@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class EnemyCatMovement: IEnemyCatMovement
 {
-    IMovement movement;
-    public void Initialize(CharacterController cc, Vector3 moveTo, float heightJump, float speedMove)
+    private IMovement movement;
+    public EnemyCatMovement(CharacterController cc, Vector3 moveTo, float heightJump, float speedMove)
     {
-        movement = new Movement();
-        movement.Initialize(cc, heightJump, speedMove);
+        movement = new Movement(cc, heightJump, speedMove);
         movement.moveTo = moveTo;
     }
     public void UpdateMoveTo(Vector3 moveTo)
@@ -24,6 +23,6 @@ public class EnemyCatMovement: IEnemyCatMovement
     
     public void Update()
     {
-        movement.Update();
+        movement.Update(); 
     }
 }

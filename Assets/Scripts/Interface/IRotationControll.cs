@@ -12,7 +12,6 @@ public interface IRotationControll
     // values between 0 and 1
     public Vector3 onDirections { get; set; } 
 
-    public void Initialize(float sensitivity, Vector3 onDirection, Transform playerTransform);
     public void UpdateLocalRotation(Vector2 difference);
     public void UpdateRotateTo(Vector3 target);
 }

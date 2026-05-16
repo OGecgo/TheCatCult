@@ -401,7 +401,7 @@ Transform:
   m_GameObject: {fileID: 438485728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.357369, y: 5.95, z: 1.2945595}
+  m_LocalPosition: {x: 11.76, y: 5.95, z: 1.2945595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -445,6 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   moveAction: {fileID: -1607762064484239792, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  runAction: {fileID: -8930836102701358717, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpAction: {fileID: 3341790410732654844, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   rotationAction: {fileID: 3814661625021189917, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   speedMove: 10
@@ -1200,7 +1201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8700486706830302051, guid: b1f24e093d0bd7ab19705cebed721019, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.61937
+      value: 5.73
       objectReference: {fileID: 0}
     - target: {fileID: 8700486706830302051, guid: b1f24e093d0bd7ab19705cebed721019, type: 3}
       propertyPath: m_LocalPosition.z

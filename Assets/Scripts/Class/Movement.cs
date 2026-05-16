@@ -1,62 +1,80 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Movement: IMovement
 {
 
-    private IStateMachine stateMachine;
-    private IStateMove moveGrounded;
-    private IStateJump jump;
-
-
-    private CharacterController controller;
-    private CharacterGravity gravity;
-
-
-
     private bool _jumpTrue;
+    private bool _runTrue;
     private Vector3 _moveTo;
     public bool jumpTrue {get { return _jumpTrue; } set{ _jumpTrue = value; }}
-    public Vector3 moveTo {get { return _moveTo; } set{ _moveTo = value; }}
+    public bool runTrue {get {return _runTrue; } set{ _runTrue = value;} }
+    public Vector3 moveTo { set{ _moveTo = value; }}
 
 
 
-    public void Initialize(CharacterController cc, float heightJump, float speedMove)
+    private IStateMachineMove stateMachine;
+    private IStateWalk sWalk;
+    private IStateRun sRun;
+    private IStateJump sJump;
+    private IStateMove sFall;
+
+
+    private CharacterGravity gravity;
+    private Transform transform;
+
+
+
+
+    public Movement(CharacterController cc, float heightJump, float speedMove)
     {
-        controller = cc;
-        gravity = new CharacterGravity();
-        gravity.Initialize(controller);
+        // set default values
+        jumpTrue = false;
+        runTrue = false;
+        moveTo = Vector3.zero;
+        transform = cc.transform;
 
-        // movements state
-        moveGrounded = new StateMove();
-        moveGrounded.Initialize(gravity, speedMove);
+        // gravity
+        gravity = new CharacterGravity(cc);
 
-        // jump state
-        jump = new StateJump();
-        jump.Initialize(gravity, heightJump);
+        // states
+        StateMoveSyncronizeData data = new StateMoveSyncronizeData();
+        sWalk = new StateWalk(gravity, speedMove, data);
+        sRun = new StateRun(gravity, speedMove, data);
+        sJump = new StateJump(gravity, heightJump, data);
+        sFall = new StateFall(gravity, data);
 
         // state machine
-        stateMachine = new StateMachine();
-        stateMachine.Initialize(moveGrounded);
+        stateMachine = new StateMachineMove();
+        if (gravity.IsGrounded)
+            stateMachine.Initialize(sWalk);
+        else
+            stateMachine.Initialize(sFall);
     }
     public void UpdateHeightJump(float heightJump)
     {
-        jump.heightJump = heightJump;
+        sJump.heightJump = heightJump;
     }
     public void UpdateSpeedMove(float speedMove)
     {
-        moveGrounded.speedMove = speedMove;
+        sWalk.maxSpeed = speedMove;
+        sRun.maxSpeedWalk = speedMove;
     }
     public void Update()
     {
-        // rotation * move = properly directions
-        moveGrounded.moveTo =  controller.transform.rotation * moveTo;
-        stateMachine.TransitionTo(moveGrounded);
-        if (controller.isGrounded && jumpTrue)
+        if (gravity.IsGrounded)
         {
-            stateMachine.TransitionTo(jump);
+            if (jumpTrue) stateMachine.TransitionTo(sJump);
+            else if (runTrue) stateMachine.TransitionTo(sRun);
+            else stateMachine.TransitionTo(sWalk);
         }
-
-        // update gravity and state machine
+        else
+        {
+            stateMachine.TransitionTo(sFall);
+        }
+        
+        // rotation * move = properly directions
+        stateMachine.moveTo = transform.rotation * _moveTo;
         gravity.Update();
         stateMachine.Update();
     }

@@ -19,10 +19,8 @@ public class EnemyCat : MonoBehaviour, IUpdateManagerMonoBehaviour
     public void ManualAwake()
     {
         fovD = this.GetComponent<FOVDetection>();
-        movement = new EnemyCatMovement();
-        movement.Initialize(gameObject.GetComponent<CharacterController>(), Vector3.zero, heightJump, speedMove);
-        rotation = new EnemyCatRotation();
-        rotation.Initialize(sensitivity, gameObject.GetComponent<Transform>());
+        movement = new EnemyCatMovement(gameObject.GetComponent<CharacterController>(), Vector3.zero, heightJump, speedMove);
+        rotation = new EnemyCatRotation(sensitivity, gameObject.GetComponent<Transform>());
         timerSee = 0;
     }
     public void ManualStart()

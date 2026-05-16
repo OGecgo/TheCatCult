@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     [Header("InputActions")]
     public InputActionReference moveAction;
+    public InputActionReference runAction;
     public InputActionReference jumpAction;
     public InputActionReference rotationAction;
 
@@ -40,11 +41,8 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
-        playerMovement = new PlayerMovement();
-        playerMovement.Initialize(gameObject.GetComponent<CharacterController>(), moveAction, jumpAction, heightJump, speedMove);
-        
-        playerRotation = new PlayerRotation(); 
-        playerRotation.Initialize(rotationAction, sensitivity * speedDirections.x, new Vector3(1, 0, 0), transform);
+        playerMovement = new PlayerMovement(this.GetComponent<CharacterController>(), moveAction, runAction, jumpAction, heightJump, speedMove);
+        playerRotation = new PlayerRotation(rotationAction, sensitivity * speedDirections.x, new Vector3(1, 0, 0), transform); 
 
         playerHead = GetComponentInChildren<PlayerHead>();
         playerHead.sensitivity = sensitivity * speedDirections.y; 
@@ -63,11 +61,10 @@ public class Player : MonoBehaviour
         playerHead.ManualUpdate();
 
 
-
-        // debuging
-        playerMovement.UpdateHeightJump(heightJump);
-        playerMovement.UpdateSpeedMove(speedMove);
-        playerRotation.ChangeSensitivity(sensitivity);
+        // // debuging
+        // playerMovement.UpdateHeightJump(heightJump);
+        // playerMovement.UpdateSpeedMove(speedMove);
+        // playerRotation.ChangeSensitivity(sensitivity);
     }
 
 }

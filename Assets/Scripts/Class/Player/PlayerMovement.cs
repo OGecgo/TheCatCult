@@ -12,6 +12,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : IPlayerMovement
 {
     private InputActionReference jumpAction;
+    private InputActionReference runAction;
     private InputActionReference moveAction;
     private IMovement movement;
 
@@ -28,17 +29,17 @@ public class PlayerMovement : IPlayerMovement
 
 
 
-    public void Initialize(CharacterController cc, InputActionReference move, InputActionReference jump, float heightJump, float speedMove)
+    public PlayerMovement(CharacterController cc, InputActionReference move, InputActionReference run, InputActionReference jump, float heightJump, float speedMove)
     {
         jumpAction = jump;
+        runAction = run;
         moveAction = move;
-        
-        movement = new Movement();
-        movement.Initialize(cc, heightJump, speedMove);
+        movement = new Movement(cc, heightJump, speedMove);
     }
     public void Update()
     {
         movement.jumpTrue = jumpAction.action.triggered;
+        movement.runTrue = runAction.action.IsPressed();
         movement.moveTo = new Vector3(moveAction.action.ReadValue<Vector2>().x, 0, moveAction.action.ReadValue<Vector2>().y);
         movement.Update();
     }

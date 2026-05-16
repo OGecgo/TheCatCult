@@ -1,7 +1,9 @@
 using UnityEngine;
 
-public interface IState
+public interface IStateMove
 {
+    public Vector3 moveTo { set; }
+
     public void Enter();
     public void Update();
     public void Exit(); 

@@ -3,7 +3,7 @@ using UnityEngine;
 public interface ICharacterGravity
 {
     public float g {get; set;}
-    public void Initialize(CharacterController cc);
+    public bool IsGrounded { get; }
     public void Push(Vector3 power);
     public void PushX(float power);
     public void PushY(float power);

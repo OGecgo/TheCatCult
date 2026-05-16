@@ -36,7 +36,7 @@ public class RotationControll : IRotationControll
     public Vector3 onDirections { get { return _onDirections; } set {_onDirections = value;} }
 
 
-    public void Initialize(float sensitivity, Vector3 onDirections, Transform objTransform)
+    public RotationControll(float sensitivity, Vector3 onDirections, Transform objTransform)
     {
         this.onMinMaxValues = new bool[3]; // all elements default to false
         this.onDirections = onDirections; 

@@ -11,10 +11,9 @@ public class EnemyCatRotation : IEnemyCatRotation
 
 
     
-    public void Initialize(float sensitivity, Transform transform)
+    public EnemyCatRotation(float sensitivity, Transform transform)
     {
-        contrl = new RotationControll();
-        contrl.Initialize(sensitivity, new Vector3(1, 0, 1), transform);
+        contrl = new RotationControll(sensitivity, new Vector3(1, 0, 1), transform);
         posTarget = Vector3.zero;
     }
     public void ChangeSensitivity(float newSensitivity)

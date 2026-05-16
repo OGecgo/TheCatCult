@@ -6,11 +6,10 @@ public class PlayerRotation: IPlayerRotation
     private InputActionReference rotationAction;
     private IRotationControll playerRotationControll;
 
-    public void Initialize(InputActionReference rotation, float sensitivity, Vector3 onDirections, Transform playerTransform)
+    public PlayerRotation(InputActionReference rotation, float sensitivity, Vector3 onDirections, Transform playerTransform)
     {
         rotationAction = rotation;
-        playerRotationControll = new RotationControll();
-        playerRotationControll.Initialize(sensitivity, onDirections, playerTransform);
+        playerRotationControll = new RotationControll(sensitivity, onDirections, playerTransform);
         if (onDirections.y == 1) // if camera. work only for y axi else free
         {
             playerRotationControll.onMinMaxValues[1] = true;

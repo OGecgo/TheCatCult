@@ -25,8 +25,7 @@ public class PlayerHead : MonoBehaviour, IPlayerHead
 
     public void ManualAwake()
     {
-        playerRotation = new PlayerRotation();
-        playerRotation.Initialize(lookAction, sensitivity, new Vector3(0, 1, 0), this.transform);
+        playerRotation = new PlayerRotation(lookAction, sensitivity, new Vector3(0, 1, 0), this.transform);
     }
     public void ManualStart()
     {
