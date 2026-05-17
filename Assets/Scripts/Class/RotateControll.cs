@@ -50,9 +50,11 @@ public class RotationControll : IRotationControll
         Vector3 temp = target - transform.position;
         // work with used directions
         temp = Vector3.Scale(temp, onDirections); 
-        temp = TestMinMax(temp);
         Quaternion lookRotation = Quaternion.LookRotation(temp);  
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * sensitivity);
+        Quaternion temp_q = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * sensitivity);
+        temp = temp_q.eulerAngles;
+        temp = TestMinMax(temp);
+        transform.rotation = Quaternion.Euler(temp);
     } 
   
     public void UpdateLocalRotation(Vector2 difference)  
@@ -60,33 +62,38 @@ public class RotationControll : IRotationControll
         difference.y *= -1;
         // work with used direction
         Vector3 temp = Vector3.Scale(difference, onDirections);
-        temp = temp * sensitivity;
+        temp = temp * sensitivity; 
+        temp = transform.localEulerAngles + new Vector3(temp.y, temp.x, temp.z);
         temp = TestMinMax(temp);
-        transform.localEulerAngles = transform.localEulerAngles + new Vector3(temp.y, temp.x, temp.z);
+        transform.localRotation = Quaternion.Euler(temp);
     } 
-
+ 
 
     private Vector3 TestMinMax(Vector3 value)
     {
         // test limits 
-        if (onMinMaxValues[0])
+        if (onMinMaxValues[0]) // x direction
         {
-            if (maxValues.x < value.x) value.x = maxValues.x;
-            if (minValues.x > value.x) value.x = minValues.x;            
-        }
-        if (onMinMaxValues[1])
-        {
-            if (maxValues.y < value.y) value.y = maxValues.y;
-            if (minValues.y > value.y) value.y = minValues.y;            
-        }
-        if (onMinMaxValues[2])
-        {
-            if (maxValues.z < value.z) value.z = maxValues.z;
-            if (minValues.z > value.z) value.z = minValues.z;            
-        }
+            float d = Mathf.DeltaAngle(0, value.y);
 
+            if (maxValues.x < d) value.y = maxValues.x;
+            if (minValues.x > d) value.y = minValues.x;
+        }
+        if (onMinMaxValues[1]) // y direction
+        {
+            float d = Mathf.DeltaAngle(0, value.x);
+
+            if (minValues.y > d) value.x = minValues.y;
+            else if (maxValues.y < d) value.x = maxValues.y;
+        }
+        if (onMinMaxValues[2]) // z direction
+        {
+            float d = Mathf.DeltaAngle(0, value.z);
+
+            if (minValues.z > d) value.z = minValues.z;            
+            else if (maxValues.z < d) value.z = maxValues.z;
+        }
         return value;
-
     }
 
 

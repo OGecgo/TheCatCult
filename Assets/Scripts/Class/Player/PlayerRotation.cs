@@ -13,8 +13,8 @@ public class PlayerRotation: IPlayerRotation
         if (onDirections.y == 1) // if camera. work only for y axi else free
         {
             playerRotationControll.onMinMaxValues[1] = true;
-            playerRotationControll.maxValues = new Vector3(0f, 80f, 0f);
-            playerRotationControll.minValues = new Vector3(0f, -80f, 0f);
+            playerRotationControll.maxValues = new Vector3(0f, 50f, 0f);
+            playerRotationControll.minValues = new Vector3(0f, -50f, 0f);
         }
     }
 

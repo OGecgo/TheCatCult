@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb6e66ba69a28dcebc4978fd9a45738, type: 3}
   m_Name: MoveConf
   m_EditorClassIdentifier: Assembly-CSharp::SpeedUpMoveConf
-  speedUpMoveWalk: 5
-  speedUpMoveRun: 2
-  howManyTimesWalkIsRun: 2
-  declarationMove: 8
-  speedMoveNotGrounded: 5
-  maxSpeedFall: 1
+  walkAcceleration: 5
+  runAcceleration: 5
+  runSpeedMultiplied: 1.4
+  sideStrafeSpeedMultiplier: 0.1
+  backwardSpeedMultiplier: 0.1
+  stopAcceleration: 8
+  airMoveSpeed: 0.5

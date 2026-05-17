@@ -34,11 +34,11 @@ public class StateWalk : IStateWalk
         // move to
         float targetVelocityX = _moveTo.x * maxSpeed;
         float targetVelocityZ = _moveTo.z * maxSpeed;
-
+        
         // stop move or move 
-        float acceleration = config.speedUpMoveWalk;
+        float acceleration = config.walkAcceleration;
         if (_moveTo == Vector3.zero)
-            acceleration = config.declarationMove;
+            acceleration = config.stopAcceleration;
         float speedChange = maxSpeed * Time.deltaTime * acceleration;
 
         // smooth change

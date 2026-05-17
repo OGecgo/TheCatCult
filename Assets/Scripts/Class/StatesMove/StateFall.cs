@@ -28,11 +28,11 @@ public class StateFall: IStateMove
         if (_moveTo != Vector3.zero)
         {
             // move to
-            float targetVelocityX = _moveTo.x * config.speedMoveNotGrounded;
-            float targetVelocityZ = _moveTo.z * config.speedMoveNotGrounded;
+            float targetVelocityX = _moveTo.x * config.airMoveSpeed;
+            float targetVelocityZ = _moveTo.z * config.airMoveSpeed;
 
             // smooth change
-            float speedChange = Time.deltaTime * config.speedMoveNotGrounded;
+            float speedChange = Time.deltaTime * config.airMoveSpeed;
             data.velocity_x = Mathf.MoveTowards(data.velocity_x, targetVelocityX, speedChange);
             data.velocity_z = Mathf.MoveTowards(data.velocity_z, targetVelocityZ, speedChange);
 

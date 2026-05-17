@@ -5,7 +5,7 @@ public class StateRun: IStateRun
 
     private Vector3 _moveTo;
     public Vector3 moveTo { set { _moveTo = value; } }
-    public float maxSpeedWalk { set { maxSpeed = value * config.howManyTimesWalkIsRun; } }
+    public float maxSpeedWalk { set { maxSpeed = value * config.runSpeedMultiplied; } }
 
 
     private ICharacterGravity characterGravity;
@@ -36,9 +36,9 @@ public class StateRun: IStateRun
         float targetVelocityZ = _moveTo.z * maxSpeed;
 
         // stop move or move 
-        float acceleration = config.speedUpMoveWalk;
+        float acceleration = config.runAcceleration;
         if (_moveTo == Vector3.zero)
-            acceleration = config.declarationMove;
+            acceleration = config.stopAcceleration;
         float speedChange = maxSpeed * Time.deltaTime * acceleration;
 
         // smooth change
