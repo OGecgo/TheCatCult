@@ -14,9 +14,11 @@ public class Player : MonoBehaviour
     [Header("Player Movements")]
     public float speedMove = 10f;
     public float heightJump = 1.5f;
-    [Header("Player view")]
+    [Header("Player View")]
     public float sensitivity = 2f;
+    // value between 0 andd 1
     public Vector2 speedDirections = new Vector2(1f, 1f); 
+    public float FOV;
     [Range (0, 1)]
 
 
@@ -46,11 +48,14 @@ public class Player : MonoBehaviour
 
         playerHead = GetComponentInChildren<PlayerHead>();
         playerHead.sensitivity = sensitivity * speedDirections.y; 
+        playerHead.FOV = FOV;
+        playerHead.lookAction = rotationAction;
         playerHead.ManualAwake();
     }
  
     void Start()
     {
+        playerHead.ManualStart();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

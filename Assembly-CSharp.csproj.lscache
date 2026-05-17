@@ -53,6 +53,7 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 Assets/Resources/Configuration/
  CharacterGravityConf.cs
  MoveConf.cs
+ Player/PlayerCameraConf.cs
 Assets/Scripts/Class/
  CharacterGravity.cs
  Enemy/
@@ -83,7 +84,7 @@ Assets/Scripts/Interface/
  IFOVDetection.cs
  IMovement.cs
  IRotationControll.cs
- IUpdateManagerMonoBehaviour.cs
+ ManagerMonoBehaviour/IUpdateManagerMonoBehaviour.cs
  Player/
   IPlayerHead.cs
   IPlayerMovement.cs
