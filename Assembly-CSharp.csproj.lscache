@@ -83,7 +83,7 @@ Assets/Scripts/Interface/
  ICharacterGravity.cs
  IFOVDetection.cs
  IMovement.cs
- IRotationControll.cs
+ IRotationControl.cs
  ManagerMonoBehaviour/IUpdateManagerMonoBehaviour.cs
  Player/
   IPlayerHead.cs
