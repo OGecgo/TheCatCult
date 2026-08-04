@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerWalkConf
   m_EditorClassIdentifier: Assembly-CSharp::WalkConf
   maxWalkSpeed: 5
-  speedDirection: {x: 1, y: 0.2}
+  speedDirection: {x: 0.9, y: 1}
   walkAcceleration: 40
   stopAcceleration: 40

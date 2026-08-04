@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ec3baf1ea96e1ab9454a5767ee2b0a, type: 3}
   m_Name: PlayerFallConf
   m_EditorClassIdentifier: Assembly-CSharp::FallConf
-  moveSpeed: 0.5
-  airStop: 5
-  speedDirection: {x: 1, y: 1}
+  acceleration: 0.01
