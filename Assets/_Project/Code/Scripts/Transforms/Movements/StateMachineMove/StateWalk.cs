@@ -26,7 +26,7 @@ public class StateWalk : IStateMove
 
         // corecting speed of direction
         Vector3 newDirection = Vector3.Scale(_direction, new Vector3(config.speedDirection.x, 0, config.speedDirection.y)); 
-        characterGravity.PushForward(newDirection * config.maxWalkSpeed, acceleration);
+        characterGravity.SetOfDesiredSpeedForward(newDirection * config.maxWalkSpeed, acceleration);
     }
 
 }

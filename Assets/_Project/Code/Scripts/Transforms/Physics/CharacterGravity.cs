@@ -22,14 +22,22 @@ public class CharacterGravity: ICharacterGravity
     }
 
 
-    public void PushForward(Vector3 power, float acceleration)
+    public void SetOfDesiredSpeedForward(Vector3 desiredSpeed, float acceleration)
     {
         // rotation * direction + (dont lost velocity.y)
-        Vector3 direction = controller.transform.rotation * power;
+        Vector3 direction = controller.transform.rotation * desiredSpeed;
         Vector3 newVelocity = Vector3.MoveTowards(velocity, direction, acceleration * Time.deltaTime); 
         velocity.x = newVelocity.x;
         velocity.z = newVelocity.z;
     }
+
+    public void PushForward(Vector3 power)
+    {
+        Vector3 direction = controller.transform.rotation * power;
+        velocity.x += direction.x;
+        velocity.z += direction.z;
+    }
+
     public void PushUp(float power)
     {
         velocity.y = power;

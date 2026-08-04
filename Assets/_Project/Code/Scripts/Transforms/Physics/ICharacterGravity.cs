@@ -7,12 +7,14 @@ public interface ICharacterGravity: IUpdatable
     public float g {get;}
     public bool IsGrounded { get; }
     // push forward have no stop after n time 
-    // after x push. should do -x push for stop
-    
-    // push forward automaticly make proper direction for power
-    // e.g. Vector3.forward make character move forward
-    public void PushForward(Vector3 power, float acceleration);
-    // can used for jump
+
+    // horizotan movement automaticly take proper rotation for player
+    // e.g. Vector3.forward makes character move forward
+
+    // smothly change from current spedd to desired speed from acceleration
+    public void SetOfDesiredSpeedForward(Vector3 desiredSpeed, float acceleration);
+    // simple changes velocity    
+    public void PushForward(Vector3 power);
     public void PushUp(float power);
 }
 
