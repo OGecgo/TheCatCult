@@ -4,4 +4,7 @@ using UnityEngine;
 public class WindowConf : ScriptableObject
 {
     public Vector2 cameraDimensions = new Vector2(16f, 9f);
+    [Range(50f, 70f)]
+    public float FOV = 60f;
+
 }

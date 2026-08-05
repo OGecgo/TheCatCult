@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerWindowConf
   m_EditorClassIdentifier: Assembly-CSharp::WindowConf
   cameraDimensions: {x: 16, y: 9}
+  FOV: 90

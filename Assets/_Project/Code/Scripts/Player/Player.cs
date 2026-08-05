@@ -17,24 +17,24 @@ public class Player : MonoBehaviour
     [SerializeField] public JumpConf jumpConf;
     [SerializeField] public FallConf fallConf;
 
-    [Header("Player View")]
+    [Header("Player rotation")]
     public float sensitivity = 2f;
     // value between 0 andd 1
-    public Vector2 speedDirections = new Vector2(1f, 1f); 
-    public float FOV = 70f;
+    public Vector2 speedDirections = new Vector2(1f, 1f);
 
-    private IPlayerHead playerHead;
+
     private IPalyerMovement playerMovement;
-    private IPlayerRotation playerRotation;
+    private IPlayerRotation bodyRotation;
+    private IPlayerRotation headRotation;
 
     public void OnEnable()
     {
         moveAction.action.Enable();
         jumpAction.action.Enable();
         rotationAction.action.Enable();
+    }
 
-    } 
-    public void OnDisable() 
+    public void OnDisable()
     {
         moveAction.action.Disable();
         jumpAction.action.Disable();
@@ -43,32 +43,41 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
+
         playerMovement = new PlayerMovement
         (
             this.GetComponent<CharacterController>(),
             new InputActionMovementRecord(moveAction, runAction, jumpAction),
             new PlayerConfRecord(walkConf, runConf, jumpConf, fallConf)
         );
-        playerRotation = new PlayerRotation(rotationAction, sensitivity * speedDirections.x, new Vector3(1, 0, 0), transform); 
 
-        playerHead = GetComponentInChildren<PlayerHead>();
-        playerHead.sensitivity = sensitivity * speedDirections.y; 
-        playerHead.FOV = FOV;
-        playerHead.rotationAction = rotationAction;
-        playerHead.ManualAwake();
+        bodyRotation = new PlayerRotation
+        (
+            rotationAction,
+            sensitivity * speedDirections.x,
+            new Vector3(1, 0, 0), transform
+        );
+
+        headRotation = new PlayerRotation
+        (
+            rotationAction,
+            sensitivity * speedDirections.y,
+            new Vector3(0, 1, 0),
+            // 0 is the head
+            this.transform.GetChild(0)
+        );
     }
- 
-    void Start() 
+
+    void Start()
     {
-        playerHead.ManualStart();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
     void Update()
     {
-        playerHead.ManualUpdate();
-        playerRotation.ManualUpdate();
+        bodyRotation.ManualUpdate();
+        headRotation.ManualUpdate();
         playerMovement.ManualUpdate();
     }
-
 }
