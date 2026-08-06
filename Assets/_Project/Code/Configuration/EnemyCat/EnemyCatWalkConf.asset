@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbce50017f8199cf28bb26c968e6c251, type: 3}
   m_Name: EnemyCatWalkConf
   m_EditorClassIdentifier: Assembly-CSharp::WalkConf
-  maxWalkSpeed: 5
+  maxWalkSpeed: 4
   speedDirection: {x: 1, y: 1}
   walkAcceleration: 40
   stopAcceleration: 40

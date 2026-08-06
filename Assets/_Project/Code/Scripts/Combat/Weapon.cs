@@ -1,16 +1,27 @@
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Weapon: IWeapon
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    WeaponConf config;
+    int i = 0;
 
-    // Update is called once per frame
-    void Update()
+    public void Attack(Vector3 position, Vector3 direction)
     {
-        
+        if (Physics.Raycast(position, direction, out RaycastHit hit, config.range, config.targetMask))
+        {
+            // do damage if is hitable mask
+            if (hit.collider.TryGetComponent(out IDamageable damageable))
+            {
+                Debug.Log(hit.collider.name + " " + i);
+                i +=1;
+                damageable.Attack(config.damage);
+            }
+        }
     }
+    public Weapon(WeaponConf weaponConf)
+    {
+        config = weaponConf;
+    } 
+
+
 }

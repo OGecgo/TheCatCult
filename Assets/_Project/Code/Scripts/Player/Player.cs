@@ -4,18 +4,22 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-
     [Header("InputActions")]
     public InputActionReference moveAction;
     public InputActionReference runAction;
     public InputActionReference jumpAction;
     public InputActionReference rotationAction;
+    public InputActionReference attackAction;
 
     [Header("Player Movements")]
     [SerializeField] public WalkConf walkConf;
     [SerializeField] public RunConf runConf;
     [SerializeField] public JumpConf jumpConf;
     [SerializeField] public FallConf fallConf;
+
+    [Header("Player Combat")]
+    [SerializeField] public WeaponConf weaponConf;
+    
 
     [Header("Player rotation")]
     public float sensitivity = 2f;
@@ -27,9 +31,13 @@ public class Player : MonoBehaviour
     private IPlayerRotation bodyRotation;
     private IPlayerRotation headRotation;
 
+    private Camera playerCamera;
+    private IWeapon weapon;
+
     public void OnEnable()
     {
         moveAction.action.Enable();
+        runAction.action.Enable();
         jumpAction.action.Enable();
         rotationAction.action.Enable();
     }
@@ -37,12 +45,14 @@ public class Player : MonoBehaviour
     public void OnDisable()
     {
         moveAction.action.Disable();
+        runAction.action.Disable();
         jumpAction.action.Disable();
         rotationAction.action.Disable();
     }
 
     public void Awake()
     {
+
 
         playerMovement = new PlayerMovement
         (
@@ -66,6 +76,9 @@ public class Player : MonoBehaviour
             // 0 is the head
             this.transform.GetChild(0)
         );
+
+        playerCamera = this.GetComponentInChildren<Camera>();
+        weapon = new Weapon(weaponConf);
     }
 
     void Start()
@@ -78,6 +91,19 @@ public class Player : MonoBehaviour
     {
         bodyRotation.ManualUpdate();
         headRotation.ManualUpdate();
-        playerMovement.ManualUpdate();
+        playerMovement.ManualUpdate();   
+
+        if (attackAction.action.triggered)
+        {
+            Shoot();
+        }         
+    }
+
+    // TODO: Transfere attack to different class cobat
+    private void Shoot()
+    {
+        
+        weapon.Attack(playerCamera.transform.position, playerCamera.transform.forward);
     }
 }
+ 

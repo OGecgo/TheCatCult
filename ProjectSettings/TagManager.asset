@@ -34,7 +34,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - DamageableLayer
   - ObjectLayer
   - PlayerLayer
   m_SortingLayers:

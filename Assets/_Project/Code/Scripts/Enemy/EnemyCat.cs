@@ -1,7 +1,11 @@
+using System;
 using UnityEngine;
 
-public class EnemyCat : MonoBehaviour, IEnemyCat
+
+public class EnemyCat : MonoBehaviour, IEnemyCat, IDamageable
 {
+    [Header("Enemy Cat Combat Config")]
+    [SerializeField] LifeConf lifeConf;
 
     [Header("Enemy Cat Config Movement")]
     [SerializeField] WalkConf walkConf;
@@ -10,14 +14,22 @@ public class EnemyCat : MonoBehaviour, IEnemyCat
     public float timerCatWillAttack = 0f;
     // enemy go to player untile timer goes 0
     private float timerSee;
-
     private IFOVDetection fovD;
     private IEnemyCatRotation rotation;
     private IEnemyCatMovement movement;
 
+    private ILife life;
+
+    public void OnDestroy()
+    {
+        if (life != null) life.OnDie -= this.EnemyDie;
+    }
 
     public void ManualAwake()
     {
+        life = new Life(lifeConf);
+        life.OnDie += this.EnemyDie;
+
         fovD = this.GetComponent<FOVDetection>();
         movement = new EnemyCatMovement
         (
@@ -29,10 +41,25 @@ public class EnemyCat : MonoBehaviour, IEnemyCat
     }
     public void ManualStart()
     {
-        fovD.StartDetection();
+        fovD.StartDetection(); 
     }
     public void ManualUpdate()
     {
+        actionUpdate();
+    }
+
+    public void Attack(int power)
+    {
+        life.Attack(power);
+    }
+    private void EnemyDie()
+    {
+        Destroy(this.gameObject);
+    }
+
+    // TODO: make different class with different actions
+    private void actionUpdate()
+    { 
         if (fovD.isTarget)
         {
             // posTarget is pointer of position from obj
@@ -54,6 +81,8 @@ public class EnemyCat : MonoBehaviour, IEnemyCat
             rotation.posTarget = Vector3.zero;
             movement.typeMovement = TypeMovement.WHAIT;
         } 
+
+
         rotation.ManualUpdate();
         movement.ManualUpdate();
     }

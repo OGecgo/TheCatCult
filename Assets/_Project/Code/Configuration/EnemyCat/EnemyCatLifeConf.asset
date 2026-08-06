@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69767a154ddf77003acc30e298d9bbfe, type: 3}
-  m_Name: PlayerWindowConf
-  m_EditorClassIdentifier: Assembly-CSharp::WindowConf
-  cameraDimensions: {x: 16, y: 9}
-  FOV: 70
+  m_Script: {fileID: 11500000, guid: f725ec9085e250a479e62b16df8364ed, type: 3}
+  m_Name: EnemyCatLifeConf
+  m_EditorClassIdentifier: Assembly-CSharp::LifeConf
