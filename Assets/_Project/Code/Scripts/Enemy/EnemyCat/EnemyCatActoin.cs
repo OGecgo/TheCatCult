@@ -1,75 +1,53 @@
-using System;
 using UnityEngine;
 
-
-public class EnemyCat : MonoBehaviour, IEnemyCat, IDamageable
+public class EnemyCatActoin : MonoBehaviour, IUpdatable, IStartable, IAwakable
 {
-    [Header("Enemy Cat Combat Config")]
-    [SerializeField] LifeConf lifeConf;
-
-    [Header("Enemy Cat Config Movement")]
     [SerializeField] WalkConf walkConf;
     [SerializeField] RunConf runConf;
+    [Header("Rotation settins")]
     public float sensitivity = 4f;
-    public float timerCatWillAttack = 0f;
-    // enemy go to player untile timer goes 0
-    private float timerSee;
+    [Header("Action settings")]
+    public float timerAttack = 0f;
+
+    private float timer;
     private IFOVDetection fovD;
     private IEnemyCatRotation rotation;
     private IEnemyCatMovement movement;
-
-    private ILife life;
-
-    public void OnDestroy()
-    {
-        if (life != null) life.OnDie -= this.EnemyDie;
-    }
-
+    
     public void ManualAwake()
     {
-        life = new Life(lifeConf);
-        life.OnDie += this.EnemyDie;
-
-        fovD = this.GetComponent<FOVDetection>();
+        fovD = this.GetComponent<IFOVDetection>();
         movement = new EnemyCatMovement
         (
             gameObject.GetComponent<CharacterController>(),
             new EnemyCatConfRecord(walkConf, runConf)
         );
         rotation = new EnemyCatRotation(sensitivity, gameObject.GetComponent<Transform>());
-        timerSee = 0;
-    }
+        timer = 0f;
+    }    
+
     public void ManualStart()
     {
-        fovD.StartDetection(); 
+        fovD.StartDetection();
     }
+
     public void ManualUpdate()
     {
-        actionUpdate();
+        AttackUpdate();
     }
-
-    public void Attack(int power)
-    {
-        life.Attack(power);
-    }
-    private void EnemyDie()
-    {
-        Destroy(this.gameObject);
-    }
-
-    // TODO: make different class with different actions
-    private void actionUpdate()
+ 
+    private void AttackUpdate()
     { 
         if (fovD.isTarget)
         {
             // posTarget is pointer of position from obj
             rotation.posTarget = fovD.posTarget;
             movement.typeMovement = TypeMovement.RUN;
-            timerSee = timerCatWillAttack; 
+            timer = timerAttack; 
         }
-        else if (timerSee > 0) // very not smart follow player from memory
+        else if (timer > 0) // very not smart follow player from memory
         {
-            timerSee -= Time.deltaTime;
+            timer -= Time.deltaTime;
             rotation.posTarget = Vector3.zero;
             movement.typeMovement = TypeMovement.RUN;
         }
