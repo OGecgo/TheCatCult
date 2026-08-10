@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyCatCombat : MonoBehaviour, IAwakable, IDamageable
 {
+    [Header("General settings")]
     [SerializeField] LifeConf lifeConf;
 
     private ILife life;
@@ -16,12 +17,7 @@ public class EnemyCatCombat : MonoBehaviour, IAwakable, IDamageable
 
     public void ManualAwake()
     {
-        if (life == null)
-        {
-            life = new Life(lifeConf);
-        }
-
-        life.OnDie -= EnemyDie;
+        life = new Life(lifeConf);
         life.OnDie += EnemyDie;
     }
 
