@@ -1,38 +1,27 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections;
 
-public class Player : MonoBehaviour
+public class PlayerTransform : MonoBehaviour
 {
-    [Header("InputActions")]
+    [Header("Input")]
     public InputActionReference moveAction;
     public InputActionReference runAction;
     public InputActionReference jumpAction;
     public InputActionReference rotationAction;
-    public InputActionReference attackAction;
-
-    [Header("Player Movements")]
+    
+    [Header("Movement settings")]
     [SerializeField] public WalkConf walkConf;
     [SerializeField] public RunConf runConf;
     [SerializeField] public JumpConf jumpConf;
     [SerializeField] public FallConf fallConf;
+    [Header("Rotation settins")]
+    [SerializeField] public RotationConf headRotationConf;
+    [SerializeField] public RotationConf bodyRotationConf;
 
-    [Header("Player Combat")]
-    [SerializeField] public WeaponConf weaponConf;
-    
-
-    [Header("Player rotation")]
-    public float sensitivity = 2f;
-    // value between 0 andd 1
-    public Vector2 speedDirections = new Vector2(1f, 1f);
-
-
-    private IPalyerMovement playerMovement;
+    private IPlayerMovement playerMovement;
     private IPlayerRotation bodyRotation;
     private IPlayerRotation headRotation;
-
-    private Camera playerCamera;
-    private IWeapon weapon;
 
     public void OnEnable()
     {
@@ -52,8 +41,6 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
-
-
         playerMovement = new PlayerMovement
         (
             this.GetComponent<CharacterController>(),
@@ -64,21 +51,17 @@ public class Player : MonoBehaviour
         bodyRotation = new PlayerRotation
         (
             rotationAction,
-            sensitivity * speedDirections.x,
-            new Vector3(1, 0, 0), transform
+            bodyRotationConf,
+            transform
         );
 
         headRotation = new PlayerRotation
         (
             rotationAction,
-            sensitivity * speedDirections.y,
-            new Vector3(0, 1, 0),
+            headRotationConf,
             // 0 is the head
             this.transform.GetChild(0)
         );
-
-        playerCamera = this.GetComponentInChildren<Camera>();
-        weapon = new Weapon(weaponConf);
     }
 
     void Start()
@@ -92,18 +75,5 @@ public class Player : MonoBehaviour
         bodyRotation.ManualUpdate();
         headRotation.ManualUpdate();
         playerMovement.ManualUpdate();   
-
-        if (attackAction.action.triggered)
-        {
-            Shoot();
-        }         
-    }
-
-    // TODO: Transfere attack to different class cobat
-    private void Shoot()
-    {
-        
-        weapon.Attack(playerCamera.transform.position, playerCamera.transform.forward);
     }
 }
- 

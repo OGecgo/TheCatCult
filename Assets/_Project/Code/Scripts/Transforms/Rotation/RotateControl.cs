@@ -2,96 +2,63 @@ using UnityEngine;
 
 public class RotationControl : IRotationControl
 {
-    private Transform _transform;
-    private float _sensitivity;
-    private Vector3 _onDirections; // values = 0 or 1
+    private RotationConf config;
+    private Transform transform;
 
-    private bool[] _onMinMaxValues;
-    private Vector3 _maxValues;
-    private Vector3 _minValues;
-
-
-
-
-    public float sensitivity { get { return _sensitivity; } set { _sensitivity = value; } }
-    public Transform transform { get { return _transform; } set { _transform = value; } }
-    public bool[] onMinMaxValues
+    public RotationControl(RotationConf rotationConf, Transform objTransform)
     {
-        get
-        {
-            if (_onMinMaxValues == null) _onMinMaxValues = new bool[3];
-            return _onMinMaxValues;
-        }
-        set
-        {
-            if (value.Length != 3)
-            {
-                Debug.LogError("Class RotateControll:: Length of on_max_values is should be 3");
-            }
-            else _onMinMaxValues = value;
-        }
-    }
-    public Vector3 maxValues { get { return _maxValues; } set { _maxValues = value; } }
-    public Vector3 minValues { get {return _minValues; } set {_minValues = value; } }
-    public Vector3 onDirections { get { return _onDirections; } set {_onDirections = value;} }
-
-
-    public RotationControl(float sensitivity, Vector3 onDirections, Transform objTransform)
-    {
-        this.onMinMaxValues = new bool[3]; // all elements default to false
-        this.onDirections = onDirections; 
-        this.sensitivity = sensitivity;
-        this.transform = objTransform;
+        config = rotationConf;
+        transform = objTransform;
     }
 
 
     public void UpdateRotateTo(Vector3 target) 
     { 
-        Vector3 temp = target - transform.position;
-        // work with used directions
-        temp = Vector3.Scale(temp, onDirections); 
-        Quaternion lookRotation = Quaternion.LookRotation(temp);  
-        Quaternion temp_q = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * sensitivity);
-        temp = temp_q.eulerAngles;
-        temp = TestMinMax(temp);
-        transform.rotation = Quaternion.Euler(temp);
+        Vector3 tempTarget = target - transform.position;
+        // apply directoin
+        tempTarget = Vector3.Scale(tempTarget, new Vector3(config.xDirection, config.yDirection, config.zDirection)); 
+        Quaternion lookRotation = Quaternion.LookRotation(tempTarget);  
+        Quaternion temp_q = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * config.sensitivity);
+        // Clamp final euler angles
+        tempTarget = temp_q.eulerAngles;
+        tempTarget = TestDomain(tempTarget);
+        transform.rotation = Quaternion.Euler(tempTarget);
     } 
-  
+
+
     public void UpdateLocalRotation(Vector2 difference)  
     {
         difference.y *= -1;
-        // work with used direction
-        Vector3 temp = Vector3.Scale(difference, onDirections);
-        temp = temp * sensitivity; 
+        Vector3 temp = Vector3.Scale(difference, new Vector3(config.xDirection, config.yDirection, config.zDirection));
+        temp = temp * config.sensitivity; 
         temp = transform.localEulerAngles + new Vector3(temp.y, temp.x, temp.z);
-        temp = TestMinMax(temp);
+        temp = TestDomain(temp);
         transform.localRotation = Quaternion.Euler(temp);
     } 
- 
 
-    private Vector3 TestMinMax(Vector3 value)
+    private Vector3 TestDomain(Vector3 value)
     {
         // test limits 
-        if (onMinMaxValues[0]) // x direction
+        if (config.xDomain)
         {
             float d = Mathf.DeltaAngle(0, value.y);
-
-            if (maxValues.x < d) value.y = maxValues.x;
-            if (minValues.x > d) value.y = minValues.x;
+ 
+            if (config.xMin < d) value.y = config.xMin;
+            else if (config.xMax > d) value.y = config.xMax;
         }
-        if (onMinMaxValues[1]) // y direction
+        if (config.yDomain)
         {
             float d = Mathf.DeltaAngle(0, value.x);
 
-            if (minValues.y > d) value.x = minValues.y;
-            else if (maxValues.y < d) value.x = maxValues.y;
+            if (config.yMin > d) value.x = config.yMin;
+            else if (config.yMax < d) value.x = config.yMax;
         }
-        if (onMinMaxValues[2]) // z direction
+        if (config.zDomain)
         {
             float d = Mathf.DeltaAngle(0, value.z);
 
-            if (minValues.z > d) value.z = minValues.z;            
-            else if (maxValues.z < d) value.z = maxValues.z;
+            if (config.zMin > d) value.z = config.zMin;            
+            else if (config.zMax < d) value.z = config.zMax;
         }
         return value;
     }

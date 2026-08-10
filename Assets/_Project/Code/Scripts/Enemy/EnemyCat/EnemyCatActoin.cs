@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class EnemyCatActoin : MonoBehaviour, IUpdatable, IStartable, IAwakable
 {
+    [Header("General settings")]
     [SerializeField] WalkConf walkConf;
     [SerializeField] RunConf runConf;
-    [Header("Rotation settins")]
-    public float sensitivity = 4f;
-    [Header("Action settings")]
-    public float timerAttack = 0f;
+    [SerializeField] RotationConf rotationConf;  
+
+    // for now that
+    private float timerAttack = 0f;
 
     private float timer;
     private IFOVDetection fovD;
@@ -22,7 +23,7 @@ public class EnemyCatActoin : MonoBehaviour, IUpdatable, IStartable, IAwakable
             gameObject.GetComponent<CharacterController>(),
             new EnemyCatConfRecord(walkConf, runConf)
         );
-        rotation = new EnemyCatRotation(sensitivity, gameObject.GetComponent<Transform>());
+        rotation = new EnemyCatRotation(rotationConf, gameObject.GetComponent<Transform>());
         timer = 0f;
     }    
 

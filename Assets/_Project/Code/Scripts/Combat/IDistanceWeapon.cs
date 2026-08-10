@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IWeapon
+public interface IDistanceWeapon
 {
     public void Attack(Vector3 position, Vector3 direction);
 }

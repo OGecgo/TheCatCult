@@ -8,16 +8,12 @@ public class EnemyCatRotation : IEnemyCatRotation
     private IRotationControl controle;
 
     public Vector3 posTarget { get { return _posTarget; } set { _posTarget = value; }}
-    public EnemyCatRotation(float sensitivity, Transform transform)
+    public EnemyCatRotation(RotationConf rotationConf, Transform transform)
     {
-        controle = new RotationControl(sensitivity, new Vector3(1, 0, 1), transform);
+        controle = new RotationControl(rotationConf, transform);
         posTarget = Vector3.zero;
     }
-    public void ChangeSensitivity(float newSensitivity)
-    {
-        controle.sensitivity = newSensitivity;
-    }
-
+ 
     public void ManualUpdate()
     {
         if (posTarget != Vector3.zero){  

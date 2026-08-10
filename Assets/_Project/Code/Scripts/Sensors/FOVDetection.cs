@@ -1,23 +1,18 @@
 using UnityEngine;
 using System.Collections;
 
+// find only the first object
 
 public class FOVDetection: MonoBehaviour, IFOVDetection
 {
 
-
-    [Header("FOV Config")]
-    public float radius = 10f;
-    public float close_radius = 3f;
-    [Range(0, 360)]
-    public float angle = 70f;
-    public LayerMask targetMask;
-    public LayerMask obstructionMask;
+    [SerializeField] public FOVDetectionConf fovConf;
 
 
     private bool _isTarget; 
     private Vector3 _posTarget;
-    // private int lengthReadTargets; if i want to recognize more objects than one. Now not work
+    private Collider[] rangeCheck;
+
 
     public bool isTarget { get { return _isTarget; } set { _isTarget = value; } }
     public Vector3 posTarget { get { return _posTarget;  }  set { _posTarget = value; } }
@@ -27,6 +22,7 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
     {
         this.isTarget = false;
         this.posTarget = Vector3.zero;
+        rangeCheck = new Collider[1];
     }
 
 
@@ -48,22 +44,21 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
 
     public void FOVCheck()
     {
-        Collider[] rangeCheck;
         // work only for first detection.
-        rangeCheck = Physics.OverlapSphere(transform.position, radius, targetMask);
-        if (rangeCheck.Length != 0)
+        int rangeCount = Physics.OverlapSphereNonAlloc(transform.position, fovConf.radius, rangeCheck, fovConf.targetMask);
+        if (rangeCount != 0)
         {
             Transform targetTransfrom = rangeCheck[0].transform;
             Vector3 directionToTarget = (targetTransfrom.position - transform.position).normalized;
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            if (Vector3.Angle(transform.forward, directionToTarget) < fovConf.angle / 2)
             {
                 checkObjectsBetween(targetTransfrom.position, directionToTarget);
             }
             else 
             {
                 // if player too close. see it
-                rangeCheck = Physics.OverlapSphere(transform.position, close_radius, targetMask); 
-                if (rangeCheck.Length != 0)
+                rangeCount = Physics.OverlapSphereNonAlloc(transform.position, fovConf.closeRadius, rangeCheck, fovConf.targetMask); 
+                if (rangeCount != 0)
                 { 
                     checkObjectsBetween(targetTransfrom.position, directionToTarget);
                 } 
@@ -94,7 +89,7 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
     private void checkObjectsBetween(Vector3 positionTarget, Vector3 directionToTarget)
     {
         float distanceToTarget = Vector3.Distance(transform.position, positionTarget);
-        if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+        if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, fovConf.obstructionMask))
         { 
             checkTrue(positionTarget);
         }

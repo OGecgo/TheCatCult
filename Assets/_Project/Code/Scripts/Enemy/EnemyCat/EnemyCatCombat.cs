@@ -6,23 +6,30 @@ public class EnemyCatCombat : MonoBehaviour, IAwakable, IDamageable
 
     private ILife life;
 
-    public void Onestroy()
+    public void OnDestroy()
     {
-        if (life != null) life.OnDie -= this.EnemyDie;        
+        if (life != null)
+        {
+            life.OnDie -= EnemyDie;
+        }
     }
 
     public void ManualAwake()
     {
-        life = new Life(lifeConf);
-        life.OnDie += this.EnemyDie;
+        if (life == null)
+        {
+            life = new Life(lifeConf);
+        }
+
+        life.OnDie -= EnemyDie;
+        life.OnDie += EnemyDie;
     }
-
-
 
     public void Attack(int power)
     {
         life.Attack(power);
     }
+
     private void EnemyDie()
     {
         Destroy(this.gameObject);

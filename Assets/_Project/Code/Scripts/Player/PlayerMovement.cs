@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 // move same direction grounded == notgrounded
 
 
-public class PlayerMovement : IPalyerMovement
+public class PlayerMovement : IPlayerMovement
 {
     private InputActionReference jumpAction;
     private InputActionReference runAction;

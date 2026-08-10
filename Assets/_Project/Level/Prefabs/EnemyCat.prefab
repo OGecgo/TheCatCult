@@ -268,15 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e046484baa1aa56cb6676d761385eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FOVDetection
-  radius: 8
-  close_radius: 3
-  angle: 92
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 2147483648
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 1073741824
+  fovConf: {fileID: 11400000, guid: 21f4c726f5b9516cabaea6a755d4ec48, type: 2}
 --- !u!114 &7950106673240316431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,8 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCatActoin
   walkConf: {fileID: 11400000, guid: 90670c11c0d3c99dd8e1a326fbd87cf2, type: 2}
   runConf: {fileID: 11400000, guid: 99eeb973fa2bebcf0a65cdf20d77e3f6, type: 2}
-  sensitivity: 8
-  timerAttack: 2
+  rotationConf: {fileID: 11400000, guid: 966707c7789095142ab4d699f7bf072e, type: 2}
 --- !u!114 &8795377399723054279
 MonoBehaviour:
   m_ObjectHideFlags: 0

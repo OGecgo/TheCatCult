@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class Weapon: IWeapon
+public class DistanceWeapon: IDistanceWeapon
 {
-    WeaponConf config;
-    int i = 0;
+    DistanceWeaponConf config;
 
     public void Attack(Vector3 position, Vector3 direction)
     {
@@ -12,15 +11,13 @@ public class Weapon: IWeapon
             // do damage if is hitable mask
             if (hit.collider.TryGetComponent(out IDamageable damageable))
             {
-                Debug.Log(hit.collider.name + " " + i);
-                i +=1;
                 damageable.Attack(config.damage);
             }
         }
     }
-    public Weapon(WeaponConf weaponConf)
+    public DistanceWeapon(DistanceWeaponConf distanceWeaponConf)
     {
-        config = weaponConf;
+        config = distanceWeaponConf;
     } 
 
 

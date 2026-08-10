@@ -1,5 +1,4 @@
 
-using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
 
@@ -10,7 +9,14 @@ public class UpdateManager : MonoBehaviour
     private IUpdatable[] updatable;
     private IStartable[] startable;
     private IAwakable[] awakable;
-     
+
+    public void Onestroy()
+    {
+        updatable = null;
+        startable = null;
+        awakable = null;
+    }
+
     public void Awake()
     {
         updatable = this.GetComponentsInChildren<IUpdatable>();
@@ -36,4 +42,6 @@ public class UpdateManager : MonoBehaviour
             if ((UnityEngine.Object)u != null) u.ManualUpdate();
         }
     }
+
+
 }
