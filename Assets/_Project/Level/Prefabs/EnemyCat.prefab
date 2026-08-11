@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 8299205379077572272}
   - component: {fileID: 7950106673240316431}
   - component: {fileID: 3700612631304129176}
+  - component: {fileID: 1203422496663049128}
   m_Layer: 29
   m_Name: EnemyCat
   m_TagString: Untagged
@@ -276,6 +277,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCatCombat
   lifeConf: {fileID: 11400000, guid: f839049156a1456d490397ea516c498f, type: 2}
+--- !u!114 &1203422496663049128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190442579273531434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720178358d20afa2f8472714b45e2763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterGravity
 --- !u!1 &2794788012402968695
 GameObject:
   m_ObjectHideFlags: 0

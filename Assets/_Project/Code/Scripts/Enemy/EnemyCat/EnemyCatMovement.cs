@@ -13,9 +13,9 @@ public class EnemyCatMovement: IEnemyCatMovement
 
     public TypeMovement typeMovement { set{_typeMovement = value;}}
 
-    public EnemyCatMovement(CharacterController cc, EnemyCatConfRecord eccr)
+    public EnemyCatMovement(ICharacterGravity gravity, EnemyCatConfRecord eccr)
     {
-        gravity = new CharacterGravity(cc);
+        this.gravity = gravity;
         _typeMovement = TypeMovement.WHAIT;
 
         // states
@@ -40,7 +40,6 @@ public class EnemyCatMovement: IEnemyCatMovement
         if (_typeMovement != TypeMovement.WHAIT) stateMachineMove.direction = Vector3.forward;
         else stateMachineMove.direction = Vector3.zero;
 
-        gravity.ManualUpdate();
         stateMachineMove.ManualUpdate();
     }
 }

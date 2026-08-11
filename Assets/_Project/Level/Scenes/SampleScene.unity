@@ -360,7 +360,8 @@ GameObject:
   - component: {fileID: 438485731}
   - component: {fileID: 438485734}
   - component: {fileID: 438485736}
-  - component: {fileID: 438485735}
+  - component: {fileID: 438485737}
+  - component: {fileID: 438485738}
   m_Layer: 31
   m_Name: Player
   m_TagString: Untagged
@@ -376,15 +377,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438485728}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9183753, z: -0, w: -0.39571056}
-  m_LocalPosition: {x: 12.29, y: 8.2, z: -1.85}
+  m_LocalRotation: {x: -0, y: -0.9398519, z: -0, w: 0.34158227}
+  m_LocalPosition: {x: 13.68, y: 8.05, z: -1.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 20706519}
   - {fileID: 630334000}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 226.621, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -140.053, z: 0}
 --- !u!136 &438485731
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -405,7 +406,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2.601152
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &438485734
@@ -433,7 +434,37 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &438485735
+--- !u!114 &438485736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438485728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549b2740c15ce382cbbb57c1e3a13c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
+  attackAction: {fileID: -405575423572668149, guid: c73c28d90eb22cd87997cbe7f3c07159, type: 3}
+  distanceWeaponConf: {fileID: 11400000, guid: 12946ed2b8ff75098844fb681d71c0af, type: 2}
+  lifeConf: {fileID: 11400000, guid: 82ce310a30c7b1cf2a4b2c0649d716ea, type: 2}
+  pushUp: 5
+  pushBack: 10
+  timerInvisible: 3
+--- !u!114 &438485737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438485728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720178358d20afa2f8472714b45e2763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterGravity
+--- !u!114 &438485738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -455,21 +486,6 @@ MonoBehaviour:
   fallConf: {fileID: 11400000, guid: dfabfa2faea559345b503841474043d7, type: 2}
   headRotationConf: {fileID: 11400000, guid: 7b7014d1604f7fbe28b15d1c018a30da, type: 2}
   bodyRotationConf: {fileID: 11400000, guid: 50b2574265aa7a842b84bc77fb76b6b6, type: 2}
---- !u!114 &438485736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 438485728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 549b2740c15ce382cbbb57c1e3a13c72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
-  attackAction: {fileID: -405575423572668149, guid: c73c28d90eb22cd87997cbe7f3c07159, type: 3}
-  distanceWeaponConf: {fileID: 11400000, guid: 12946ed2b8ff75098844fb681d71c0af, type: 2}
-  lifeConf: {fileID: 11400000, guid: 82ce310a30c7b1cf2a4b2c0649d716ea, type: 2}
 --- !u!1 &484142118
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8700486706830302051, guid: b1f24e093d0bd7ab19705cebed721019, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.25554
+      value: 8.4
       objectReference: {fileID: 0}
     - target: {fileID: 8700486706830302051, guid: b1f24e093d0bd7ab19705cebed721019, type: 3}
       propertyPath: m_LocalPosition.z

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f725ec9085e250a479e62b16df8364ed, type: 3}
   m_Name: PlayerLifeConf
   m_EditorClassIdentifier: Assembly-CSharp::LifeConf
-  health: 100
+  health: 40

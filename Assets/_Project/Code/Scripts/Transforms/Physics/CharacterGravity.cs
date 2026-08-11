@@ -1,28 +1,24 @@
-using System.Data.Common;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class CharacterGravity: ICharacterGravity
+public class CharacterGravity: MonoBehaviour, ICharacterGravity
 {
     private float _g = -9.81f;
 
     private CharacterController controller;
     private Vector3 velocity;
 
-
     public bool IsGrounded { get { return controller.isGrounded; } }
-
     public float g { get { return _g; }}
 
-    // character should be body. not camera
-    public CharacterGravity(CharacterController cc)
+
+    public void Awake()
     {
-        this.controller = cc;
+        controller = GetComponent<CharacterController>();
+        if (controller == null) Debug.Log("controler is null");
         velocity = Vector3.zero;
     }
 
-
-    public void SetOfDesiredSpeedForward(Vector3 desiredSpeed, float acceleration)
+    public void PushForwardToDesireSpeed(Vector3 desiredSpeed, float acceleration)
     {
         // rotation * direction + (dont lost velocity.y)
         Vector3 direction = controller.transform.rotation * desiredSpeed;
@@ -34,8 +30,15 @@ public class CharacterGravity: ICharacterGravity
     public void PushForward(Vector3 power)
     {
         Vector3 direction = controller.transform.rotation * power;
-        velocity.x += direction.x;
-        velocity.z += direction.z;
+        velocity.x += direction.x * Time.deltaTime;
+        velocity.z += direction.z * Time.deltaTime;
+    } 
+
+    public void MoveForward(Vector3 constant)
+    {
+        Vector3 direction = controller.transform.rotation * constant;
+        velocity.x = direction.x;
+        velocity.z = direction.z;
     }
 
     public void PushUp(float power)
@@ -43,10 +46,11 @@ public class CharacterGravity: ICharacterGravity
         velocity.y = power;
     }
 
-
-    public void ManualUpdate()
+    public void Update()
     {
+        // gravity
         velocity.y += g * Time.deltaTime;
+        // moves
         controller.Move(velocity * Time.deltaTime);
         if (controller.isGrounded && velocity.y < 0)
         {

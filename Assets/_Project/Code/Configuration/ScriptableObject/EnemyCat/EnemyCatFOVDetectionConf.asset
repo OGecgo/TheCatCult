@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FOVDetectionConf
   radius: 10
   closeRadius: 3
-  angle: 39
+  angle: 103.5
   targetMask:
     serializedVersion: 2
     m_Bits: 2147483648

@@ -22,7 +22,9 @@ public class PlayerMovement : IPlayerMovement
     private ICharacterGravity gravity;
     private IJumpControl jumpControl;
 
-    public PlayerMovement(CharacterController cc, InputActionMovementRecord iamc , PlayerConfRecord pcc)
+
+
+    public PlayerMovement(ICharacterGravity gravity, InputActionMovementRecord iamc , PlayerConfRecord pcc)
     {
         // player controler
         jumpAction = iamc.jump;
@@ -30,7 +32,7 @@ public class PlayerMovement : IPlayerMovement
         moveAction = iamc.move;
 
         // for control movements
-        gravity = new CharacterGravity(cc);
+        this.gravity = gravity;
 
         // jump
         jumpControl = new JumpControl(gravity, pcc.jumpConf);
@@ -42,8 +44,7 @@ public class PlayerMovement : IPlayerMovement
 
         // state machine
         stateMachineMove = new StateMachineMove();
-        if (gravity.IsGrounded) stateMachineMove.SetState(sWalk);
-        else stateMachineMove.SetState(sFall);
+        stateMachineMove.SetState(sWalk);
     }
     public void ManualUpdate()
     {
@@ -67,9 +68,5 @@ public class PlayerMovement : IPlayerMovement
         stateMachineMove.direction = controlerDirection;
         stateMachineMove.ManualUpdate();
         jumpControl.ManualUpdate();
-        gravity.ManualUpdate();
-
     }
- 
-
 }

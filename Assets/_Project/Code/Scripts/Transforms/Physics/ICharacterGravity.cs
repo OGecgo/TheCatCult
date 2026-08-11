@@ -2,7 +2,7 @@ using UnityEngine;
 
 // give gravity to character
 // give controll movements
-public interface ICharacterGravity: IUpdatable
+public interface ICharacterGravity
 {
     public float g {get;}
     public bool IsGrounded { get; }
@@ -11,10 +11,11 @@ public interface ICharacterGravity: IUpdatable
     // horizotan movement automaticly take proper rotation for player
     // e.g. Vector3.forward makes character move forward
 
-    // smothly change from current spedd to desired speed from acceleration
-    public void SetOfDesiredSpeedForward(Vector3 desiredSpeed, float acceleration);
-    // simple changes velocity    
+    // Linear Functions
+    public void PushForwardToDesireSpeed(Vector3 desiredSpeed, float acceleration);
     public void PushForward(Vector3 power);
+    // Constant Fucntion
+    public void MoveForward(Vector3 constant);
     public void PushUp(float power);
 }
 

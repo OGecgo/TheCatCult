@@ -9,8 +9,8 @@ public class EnemyCatActoin : MonoBehaviour, IUpdatable, IStartable, IAwakable
 
     // for now that
     private float timerAttack = 0f;
-
     private float timer;
+    
     private IFOVDetection fovD;
     private IEnemyCatRotation rotation;
     private IEnemyCatMovement movement;
@@ -20,7 +20,7 @@ public class EnemyCatActoin : MonoBehaviour, IUpdatable, IStartable, IAwakable
         fovD = this.GetComponent<IFOVDetection>();
         movement = new EnemyCatMovement
         (
-            gameObject.GetComponent<CharacterController>(),
+            gameObject.GetComponent<ICharacterGravity>(),
             new EnemyCatConfRecord(walkConf, runConf)
         );
         rotation = new EnemyCatRotation(rotationConf, gameObject.GetComponent<Transform>());
@@ -50,7 +50,7 @@ public class EnemyCatActoin : MonoBehaviour, IUpdatable, IStartable, IAwakable
         {
             timer -= Time.deltaTime;
             rotation.posTarget = Vector3.zero;
-            movement.typeMovement = TypeMovement.RUN;
+            movement.typeMovement = TypeMovement.WALK;
         }
         else
         {
