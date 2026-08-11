@@ -1,4 +1,4 @@
-Shader "Custom/crosshair"
+Shader "Custom/Crosshair"
 {
     Properties
     {

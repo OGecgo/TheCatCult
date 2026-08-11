@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Σελίδα-1" id="RHhtozIAqVEN69dNCovi">
-        <mxGraphModel dx="1390" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
+        <mxGraphModel dx="1864" dy="598" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -247,16 +247,16 @@
                     <mxGeometry x="-556.25" y="392" width="182.5" height="29.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="417" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFE1F5;strokeColor=#9673a6;" parent="1" vertex="1">
-                    <mxGeometry x="50" y="30.5" width="360" height="399.5" as="geometry"/>
+                    <mxGeometry x="50" y="30.5" width="360" height="429.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="418" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;I&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;Melee&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;Weapon&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
-                    <mxGeometry x="125" y="57" width="210" height="70" as="geometry"/>
+                    <mxGeometry x="110" y="50" width="240" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="419" value="+ void Attack(Collider colliderTarget);" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="418" vertex="1">
-                    <mxGeometry y="40" width="210" height="30" as="geometry"/>
+                <mxCell id="419" value="&lt;div&gt;+ bool TestCollider(Collider colliderTarget);&lt;/div&gt;+ void Attack(Collider colliderTarget);" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="418" vertex="1">
+                    <mxGeometry y="40" width="240" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="420" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;WeaponMeleeConf :&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;ScriptableObject&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-                    <mxGeometry x="112.5" y="295.5" width="235" height="80" as="geometry"/>
+                    <mxGeometry x="112.5" y="329" width="235" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="421" value="+ int damage;&lt;div&gt;+ LayerMask targetMask;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="420" vertex="1">
                     <mxGeometry y="40" width="235" height="40" as="geometry"/>
@@ -265,13 +265,13 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="422" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;MeleeWeapon&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;" parent="1" vertex="1">
-                    <mxGeometry x="70" y="165.5" width="320" height="110" as="geometry"/>
+                    <mxGeometry x="70" y="165.5" width="320" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="423" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;- MeleeWeaponConf config;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="422" vertex="1">
                     <mxGeometry y="40" width="320" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="424" value="+ MeleeWeapon(MeleeWeaponConf meleeWeaponConf);&lt;div&gt;+ void Attack(Collider colliderTarget);&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="422" vertex="1">
-                    <mxGeometry y="70" width="320" height="40" as="geometry"/>
+                <mxCell id="424" value="+ MeleeWeapon(MeleeWeaponConf meleeWeaponConf);&lt;div&gt;+ void Attack(Collider colliderTarget);&lt;/div&gt;&lt;div&gt;+ bool TestCollider(Colider colliderTarget);&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="422" vertex="1">
+                    <mxGeometry y="70" width="320" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="425" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;dashed=1;endSize=12;" parent="1" source="422" target="418" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -280,7 +280,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="426" value="&lt;font&gt;Weapon Melee&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=25;" parent="1" vertex="1">
-                    <mxGeometry x="117.5" y="375.5" width="225" height="50" as="geometry"/>
+                    <mxGeometry x="117.5" y="409" width="225" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="427" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;IDamageable&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="-580" y="450" width="150" height="70" as="geometry"/>
@@ -421,16 +421,16 @@
                     <mxGeometry x="730" y="1110" width="140" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="448" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFE1F5;strokeColor=#9673a6;" parent="1" vertex="1">
-                    <mxGeometry x="-330" y="30.5" width="360" height="419.5" as="geometry"/>
+                    <mxGeometry x="-330" y="30.5" width="360" height="429.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="449" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;IDistanceWeapon&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
-                    <mxGeometry x="-290" y="57" width="280" height="70" as="geometry"/>
+                    <mxGeometry x="-290" y="52" width="280" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="450" value="&lt;div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ void Attack(Vector3 position, Vector3 direction&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="449" vertex="1">
                     <mxGeometry y="40" width="280" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="451" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;DistanceWeaponConf :&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;ScriptableObject&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-                    <mxGeometry x="-275" y="302" width="250" height="100" as="geometry"/>
+                    <mxGeometry x="-275" y="310" width="250" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="452" value="&lt;div&gt;+ int damage;&lt;/div&gt;&lt;div&gt;+ float range;&lt;/div&gt;&lt;div&gt;+ LayerMaks targetMask;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="451" vertex="1">
                     <mxGeometry y="40" width="250" height="60" as="geometry"/>
@@ -454,7 +454,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="458" value="&lt;font&gt;Distance Weapon&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=25;" parent="1" vertex="1">
-                    <mxGeometry x="-251.25" y="402.5" width="202.5" height="40" as="geometry"/>
+                    <mxGeometry x="-251.25" y="410" width="202.5" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="466" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;FOVDetectionConf :&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;ScriptableObject&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
                     <mxGeometry x="2070" y="1175" width="230" height="130" as="geometry"/>
@@ -530,13 +530,13 @@
                         <mxPoint x="340" y="288" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="474" style="edgeStyle=elbowEdgeStyle;html=1;endSize=12;endArrow=block;endFill=0;elbow=vertical;rounded=0;curved=0;dashed=1;" edge="1" parent="1" source="qro2UC5VyUgHCRUZDQm8-9" target="475">
+                <mxCell id="474" style="edgeStyle=elbowEdgeStyle;html=1;endSize=12;endArrow=block;endFill=0;elbow=vertical;rounded=0;curved=0;dashed=1;" parent="1" source="qro2UC5VyUgHCRUZDQm8-9" target="475" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="2280" y="706" as="sourcePoint"/>
                         <mxPoint x="2320" y="706" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="475" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;Monobehaviour&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="475" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;Monobehaviour&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="2340" y="750" width="150" height="48" as="geometry"/>
                 </mxCell>
             </root>

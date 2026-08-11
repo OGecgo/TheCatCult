@@ -1,8 +1,9 @@
-using System.Threading;
+using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerCombat : MonoBehaviour, IDamageable
+public class PlayerCombat : MonoBehaviour, IDamageable, IAttackedUI
 {
     [Header("Input")]
     public InputActionReference attackAction;
@@ -15,13 +16,17 @@ public class PlayerCombat : MonoBehaviour, IDamageable
     public float timerInvincible = 1f;
 
 
-    private float timerCount;
     private bool isAttacked;
+    private float timerCount;
+    // Monobehaviour
     private Camera playerCamera;
     private ICharacterGravity characterGravity;
-    private IPlayerTransform playerTransform;
+    // classes
     private IDistanceWeapon distanceWeapon;
     private ILife life;
+
+    public event Action OnSetAttacked;
+    public event Action OnUnsetAttacked;
 
     public void OnEnable()
     {
@@ -37,7 +42,6 @@ public class PlayerCombat : MonoBehaviour, IDamageable
         life = new Life(lifeConf);
         playerCamera = GetComponentInChildren<Camera>();
         characterGravity = GetComponent<ICharacterGravity>();
-        playerTransform = GetComponent<IPlayerTransform>();
         distanceWeapon = new DistanceWeapon(distanceWeaponConf);
 
         timerCount = 0f;
@@ -56,10 +60,7 @@ public class PlayerCombat : MonoBehaviour, IDamageable
             {
                 isAttacked = false;
                 UnsetInvincible();
-            }
-            if (characterGravity.IsGrounded)
-            {
-                playerTransform.stopTranforms = false;
+                OnUnsetAttacked.Invoke();
             }
             timerCount -= Time.deltaTime;
         }     
@@ -71,7 +72,7 @@ public class PlayerCombat : MonoBehaviour, IDamageable
         AttackPushPlayer();
         isAttacked = true;
         timerCount = timerInvincible;
-        playerTransform.stopTranforms = true;
+        OnSetAttacked.Invoke();
         life.Attack(power);
     }
 

@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 7325577052678028649}
   - component: {fileID: 625822935242913425}
   - component: {fileID: 6993405907385509051}
-  m_Layer: 29
+  m_Layer: 0
   m_Name: EnemyCatAttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,8 +318,8 @@ Transform:
   m_GameObject: {fileID: 2794788012402968695}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.272, z: 0.521}
-  m_LocalScale: {x: 0.5759, y: 0.12539, z: 0.54379255}
+  m_LocalPosition: {x: 0, y: 0.11, z: 0.521}
+  m_LocalScale: {x: 0.5759, y: 1.2962818, z: 0.54379255}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8700486706830302051}
@@ -415,3 +415,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCatAttackCollider
   meleeWeaponConf: {fileID: 11400000, guid: 9c21dbb0cac0fbca8a153f4299517abe, type: 2}
+  timerAttack: 0.1

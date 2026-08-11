@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: crosshair
+  m_Name: Crosshair
   m_Shader: {fileID: 4800000, guid: ecda68bc8298294528d34eb5c9ff02f0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

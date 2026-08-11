@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerTransform : MonoBehaviour, IPlayerTransform
+public class PlayerTransform : MonoBehaviour
 {
     [Header("Input")]
     public InputActionReference moveAction;
@@ -19,13 +19,9 @@ public class PlayerTransform : MonoBehaviour, IPlayerTransform
     [SerializeField] public RotationConf headRotationConf;
     [SerializeField] public RotationConf bodyRotationConf;
 
-    private bool _stopTranforms;
-
     private IPlayerMovement playerMovement;
     private IPlayerRotation bodyRotation;
     private IPlayerRotation headRotation;
-
-    public bool stopTranforms {get{return _stopTranforms;} set{_stopTranforms = value;}}
 
     public void OnEnable()
     {
@@ -45,8 +41,6 @@ public class PlayerTransform : MonoBehaviour, IPlayerTransform
 
     public void Awake()
     {
-        stopTranforms = false;
-
         playerMovement = new PlayerMovement
         (
             this.GetComponent<ICharacterGravity>(),
@@ -78,12 +72,8 @@ public class PlayerTransform : MonoBehaviour, IPlayerTransform
 
     void Update()
     {
-        if (!stopTranforms)
-        {
-            bodyRotation.ManualUpdate();
-            headRotation.ManualUpdate();
-            playerMovement.ManualUpdate();               
-        }
-         
+        bodyRotation.ManualUpdate();
+        headRotation.ManualUpdate();
+        playerMovement.ManualUpdate();
     }
 }
