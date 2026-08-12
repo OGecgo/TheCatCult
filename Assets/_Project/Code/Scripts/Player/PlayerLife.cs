@@ -1,32 +1,23 @@
 using System;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerCombat : MonoBehaviour, IDamageable, IAttackedUI
+public class PlayerLife : MonoBehaviour, IDamageable, IAttackedDamageUI, IAttackedHelthUI
 {
-    [Header("Input")]
-    public InputActionReference attackAction;
-    [Header("General settigs")]
-    public DistanceWeaponConf distanceWeaponConf;
-    public LifeConf lifeConf;
+    [Header("General settings")]
+    [SerializeField] private LifeConf lifeConf;
     [Header("Player take damage settigs")]
-    public float pushUp = 0.5f;
-    public float pushBack = 1f;
-    public float timerInvincible = 1f;
+    [SerializeField] private float pushUp = 0.5f;
+    [SerializeField] private float pushBack = 1f;
+    [SerializeField] private float timerInvincible = 1f;
 
 
     private bool isAttacked;
     private float timerCount;
-    // Monobehaviour
-    private Camera playerCamera;
     private ICharacterGravity characterGravity;
-    // classes
-    private IDistanceWeapon distanceWeapon;
     private ILife life;
-
     public event Action OnSetAttacked;
     public event Action OnUnsetAttacked;
+    public event Action<int> OnAttacked;
 
     public void OnEnable()
     {
@@ -40,20 +31,15 @@ public class PlayerCombat : MonoBehaviour, IDamageable, IAttackedUI
     public void Awake()
     {
         life = new Life(lifeConf);
-        playerCamera = GetComponentInChildren<Camera>();
         characterGravity = GetComponent<ICharacterGravity>();
-        distanceWeapon = new DistanceWeapon(distanceWeaponConf);
 
         timerCount = 0f;
         isAttacked = false;
     }
 
+    // do not use Update. find something better that this
     void Update()
     {
-        if (attackAction.action.triggered)
-        {
-            Shoot();
-        }
         if (isAttacked)
         {
             if (timerCount <= 0)
@@ -74,11 +60,11 @@ public class PlayerCombat : MonoBehaviour, IDamageable, IAttackedUI
         timerCount = timerInvincible;
         OnSetAttacked.Invoke();
         life.Attack(power);
+        OnAttacked.Invoke(power);
     }
 
     private void AttackPushPlayer()
     {
-
         characterGravity.PushUp(pushUp);
         characterGravity.MoveForward(new Vector3(0, 0, -pushBack));
     }
@@ -98,11 +84,4 @@ public class PlayerCombat : MonoBehaviour, IDamageable, IAttackedUI
     {
         Debug.Log("Player not dead");
     }
-
-    private void Shoot()
-    {
-        distanceWeapon.Attack(playerCamera.transform.position, playerCamera.transform.forward);
-    }
-
-
 }

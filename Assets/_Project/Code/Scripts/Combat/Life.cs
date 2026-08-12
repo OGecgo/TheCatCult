@@ -2,17 +2,19 @@ using System;
 
 public class Life : ILife
 {
-    private int health;
+    private int damageTaked;
+    private LifeConf config;
     public event Action OnDie;
     
     public Life(LifeConf lifeConf)
     {
-        health = lifeConf.health;
+        damageTaked = 0;
+        config = lifeConf;
     }
 
     public void Attack(int power)
     {
-        health -= power;
-        if (health <= 0) OnDie.Invoke();
+        damageTaked += power;
+        if (config.health <= damageTaked) OnDie.Invoke();
     }
 }

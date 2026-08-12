@@ -11,7 +11,7 @@ public class DamageCanvas : MonoBehaviour
     [Header("Links")]
     public MonoBehaviour attacked;
 
-    private IAttackedUI attackedUI => attacked as IAttackedUI;
+    private IAttackedDamageUI attackedUI;
     private RawImage rawImage;
 
     public void OnDestroy()
@@ -25,6 +25,7 @@ public class DamageCanvas : MonoBehaviour
     {
         rawImage = GetComponent<RawImage>();
         UnsetAttacked();
+        attackedUI = attacked.GetComponent<IAttackedDamageUI>();
         attackedUI.OnSetAttacked += SetAttacked;
         attackedUI.OnUnsetAttacked += UnsetAttacked;
     }
