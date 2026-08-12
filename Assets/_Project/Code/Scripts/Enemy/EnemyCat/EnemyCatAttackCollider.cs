@@ -3,8 +3,8 @@ using UnityEngine;
 public class EnemyCatAttackCollider : MonoBehaviour, IAwakable
 {
     [Header("General settins")]
-    public MeleeWeaponConf meleeWeaponConf;
-    public float timerAttack = 1f;
+    [SerializeField] private MeleeWeaponConf meleeWeaponConf;
+    [SerializeField] private float timerAttack = 1f;
 
     private float timerCount;
     private IMeleeWeapon meleeWeapon;

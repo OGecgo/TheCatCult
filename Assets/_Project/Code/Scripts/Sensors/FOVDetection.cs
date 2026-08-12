@@ -6,7 +6,7 @@ using System.Collections;
 public class FOVDetection: MonoBehaviour, IFOVDetection
 {
 
-    [SerializeField] public FOVDetectionConf fovConf;
+    [SerializeField] private FOVDetectionConf fovConf;
 
 
     private bool _isTarget; 

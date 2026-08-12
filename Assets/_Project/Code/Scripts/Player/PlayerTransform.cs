@@ -5,19 +5,19 @@ using UnityEngine.InputSystem;
 public class PlayerTransform : MonoBehaviour
 {
     [Header("Input")]
-    public InputActionReference moveAction;
-    public InputActionReference runAction;
-    public InputActionReference jumpAction;
-    public InputActionReference rotationAction;
+    [SerializeField] private InputActionReference moveAction;
+    [SerializeField] private InputActionReference runAction;
+    [SerializeField] private InputActionReference jumpAction;
+    [SerializeField] private InputActionReference rotationAction;
     
     [Header("Movement settings")]
-    [SerializeField] public WalkConf walkConf;
-    [SerializeField] public RunConf runConf;
-    [SerializeField] public JumpConf jumpConf;
-    [SerializeField] public FallConf fallConf;
+    [SerializeField] private WalkConf walkConf;
+    [SerializeField] private RunConf runConf;
+    [SerializeField] private JumpConf jumpConf;
+    [SerializeField] private FallConf fallConf;
     [Header("Rotation settins")]
-    [SerializeField] public RotationConf headRotationConf;
-    [SerializeField] public RotationConf bodyRotationConf;
+    [SerializeField] private RotationConf headRotationConf;
+    [SerializeField] private RotationConf bodyRotationConf;
 
     private IPlayerMovement playerMovement;
     private IPlayerRotation bodyRotation;

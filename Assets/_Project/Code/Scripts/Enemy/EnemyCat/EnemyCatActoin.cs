@@ -3,9 +3,9 @@ using UnityEngine;
 public class EnemyCatActoin : MonoBehaviour, IUpdatable, IStartable, IAwakable
 {
     [Header("General settings")]
-    [SerializeField] WalkConf walkConf;
-    [SerializeField] RunConf runConf;
-    [SerializeField] RotationConf rotationConf;  
+    [SerializeField] private WalkConf walkConf;
+    [SerializeField] private RunConf runConf;
+    [SerializeField] private RotationConf rotationConf;  
 
     // for now that
     private float timerAttack = 0f;

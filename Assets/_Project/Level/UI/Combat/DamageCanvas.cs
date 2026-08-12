@@ -6,10 +6,10 @@ public class DamageCanvas : MonoBehaviour
 {
     // TODO: for future animations
     [Header("General settins")]
-    public float timerShowDamage = 1f;
-    public float timerHideDamage = 1f;
+    [SerializeField] private float timerShowDamage = 1f;
+    [SerializeField] private float timerHideDamage = 1f;
     [Header("Links")]
-    public MonoBehaviour attacked;
+    [SerializeField] private MonoBehaviour attacked;
 
     private IAttackedDamageUI attackedUI;
     private RawImage rawImage;

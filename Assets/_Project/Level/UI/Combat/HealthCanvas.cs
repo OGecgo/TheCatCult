@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class HealthCanvas : MonoBehaviour
 {
     [Header("Links")]
-    public MonoBehaviour attacked;
+    [SerializeField] private MonoBehaviour attacked;
     [Header("General settings")]
-    public LifeConf lifeConf;
+    [SerializeField] private LifeConf lifeConf;
 
     private IAttackedHelthUI attackedUI;
     private Slider sliderHelth;

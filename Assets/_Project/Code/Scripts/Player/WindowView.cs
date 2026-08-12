@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerView : MonoBehaviour
 {
     
-    [SerializeField] public WindowConf winConf;
+    [SerializeField] private WindowConf winConf;
 
     // testing if window dimantions is changed 
     private float lastWindowSpect;

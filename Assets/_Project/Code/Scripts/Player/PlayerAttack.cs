@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputActionReference attackAction;
     [Header("General settigs")]
-    public DistanceWeaponConf distanceWeaponConf;
+    [SerializeField] private DistanceWeaponConf distanceWeaponConf;
 
     private Camera playerCamera;
     private IDistanceWeapon distanceWeapon;
