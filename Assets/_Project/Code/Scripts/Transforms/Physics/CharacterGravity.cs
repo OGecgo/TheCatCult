@@ -56,7 +56,6 @@ public class CharacterGravity: MonoBehaviour, ICharacterGravity, IUpdatable
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        if (controller == null) Debug.Log("controler is null");
         velocity = Vector3.zero;
     }
 }

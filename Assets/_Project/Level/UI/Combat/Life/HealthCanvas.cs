@@ -23,7 +23,6 @@ public class HealthCanvas : MonoBehaviour
     {
         sliderHelth = GetComponent<Slider>();
         attackedUI = attacked.GetComponent<IAttackedHelthUI>();
-        if (attacked == null) Debug.Log("wtf");
         attackedUI.OnAttacked += Attacked;
         damageTaked = 0;
         sliderHelth.value = 1;

@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[AddComponentMenu("UI")]
 public class DamageCanvas : MonoBehaviour
 {
     // TODO: for future animations

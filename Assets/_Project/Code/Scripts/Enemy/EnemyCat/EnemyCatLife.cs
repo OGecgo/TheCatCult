@@ -6,10 +6,11 @@ public class EnemyCatCombat : MonoBehaviour, IDamageable, IPauseFeatures
     [Header("General settings")]
     [SerializeField] private LifeConf lifeConf;
     [Header("Enemy take damage")]
-    [SerializeField] private float timeDamageWillShowed = 1f;
+    [SerializeField] private float timeDamageWillShowed = 0.3f;
     [SerializeField] private Color colorWhenTakedDamage = Color.red;
 
     private bool featureIsPaused;
+    private bool isAttacked;
     private ILife life;
     private MeshRenderer meshRenderer;
 
@@ -24,8 +25,12 @@ public class EnemyCatCombat : MonoBehaviour, IDamageable, IPauseFeatures
         if (featureIsPaused) return;
         
         life.Attack(power);
-        // show to player. cat is attacked
-        StartCoroutine(ShowDamageTaked());
+        // avoid star >1 routines
+        if (!isAttacked)
+        {
+            // show to player. cat is attacked
+            StartCoroutine(ShowDamageTaked());
+        }
     }
 
     private void OnDestroy()
@@ -39,6 +44,7 @@ public class EnemyCatCombat : MonoBehaviour, IDamageable, IPauseFeatures
    private void Awake()
     {
         featureIsPaused = false;
+        isAttacked = false;
         meshRenderer = GetComponent<MeshRenderer>();
         life = new Life(lifeConf); 
         life.OnDie += EnemyDie;
@@ -46,10 +52,12 @@ public class EnemyCatCombat : MonoBehaviour, IDamageable, IPauseFeatures
 
     private IEnumerator ShowDamageTaked()
     {
+        isAttacked = true;
         Color tempColor = meshRenderer.material.color;
         meshRenderer.material.color = colorWhenTakedDamage;
         yield return new WaitForSeconds(timeDamageWillShowed);
         meshRenderer.material.color = tempColor;
+        isAttacked = false;
     }
 
     private void EnemyDie()

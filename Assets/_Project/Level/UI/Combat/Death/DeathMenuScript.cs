@@ -8,10 +8,10 @@ public class DeathMenuScript : MonoBehaviour
 
     [Header("Links")]
     [SerializeField] private MonoBehaviour death;
-    [SerializeField] private MonoBehaviour m_pauseControl;
+    [SerializeField] private MonoBehaviour pauseControl;
 
     private IDeathUI deathUI;
-    private IPauseControl pauseControl;
+    private IPauseControl _pauseControl;
 
     private void OnDisable()
     {
@@ -25,7 +25,7 @@ public class DeathMenuScript : MonoBehaviour
 
     private void Awake()
     {
-        pauseControl = m_pauseControl.GetComponent<IPauseControl>();
+        _pauseControl = pauseControl.GetComponent<IPauseControl>();
         deathUI = death.GetComponent<IDeathUI>();
         deathCanvas.enabled = false;
         gameCanvas.enabled = true;
@@ -33,7 +33,7 @@ public class DeathMenuScript : MonoBehaviour
 
     private void Death()
     {
-        pauseControl.PauseGame();
+        _pauseControl.PauseGame();
         deathCanvas.enabled = true;
         gameCanvas.enabled = false;
     }

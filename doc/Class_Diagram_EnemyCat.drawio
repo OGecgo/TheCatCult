@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="fIXOdNchauMUXSfByhlN" name="Page-1">
-        <mxGraphModel dx="1588" dy="598" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1342" dy="478" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -131,13 +131,13 @@
                     <mxGeometry y="200" width="200" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="154" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;EnemyCatLife&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;" parent="1" vertex="1">
-                    <mxGeometry x="56.67999999999999" y="225" width="210" height="250" as="geometry"/>
+                    <mxGeometry x="56.67999999999999" y="225" width="210" height="270" as="geometry"/>
                 </mxCell>
-                <mxCell id="155" value="&lt;div&gt;- LifeConf lifeConf;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- float timeDamageWillShowed;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- float colorWhenTakedDamage;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- bool featurIsPaused;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- ILife life;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- MeshRenderer meshRenderer;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="154" vertex="1">
-                    <mxGeometry y="40" width="210" height="110" as="geometry"/>
+                <mxCell id="155" value="&lt;div&gt;- LifeConf lifeConf;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- float timeDamageWillShowed;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- float colorWhenTakedDamage;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- bool featurIsPaused;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- bool isAttacked;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- ILife life;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- MeshRenderer meshRenderer;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="154" vertex="1">
+                    <mxGeometry y="40" width="210" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="156" value="&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ void FeatureIsPosed(bool value);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ void Attack(int power);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- void OnDestroy();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- void Awake();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- IEnumerator ShowDamageTaked();&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;- void EnemyDie();&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="154" vertex="1">
-                    <mxGeometry y="150" width="210" height="100" as="geometry"/>
+                    <mxGeometry y="170" width="210" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="160" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;dashed=1;" parent="1" source="157" target="33" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -311,19 +311,19 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="219" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="310" y="210" width="270" height="270" as="geometry"/>
+                    <mxGeometry x="310" y="210" width="270" height="240" as="geometry"/>
                 </mxCell>
                 <mxCell id="220" value="&lt;font&gt;Enemy Cat Collider&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=25;" parent="1" vertex="1">
-                    <mxGeometry x="332.5" y="435" width="225" height="40" as="geometry"/>
+                    <mxGeometry x="332.5" y="405" width="225" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="221" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;EnemyCatAttackCollider&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;" parent="1" vertex="1">
-                    <mxGeometry x="325" y="225" width="240" height="210" as="geometry"/>
+                    <mxGeometry x="325" y="225" width="240" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="222" value="&lt;div&gt;- MeleeWeaponConf meleeWeaponConf;&lt;/div&gt;&lt;div&gt;- float timerAttack;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- bool featureIsPaused&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- float timerCount;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- IMeleeWeapon meleeWeapon;&lt;/span&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="221" vertex="1">
-                    <mxGeometry y="40" width="240" height="100" as="geometry"/>
+                <mxCell id="222" value="&lt;div&gt;- MeleeWeaponConf meleeWeaponConf;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- bool featureIsPaused&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- IMeleeWeapon meleeWeapon;&lt;/span&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="221" vertex="1">
+                    <mxGeometry y="40" width="240" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="223" value="+ void FeatureIsPosed(bool value);&lt;div&gt;- void Awake();&lt;/div&gt;&lt;div&gt;- void OnTriggerStay(Collider other);&lt;/div&gt;&lt;div&gt;- void OnTriggerExist();&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="221" vertex="1">
-                    <mxGeometry y="140" width="240" height="70" as="geometry"/>
+                    <mxGeometry y="110" width="240" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="226" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;IPauseFeatures&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;container=0;" parent="1" vertex="1">
                     <mxGeometry x="323.38" y="130" width="110" height="60" as="geometry"/>

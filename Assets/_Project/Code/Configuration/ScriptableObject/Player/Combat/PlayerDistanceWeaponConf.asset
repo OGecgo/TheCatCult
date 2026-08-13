@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DistanceWeaponConf
   damage: 10
   range: 100
+  bullets: 100
+  bunchOfBullets: 3
+  timerCountAttack: 0.075
+  timerReload: 3
   targetMask:
     serializedVersion: 2
     m_Bits: 536870912

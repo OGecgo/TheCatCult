@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCatCombat
   lifeConf: {fileID: 11400000, guid: f839049156a1456d490397ea516c498f, type: 2}
-  timeDamageWillShowed: 0.5
+  timeDamageWillShowed: 0.3
   colorWhenTakedDamage: {r: 0.6603774, g: 0, b: 0, a: 0}
 --- !u!1 &2794788012402968695
 GameObject:
@@ -393,4 +393,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCatAttackCollider
   meleeWeaponConf: {fileID: 11400000, guid: 9c21dbb0cac0fbca8a153f4299517abe, type: 2}
-  timerAttack: 0.1
