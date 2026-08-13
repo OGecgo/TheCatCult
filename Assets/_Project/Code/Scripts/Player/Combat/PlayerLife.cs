@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IDamageable, IAttackedDamageUI, IAttackedHelthUI
+public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IDamageable, IAttackedDamageUI, IAttackedHelthUI, IDeathUI
 {
     [Header("General settings")]
     [SerializeField] private LifeConf lifeConf;
@@ -21,6 +21,7 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IDamageable
     public event Action OnSetAttacked;
     public event Action OnUnsetAttacked;
     public event Action<int> OnAttacked;
+    public event Action OnDeath;
 
     public void ManualUpdate()
     {
@@ -56,11 +57,11 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IDamageable
 
     private void OnEnable()
     {
-        life.OnDie += PlayerDeath;
+        life.OnDie += Die;
     }
     private void OnDisable()
     {
-        life.OnDie -= PlayerDeath;   
+        life.OnDie -= Die;   
     }
 
     private void Awake()
@@ -71,6 +72,11 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IDamageable
         featureIsPaused = false;
         timerCount = 0f;
         isAttacked = false;
+    }
+
+    private void Die()
+    {
+        OnDeath.Invoke();
     }
 
     private void AttackPushPlayer()
@@ -87,11 +93,5 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IDamageable
     private void UnsetInvincible()
     {
         this.gameObject.layer = LayerMask.NameToLayer("PlayerLayer");
-    }
-
-    // for now nothing (connect with UI)
-    private void PlayerDeath()
-    {
-        Debug.Log("Player not dead");
     }
 }
