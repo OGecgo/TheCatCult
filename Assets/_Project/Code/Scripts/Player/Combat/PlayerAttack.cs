@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack : MonoBehaviour, IUpdatable
 {
     [Header("Input")]
     [SerializeField] private InputActionReference attackAction;
@@ -11,15 +11,15 @@ public class PlayerAttack : MonoBehaviour
     private Camera playerCamera;
     private IDistanceWeapon distanceWeapon;
 
-    public void Awake()
+    public void ManualUpdate()
+    {
+        if (attackAction.action.triggered) Shoot();
+    }
+
+    private void Awake()
     {
         playerCamera = GetComponentInChildren<Camera>();
         distanceWeapon = new DistanceWeapon(distanceWeaponConf);
-    }
-
-    void Update()
-    {
-        if (attackAction.action.triggered) Shoot();
     }
 
     private void Shoot()

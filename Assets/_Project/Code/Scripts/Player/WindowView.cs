@@ -14,17 +14,17 @@ public class PlayerView : MonoBehaviour
 
 
 
-    public void Awake()
+    private void Awake()
     {
         objCamera = GetComponent<Camera>();
         lastWindowSpect = (float)Screen.width / (float)Screen.height;    
     } 
-    void Start()
+    private void Start()
     {
         AdjustCamera();
-        objCamera.fieldOfView = winConf.FOV; 
+        objCamera.fieldOfView = winConf.FOV;  
     } 
-    void Update()
+    private void Update()
     {
         // after resize change the window proportions 
         float newWindowSpect = (float)Screen.width / (float)Screen.height;

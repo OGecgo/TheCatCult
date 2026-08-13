@@ -1,8 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerTransform : MonoBehaviour
+public class PlayerTransform : MonoBehaviour, IUpdatable
 {
     [Header("Input")]
     [SerializeField] private InputActionReference moveAction;
@@ -23,7 +22,14 @@ public class PlayerTransform : MonoBehaviour
     private IPlayerRotation bodyRotation;
     private IPlayerRotation headRotation;
 
-    public void OnEnable()
+    public void ManualUpdate()
+    {
+        bodyRotation.ManualUpdate();
+        headRotation.ManualUpdate();
+        playerMovement.ManualUpdate();
+    }
+
+    private void OnEnable()
     {
         moveAction.action.Enable();
         runAction.action.Enable();
@@ -31,7 +37,7 @@ public class PlayerTransform : MonoBehaviour
         rotationAction.action.Enable();
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
         moveAction.action.Disable();
         runAction.action.Disable();
@@ -39,7 +45,7 @@ public class PlayerTransform : MonoBehaviour
         rotationAction.action.Disable();
     }
 
-    public void Awake()
+    private void Awake()
     {
         playerMovement = new PlayerMovement
         (
@@ -62,18 +68,5 @@ public class PlayerTransform : MonoBehaviour
             // 0 is the head
             this.transform.GetChild(0)
         );
-    }
-
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-    void Update()
-    {
-        bodyRotation.ManualUpdate();
-        headRotation.ManualUpdate();
-        playerMovement.ManualUpdate();
     }
 }

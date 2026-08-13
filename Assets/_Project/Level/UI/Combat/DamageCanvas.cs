@@ -5,23 +5,23 @@ using UnityEngine.UI;
 public class DamageCanvas : MonoBehaviour
 {
     // TODO: for future animations
-    [Header("General settins")]
-    [SerializeField] private float timerShowDamage = 1f;
-    [SerializeField] private float timerHideDamage = 1f;
+    // [Header("General settins")]
+    // [SerializeField] private float timerShowDamage = 1f;
+    // [SerializeField] private float timerHideDamage = 1f;
     [Header("Links")]
     [SerializeField] private MonoBehaviour attacked;
 
     private IAttackedDamageUI attackedUI;
     private RawImage rawImage;
 
-    public void OnDestroy()
+    private void OnDestroy()
     {
         attackedUI.OnSetAttacked -= SetAttacked;
         attackedUI.OnUnsetAttacked -= UnsetAttacked;
 
     }
 
-    public void Awake()
+    private void Awake()
     {
         rawImage = GetComponent<RawImage>();
         UnsetAttacked();

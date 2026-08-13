@@ -13,13 +13,13 @@ public class HealthCanvas : MonoBehaviour
     private int damageTaked;
 
 
-    public void OnDestroy()
+    private void OnDestroy()
     {
         attackedUI.OnAttacked -= Attacked;
 
     }
 
-    public void Awake()
+    private void Awake()
     {
         sliderHelth = GetComponent<Slider>();
         attackedUI = attacked.GetComponent<IAttackedHelthUI>();

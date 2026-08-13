@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e046484baa1aa56cb6676d761385eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FOVDetection
-  fovConf: {fileID: 11400000, guid: 21f4c726f5b9516cabaea6a755d4ec48, type: 2}
+  m_fovConf: {fileID: 11400000, guid: 21f4c726f5b9516cabaea6a755d4ec48, type: 2}
 --- !u!114 &7950106673240316431
 MonoBehaviour:
   m_ObjectHideFlags: 0

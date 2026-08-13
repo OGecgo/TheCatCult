@@ -1,47 +1,47 @@
 
+using System;
 using UnityEngine;
 
 
-// TODO: for now used if null. in the futture better will be think better way
-// example with events. for avoid multiple if statments
-public class UpdateManager : MonoBehaviour
+public class UpdateManager : MonoBehaviour, IPauseUpdate
 {
+    private bool objIsPosed;
+
     private IUpdatable[] updatable;
-    private IStartable[] startable;
-    private IAwakable[] awakable;
+    private IPauseFeatures[] features;
 
-    public void Onestroy()
+    public void ObjIsPaused(bool value)
     {
-        updatable = null;
-        startable = null;
-        awakable = null;
+        objIsPosed = value;
+        foreach(IPauseFeatures f in features)
+        {
+            if ((UnityEngine.Object)f != null) f.FeatureIsPaused(value);
+        }
     }
 
-    public void Awake()
+   private void Awake()
     {
+        objIsPosed = false;
         updatable = this.GetComponentsInChildren<IUpdatable>();
-        startable = this.GetComponentsInChildren<IStartable>();
-        awakable  = this.GetComponentsInChildren<IAwakable> ();
+        features = this.GetComponentsInChildren<IPauseFeatures>();
+    }
 
-        foreach (IAwakable a in awakable)
-        {
-            if ((UnityEngine.Object)a != null) a.ManualAwake();
-        }
-    }
-    void Start()
+    private void Update()
     {
-        foreach (IStartable s in startable)
-        {
-            if ((UnityEngine.Object)s != null) s.ManualStart();                
-        }
-    }
-    void Update()
-    {
+        if (objIsPosed) return;
+
         foreach (IUpdatable u in updatable)
         {
             if ((UnityEngine.Object)u != null) u.ManualUpdate();
         }
     }
+
+    private void OnDestroy()
+    {
+        updatable     = null;
+        features = null;
+    }
+
 
 
 }

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyCatCombat : MonoBehaviour, IAwakable, IDamageable
+public class EnemyCatCombat : MonoBehaviour, IDamageable, IPauseFeatures
 {
     [Header("General settings")]
     [SerializeField] private LifeConf lifeConf;
@@ -9,10 +9,26 @@ public class EnemyCatCombat : MonoBehaviour, IAwakable, IDamageable
     [SerializeField] private float timeDamageWillShowed = 1f;
     [SerializeField] private Color colorWhenTakedDamage = Color.red;
 
+    private bool featureIsPaused;
     private ILife life;
     private MeshRenderer meshRenderer;
 
-    public void OnDestroy()
+
+    public void FeatureIsPaused(bool value)
+    {
+        featureIsPaused = value;
+    }
+
+    public void Attack(int power)
+    {
+        if (featureIsPaused) return;
+        
+        life.Attack(power);
+        // show to player. cat is attacked
+        StartCoroutine(ShowDamageTaked());
+    }
+
+    private void OnDestroy()
     {
         if (life != null)
         {
@@ -20,18 +36,12 @@ public class EnemyCatCombat : MonoBehaviour, IAwakable, IDamageable
         }
     }
 
-    public void ManualAwake()
+   private void Awake()
     {
+        featureIsPaused = false;
         meshRenderer = GetComponent<MeshRenderer>();
         life = new Life(lifeConf); 
         life.OnDie += EnemyDie;
-    }
-
-    public void Attack(int power)
-    {
-        life.Attack(power);
-        // show to player. cat is attacked
-        StartCoroutine(ShowDamageTaked());
     }
 
     private IEnumerator ShowDamageTaked()

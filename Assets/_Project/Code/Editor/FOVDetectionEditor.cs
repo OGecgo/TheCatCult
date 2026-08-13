@@ -11,7 +11,7 @@ public class FOVDetectionEditor: Editor
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 
-    void OnSceneGUI()
+    private void OnSceneGUI()
     {
         FOVDetection fov = (FOVDetection)target;
         Handles.color = Color.white;

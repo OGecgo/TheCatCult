@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyCatActoin : MonoBehaviour, IUpdatable, IStartable, IAwakable
+public class EnemyCatActoin : MonoBehaviour, IUpdatable
 {
     [Header("General settings")]
     [SerializeField] private WalkConf walkConf;
@@ -15,7 +15,12 @@ public class EnemyCatActoin : MonoBehaviour, IUpdatable, IStartable, IAwakable
     private IEnemyCatRotation rotation;
     private IEnemyCatMovement movement;
     
-    public void ManualAwake()
+    public void ManualUpdate()
+    {
+        AttackUpdate();
+    }
+
+   private void Awake()
     {
         fovD = this.GetComponent<IFOVDetection>();
         movement = new EnemyCatMovement
@@ -27,14 +32,9 @@ public class EnemyCatActoin : MonoBehaviour, IUpdatable, IStartable, IAwakable
         timer = 0f;
     }    
 
-    public void ManualStart()
+   private void Start()
     {
         fovD.StartDetection();
-    }
-
-    public void ManualUpdate()
-    {
-        AttackUpdate();
     }
  
     private void AttackUpdate()

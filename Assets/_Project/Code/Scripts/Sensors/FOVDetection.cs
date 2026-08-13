@@ -6,8 +6,7 @@ using System.Collections;
 public class FOVDetection: MonoBehaviour, IFOVDetection
 {
 
-    [SerializeField] private FOVDetectionConf fovConf;
-
+    [SerializeField] private FOVDetectionConf m_fovConf;
 
     private bool _isTarget; 
     private Vector3 _posTarget;
@@ -16,20 +15,19 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
 
     public bool isTarget { get { return _isTarget; } set { _isTarget = value; } }
     public Vector3 posTarget { get { return _posTarget;  }  set { _posTarget = value; } }
-
-
-    public void Start()
-    {
-        this.isTarget = false;
-        this.posTarget = Vector3.zero;
-        rangeCheck = new Collider[1];
-    }
-
+    public FOVDetectionConf fovConf {get{return m_fovConf;}}
 
     // updated after 0.2 seconds
     public void StartDetection()
     {
         StartCoroutine(FOVRoutine());
+    }
+
+    private void Start()
+    {
+        this.isTarget = false;
+        this.posTarget = Vector3.zero;
+        rangeCheck = new Collider[1];
     }
 
     private IEnumerator FOVRoutine()
@@ -42,7 +40,7 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
         }
     }
 
-    public void FOVCheck()
+    private void FOVCheck()
     {
         // work only for first detection.
         int rangeCount = Physics.OverlapSphereNonAlloc(transform.position, fovConf.radius, rangeCheck, fovConf.targetMask);
@@ -78,7 +76,7 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
     {
         isTarget = false;
         posTarget = Vector3.zero;
-    } 
+    }
 
     private void checkTrue(Vector3 position)
     {

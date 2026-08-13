@@ -11,7 +11,7 @@ Shader "Custom/Crosshair"
         Tags 
         { 
             // lasth render (after rendering other stuff)
-            "Queue" = "Overlay"
+            "Queue" = "Transparent"
             "IgnoreProjector" = "True"
             // unity know this is transparent
             "RenderType" = "Transparent"

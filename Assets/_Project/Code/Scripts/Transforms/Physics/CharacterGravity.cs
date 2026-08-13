@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class CharacterGravity: MonoBehaviour, ICharacterGravity
+
+// charachter gravity work only if someone calls the update
+// (that need for ease controll update)
+public class CharacterGravity: MonoBehaviour, ICharacterGravity, IUpdatable
 {
     private float _g = -9.81f;
 
@@ -9,14 +12,6 @@ public class CharacterGravity: MonoBehaviour, ICharacterGravity
 
     public bool IsGrounded { get { return controller.isGrounded; } }
     public float g { get { return _g; }}
-
-
-    public void Awake()
-    {
-        controller = GetComponent<CharacterController>();
-        if (controller == null) Debug.Log("controler is null");
-        velocity = Vector3.zero;
-    }
 
     public void PushForwardToDesireSpeed(Vector3 desiredSpeed, float acceleration)
     {
@@ -46,7 +41,7 @@ public class CharacterGravity: MonoBehaviour, ICharacterGravity
         velocity.y = power;
     }
 
-    public void Update()
+    public void ManualUpdate()
     {
         // gravity
         velocity.y += g * Time.deltaTime;
@@ -56,5 +51,12 @@ public class CharacterGravity: MonoBehaviour, ICharacterGravity
         {
             velocity.y = 0f;
         }
+    }
+
+    private void Awake()
+    {
+        controller = GetComponent<CharacterController>();
+        if (controller == null) Debug.Log("controler is null");
+        velocity = Vector3.zero;
     }
 }

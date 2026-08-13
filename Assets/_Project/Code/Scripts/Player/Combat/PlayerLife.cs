@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerLife : MonoBehaviour, IDamageable, IAttackedDamageUI, IAttackedHelthUI
+public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IDamageable, IAttackedDamageUI, IAttackedHelthUI
 {
     [Header("General settings")]
     [SerializeField] private LifeConf lifeConf;
@@ -15,30 +15,14 @@ public class PlayerLife : MonoBehaviour, IDamageable, IAttackedDamageUI, IAttack
     private float timerCount;
     private ICharacterGravity characterGravity;
     private ILife life;
+    private bool featureIsPaused;
+
+
     public event Action OnSetAttacked;
     public event Action OnUnsetAttacked;
     public event Action<int> OnAttacked;
 
-    public void OnEnable()
-    {
-        life.OnDie += PlayerDeath;
-    }
-    public void OnDisable()
-    {
-        life.OnDie -= PlayerDeath;   
-    }
-
-    public void Awake()
-    {
-        life = new Life(lifeConf);
-        characterGravity = GetComponent<ICharacterGravity>();
-
-        timerCount = 0f;
-        isAttacked = false;
-    }
-
-    // do not use Update. find something better that this
-    void Update()
+    public void ManualUpdate()
     {
         if (isAttacked)
         {
@@ -52,8 +36,15 @@ public class PlayerLife : MonoBehaviour, IDamageable, IAttackedDamageUI, IAttack
         }     
     }
 
+    public void FeatureIsPaused(bool value)
+    {
+        featureIsPaused = value;
+    }
+
     public void Attack(int power)
     {
+        if (featureIsPaused) return;
+
         SetInvincible();
         AttackPushPlayer();
         isAttacked = true;
@@ -61,6 +52,25 @@ public class PlayerLife : MonoBehaviour, IDamageable, IAttackedDamageUI, IAttack
         OnSetAttacked.Invoke();
         life.Attack(power);
         OnAttacked.Invoke(power);
+    }
+
+    private void OnEnable()
+    {
+        life.OnDie += PlayerDeath;
+    }
+    private void OnDisable()
+    {
+        life.OnDie -= PlayerDeath;   
+    }
+
+    private void Awake()
+    {
+        life = new Life(lifeConf);
+        characterGravity = GetComponent<ICharacterGravity>();
+
+        featureIsPaused = false;
+        timerCount = 0f;
+        isAttacked = false;
     }
 
     private void AttackPushPlayer()
