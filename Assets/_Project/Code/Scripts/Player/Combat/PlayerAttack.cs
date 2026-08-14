@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-public class PlayerAttack : MonoBehaviour, IUpdatable, IBulletUI
+ 
+public class PlayerAttack : MonoBehaviour, IUpdatable, IInteractBullet, IBulletUI
 {
     [Header("Input")]
     [SerializeField] private InputActionReference attackAction;
@@ -27,7 +27,7 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IBulletUI
             OnSetBullets.Invoke(distanceWeapon.currentBullets, distanceWeaponConf.bullets);
         } 
         else
-        {
+        { 
             distanceWeapon.ResetTimer();
         }
 
@@ -45,6 +45,12 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IBulletUI
         {
             distanceWeapon.UpdateIsReloading();
         }
+    }
+
+    public void GetBunchOfBullets()
+    {
+        distanceWeapon.AddBunchOfBullets();
+        OnSetBunchOfBullets.Invoke(distanceWeapon.currentBunchOfBullets);
     }
 
     private void Awake()

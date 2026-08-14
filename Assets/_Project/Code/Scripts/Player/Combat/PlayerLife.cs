@@ -1,7 +1,11 @@
 using System;
 using UnityEngine;
 
-public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IDamageable, IAttackedDamageUI, IAttackedHelthUI, IDeathUI
+public class PlayerLife : MonoBehaviour, 
+    IUpdatable, IPauseFeatures, 
+    IDamageable, 
+    IAttackedDamageUI, IAttackedHelthUI, IDeathUI
+
 {
     [Header("General settings")]
     [SerializeField] private LifeConf lifeConf;

@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class DistanceWeapon: IDistanceWeapon
@@ -47,7 +46,7 @@ public class DistanceWeapon: IDistanceWeapon
 
     public void AddBunchOfBullets()
     {
-        bulletsUsed += 1;
+        bunchOfBullets += 1;
     }
 
     public void Attack(Vector3 position, Vector3 direction)

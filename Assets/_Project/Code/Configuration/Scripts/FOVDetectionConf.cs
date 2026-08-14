@@ -7,6 +7,7 @@ public class FOVDetectionConf : ScriptableObject
     public float closeRadius = 3f;
     [Range(0, 360)]
     public float angle = 70f;
+    public float timeUpdate = 0.3f;
     public LayerMask targetMask;
     public LayerMask obstructionMask;
 }

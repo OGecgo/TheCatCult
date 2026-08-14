@@ -32,10 +32,10 @@ public class FOVDetection: MonoBehaviour, IFOVDetection
 
     private IEnumerator FOVRoutine()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.2f);
+        WaitForSeconds wait = new WaitForSeconds(m_fovConf.timeUpdate);
         while (true)
         {
-            yield return wait; // wait for 0.2 sec (example)
+            yield return wait;
             FOVCheck();
         }
     }
