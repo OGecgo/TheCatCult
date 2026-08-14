@@ -8,10 +8,11 @@ public class DistanceWeapon: IDistanceWeapon
     private float timerCountAttack;
     private float timerCountRelaod;
     private int bulletsUsed;
-    private int bunchOfBulletsUsed;
+    private int bunchOfBullets;
 
     public bool isRealoading {get{return timerCountRelaod > 0;}}
     public int currentBullets {get{return config.bullets - bulletsUsed;}}
+    public int currentBunchOfBullets {get{return bunchOfBullets;}}
 
     public DistanceWeapon(DistanceWeaponConf distanceWeaponConf)
     {
@@ -19,7 +20,7 @@ public class DistanceWeapon: IDistanceWeapon
         timerCountAttack = 0f;
         timerCountRelaod = 0f;
         bulletsUsed = 0;
-        bunchOfBulletsUsed = 0;
+        bunchOfBullets = config.bunchOfBullets;;
     } 
 
     public void ResetTimer()
@@ -31,25 +32,22 @@ public class DistanceWeapon: IDistanceWeapon
     {
         if (isRealoading) return;
 
-        if (bunchOfBulletsUsed < config.bunchOfBullets)
+        if (bunchOfBullets > 0)
         {
-            bunchOfBulletsUsed += 1;
+            bunchOfBullets -= 1;
             bulletsUsed = 0;
             timerCountRelaod = config.timerReload;
-        }
+        }        
     }
 
     public void UpdateIsReloading()
     {
-        if (isRealoading)
-        {
-            timerCountRelaod -= Time.deltaTime;
-        }
+        timerCountRelaod -= Time.deltaTime;
     }
 
     public void AddBunchOfBullets()
     {
-        bunchOfBulletsUsed -= 1;
+        bulletsUsed += 1;
     }
 
     public void Attack(Vector3 position, Vector3 direction)

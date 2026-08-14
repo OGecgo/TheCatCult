@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PauseControl : MonoBehaviour, IPauseControl
 {
-    [SerializeField] private MonoBehaviour[] updateManagers;    
-
     private bool _isPaused;
     private IPauseUpdate[] pauseUpdate;
 
@@ -43,10 +41,6 @@ public class PauseControl : MonoBehaviour, IPauseControl
 
     private void Awake()
     {
-        pauseUpdate = new IPauseUpdate[updateManagers.Length];
-        for (int i = 0; i < pauseUpdate.Length; i++)
-        {
-            pauseUpdate[i] = updateManagers[i].GetComponent<IPauseUpdate>();
-        }
+        pauseUpdate = GetComponentsInChildren<IPauseUpdate>();
     }
 }

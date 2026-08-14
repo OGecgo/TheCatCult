@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IBulletUI
     private IDistanceWeapon distanceWeapon;
 
     public event Action<int, int> OnSetBullets;
+    public event Action<int> OnSetBunchOfBullets;
 
     public void ManualUpdate()
     {
@@ -35,6 +36,7 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IBulletUI
         {
             distanceWeapon.StartReloading();
             distanceWeapon.ResetTimer();
+            OnSetBunchOfBullets.Invoke(distanceWeapon.currentBunchOfBullets);
             OnSetBullets.Invoke(distanceWeapon.currentBullets, distanceWeaponConf.bullets);
         }
 
@@ -54,6 +56,7 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IBulletUI
     private void Start()
     {
         OnSetBullets.Invoke(distanceWeapon.currentBullets, distanceWeaponConf.bullets);
+        OnSetBunchOfBullets.Invoke(distanceWeapon.currentBunchOfBullets);
     }
 
 }
