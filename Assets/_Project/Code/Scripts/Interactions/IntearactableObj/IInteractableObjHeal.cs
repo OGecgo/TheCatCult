@@ -1,6 +1,4 @@
-using System;
-
 public interface IInteractableObjHeal
 {
-    //public void Interact();
+    public void Interact(IInteractHealth interactHealth);
 }

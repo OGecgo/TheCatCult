@@ -1,4 +1,4 @@
-Shader "Custom/Crosshair"
+Shader "Custom/InvertCollor"
 {
     Properties
     {
@@ -22,7 +22,7 @@ Shader "Custom/Crosshair"
         {
             // for inverse transparency
             Blend OneMinusDstColor Zero
-            // have no depth (other object cannot overide the crosshair)
+            // have no depth (other object cannot overide)
             ZWrite Off
             // draw always
             ZTest Always

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1f437a3929037aea2c0cd3a94abf0c, type: 3}
   m_Name: PlayerRunConf
   m_EditorClassIdentifier: Assembly-CSharp::RunConf
-  maxRunSpeed: 8
+  maxRunSpeed: 5
   speedDirection: {x: 0.7, y: 1}
   runAcceleration: 40
   stopAcceleration: 40

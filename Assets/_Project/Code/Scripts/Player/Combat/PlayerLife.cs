@@ -1,14 +1,19 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerLife : MonoBehaviour, 
     IUpdatable, IPauseFeatures, 
     IDamageable, 
-    IAttackedDamageUI, IAttackedHelthUI, IDeathUI
+    IInteractHealth,
+    IDamageUI, IHealingPackUI, IHealthUI, IDeathUI
 
-{
+{   
+    [Header("Input")]
+    [SerializeField] private InputActionReference healAction;
     [Header("General settings")]
     [SerializeField] private LifeConf lifeConf;
+    [SerializeField] private HealingPackConf healingPackConf;
     [Header("Player take damage settigs")]
     [SerializeField] private float pushUp = 0.5f;
     [SerializeField] private float pushBack = 1f;
@@ -19,26 +24,20 @@ public class PlayerLife : MonoBehaviour,
     private float timerCount;
     private ICharacterGravity characterGravity;
     private ILife life;
+    private IHealingPack healingPack;
     private bool featureIsPaused;
 
-
+    // used from UI
     public event Action OnSetAttacked;
     public event Action OnUnsetAttacked;
-    public event Action<int> OnAttacked;
+    public event Action<int> OnSetLife;
     public event Action OnDeath;
+    public event Action<int> OnSetHealingPacks;
 
     public void ManualUpdate()
     {
-        if (isAttacked)
-        {
-            if (timerCount <= 0)
-            {
-                isAttacked = false;
-                UnsetInvincible();
-                OnUnsetAttacked.Invoke();
-            }
-            timerCount -= Time.deltaTime;
-        }     
+        GetAttack();
+        Heal();
     }
 
     public void FeatureIsPaused(bool value)
@@ -54,10 +53,17 @@ public class PlayerLife : MonoBehaviour,
         AttackPushPlayer();
         isAttacked = true;
         timerCount = timerInvincible;
-        OnSetAttacked.Invoke();
+        if (OnSetAttacked != null) OnSetAttacked.Invoke();
         life.Attack(power);
-        OnAttacked.Invoke(power);
+        if (OnSetLife != null) OnSetLife.Invoke(life.health);
     }
+
+    public void GetHealingPack()
+    {
+        healingPack.AddHealingPack();
+    if (OnSetHealingPacks != null) OnSetHealingPacks.Invoke(healingPack.healingPacks);
+    }
+
 
     private void OnEnable()
     {
@@ -71,6 +77,7 @@ public class PlayerLife : MonoBehaviour,
     private void Awake()
     {
         life = new Life(lifeConf);
+        healingPack = new HealingPack(healingPackConf);
         characterGravity = GetComponent<ICharacterGravity>();
 
         featureIsPaused = false;
@@ -80,7 +87,7 @@ public class PlayerLife : MonoBehaviour,
 
     private void Die()
     {
-        OnDeath.Invoke();
+        if (OnDeath != null) OnDeath.Invoke();
     }
 
     private void AttackPushPlayer()
@@ -97,5 +104,30 @@ public class PlayerLife : MonoBehaviour,
     private void UnsetInvincible()
     {
         this.gameObject.layer = LayerMask.NameToLayer("PlayerLayer");
+    }
+
+    // attack every timeCount sec
+    private void GetAttack()
+    {
+        if (isAttacked)
+        {
+            if (timerCount <= 0)
+            {
+                isAttacked = false;
+                UnsetInvincible();
+                if (OnUnsetAttacked != null) OnUnsetAttacked.Invoke();
+            }
+            timerCount -= Time.deltaTime;
+        }  
+    }
+
+    private void Heal()
+    {
+        if (healAction.action.triggered)
+        {
+            healingPack.Heal(life);
+            if (OnSetHealingPacks != null) OnSetHealingPacks.Invoke(healingPack.healingPacks);
+            if (OnSetLife != null) OnSetLife.Invoke(life.health);
+        }
     }
 }

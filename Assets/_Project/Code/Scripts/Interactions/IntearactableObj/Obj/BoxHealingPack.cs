@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class BoxBullets : MonoBehaviour, IInteractableObjBullets, ILookedObj, IPauseFeatures
+public class BoxHealingPack : MonoBehaviour, IInteractableObjHeal, ILookedObj, IPauseFeatures
 {
+
     private int outlineLayer;
     private int interactLayer;
 
-    public bool featureIsPaused;
- 
-    public void Interact(IInteractBullet interactBullet)
+    private bool featureIsPaused;
+    public void Interact(IInteractHealth interactHealth)
     {
         if (featureIsPaused) return;
 
-        interactBullet.GetBunchOfBullets();
+        interactHealth.GetHealingPack();
         Destroy(this.gameObject);
     }
 
@@ -24,10 +24,11 @@ public class BoxBullets : MonoBehaviour, IInteractableObjBullets, ILookedObj, IP
         this.gameObject.layer = interactLayer;
     }
 
+
     public void FeatureIsPaused(bool value)
     {
-        featureIsPaused = value;
-    }    
+        featureIsPaused = value;   
+    }
 
     private void Awake()
     {
@@ -35,6 +36,5 @@ public class BoxBullets : MonoBehaviour, IInteractableObjBullets, ILookedObj, IP
         interactLayer = LayerMask.NameToLayer("InteractLayer"); 
         featureIsPaused = false;
     }
-    
 
 }

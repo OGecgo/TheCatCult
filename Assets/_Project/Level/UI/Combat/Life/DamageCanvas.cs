@@ -10,23 +10,26 @@ public class DamageCanvas : MonoBehaviour
     [Header("Links")]
     [SerializeField] private MonoBehaviour attacked;
 
-    private IAttackedDamageUI attackedUI;
+    private IDamageUI attackedUI;
     private RawImage rawImage;
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         attackedUI.OnSetAttacked -= SetAttacked;
         attackedUI.OnUnsetAttacked -= UnsetAttacked;
 
     }
 
+    private void OnEnable()
+    {
+        attackedUI.OnSetAttacked += SetAttacked;
+        attackedUI.OnUnsetAttacked += UnsetAttacked;
+    }
     private void Awake()
     {
         rawImage = GetComponent<RawImage>();
         UnsetAttacked();
-        attackedUI = attacked.GetComponent<IAttackedDamageUI>();
-        attackedUI.OnSetAttacked += SetAttacked;
-        attackedUI.OnUnsetAttacked += UnsetAttacked;
+        attackedUI = attacked.GetComponent<IDamageUI>();
     }
 
     private void SetAttacked()

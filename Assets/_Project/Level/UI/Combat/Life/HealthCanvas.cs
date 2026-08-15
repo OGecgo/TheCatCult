@@ -8,30 +8,32 @@ public class HealthCanvas : MonoBehaviour
     [Header("General settings")]
     [SerializeField] private LifeConf lifeConf;
 
-    private IAttackedHelthUI attackedUI;
+    private IHealthUI attackedUI;
     private Slider sliderHelth;
     private int damageTaked;
 
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        attackedUI.OnAttacked -= Attacked;
+        attackedUI.OnSetLife -= SetLife;
 
     }
 
+    private void OnEnable()
+    {
+        attackedUI.OnSetLife += SetLife;   
+    }
     private void Awake()
     {
         sliderHelth = GetComponent<Slider>();
-        attackedUI = attacked.GetComponent<IAttackedHelthUI>();
-        attackedUI.OnAttacked += Attacked;
+        attackedUI = attacked.GetComponent<IHealthUI>();
         damageTaked = 0;
         sliderHelth.value = 1;
     }
 
-    private void Attacked(int damage)
+    private void SetLife(int health)
     {
-        damageTaked += damage;
-        sliderHelth.value = ((float)(lifeConf.health - damageTaked)) / lifeConf.health;
+        sliderHelth.value = (float)health / lifeConf.health;
     }
 
 }

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f7775f8c666c9e894e1bdcead813e1, type: 3}
   m_Name: EnemyCatMeleeWeaponConf
   m_EditorClassIdentifier: Assembly-CSharp::MeleeWeaponConf
-  damage: 10
+  damage: 15
+  timerCountAttack: 0.5
   targetMask:
     serializedVersion: 2
     m_Bits: 2147483648

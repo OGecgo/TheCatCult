@@ -15,6 +15,7 @@ public class PlayerInteractor : MonoBehaviour
     private ILookedObj lastLookedObj;
     // interactions
     private IInteractBullet bulletControl;
+    private IInteractHealth healthControl;
 
     
 
@@ -22,6 +23,8 @@ public class PlayerInteractor : MonoBehaviour
     {
         playerCemare = GetComponentInChildren<Camera>();
         bulletControl = GetComponent<IInteractBullet>();
+        healthControl = GetComponent<IInteractHealth>();
+
     }
 
     private void Update()
@@ -44,9 +47,14 @@ public class PlayerInteractor : MonoBehaviour
 
             
             if (!interactAction.action.triggered) return;
-            if (hit.collider.TryGetComponent(out IInteractableObjBullets interact))
+
+            if (hit.collider.TryGetComponent(out IInteractableObjBullets interactBullet))
             {
-                interact.Interact(bulletControl) ;
+                interactBullet.Interact(bulletControl) ;
+            }
+            else if (hit.collider.TryGetComponent(out IInteractableObjHeal interactHealth))
+            {
+                interactHealth.Interact(healthControl);
             }
         }
         // if from looking ojb to nothing

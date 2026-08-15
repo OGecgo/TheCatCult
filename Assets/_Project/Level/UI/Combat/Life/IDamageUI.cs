@@ -1,6 +1,6 @@
 using System;
 
-public interface IAttackedDamageUI
+public interface IDamageUI
 {
     public event Action OnSetAttacked;
     public event Action OnUnsetAttacked;

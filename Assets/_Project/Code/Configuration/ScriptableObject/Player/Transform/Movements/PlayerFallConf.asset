@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ec3baf1ea96e1ab9454a5767ee2b0a, type: 3}
   m_Name: PlayerFallConf
   m_EditorClassIdentifier: Assembly-CSharp::FallConf
-  acceleration: 0.01
+  acceleration: 2

@@ -8,23 +8,23 @@ public class BulletCanvas : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textBunchOfBullets;
 
 
-    private IBulletUI _bulletCounter;
+    private IBulletUI bulletUI;
 
     private void Awake()
     {
-        _bulletCounter = bulletCounter.GetComponent<IBulletUI>();
+        bulletUI = bulletCounter.GetComponent<IBulletUI>();
     }
 
     private void OnEnable()
     {
-        _bulletCounter.OnSetBullets += ShowBullets;
-        _bulletCounter.OnSetBunchOfBullets += ShowBunchOfBullets;
+        bulletUI.OnSetBullets += ShowBullets;
+        bulletUI.OnSetBunchOfBullets += ShowBunchOfBullets;
     }
 
     private void OnDisable()
     {
-        _bulletCounter.OnSetBullets -= ShowBullets;
-        _bulletCounter.OnSetBunchOfBullets += ShowBunchOfBullets;
+        bulletUI.OnSetBullets -= ShowBullets;
+        bulletUI.OnSetBunchOfBullets += ShowBunchOfBullets;
     }
 
     private void ShowBullets(int currentBullelts, int bullets)
