@@ -1,11 +1,14 @@
 using System.Collections;
 using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjDoor : MonoBehaviour, IInteractableObjDoor, ILookedObj, IPauseFeatures
 {
-    [SerializeField] private float speedOpen = 1;
+    private enum allowValues {negative = -1, positive = 1}
 
+    [SerializeField] private float speedOpen = 1;
+    [SerializeField] private allowValues directionOpen = allowValues.negative;
     
     private int outlineLayer;
     private int defaultLayer;
@@ -43,15 +46,15 @@ public class ObjDoor : MonoBehaviour, IInteractableObjDoor, ILookedObj, IPauseFe
         defaultLayer = LayerMask.NameToLayer("Default"); 
         isOpen = false;
         featureIsPaused = false;
-        closeRotation = transform.rotation;
-        openRotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0f, -90f, 0f));
+        closeRotation = transform.localRotation;
+        openRotation = Quaternion.Euler(transform.localEulerAngles + new Vector3(0f, 0f, (int)directionOpen * 90f));
     }
 
     private IEnumerator CorutineMoveDoor()
     {
         Quaternion targetRotation = isOpen ? closeRotation : openRotation;
         isOpen = !isOpen;
-        while (Quaternion.Angle(this.transform.rotation, targetRotation) > 0.01f)
+        while (Quaternion.Angle(this.transform.localRotation, targetRotation) > 0.01f)
         {
             // stop every frame they paused
             if (featureIsPaused) 
@@ -59,11 +62,11 @@ public class ObjDoor : MonoBehaviour, IInteractableObjDoor, ILookedObj, IPauseFe
                 yield return null;
                 continue;
             }
-            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, targetRotation, Time.deltaTime * speedOpen);
+            this.transform.localRotation = Quaternion.Lerp(this.transform.localRotation, targetRotation, Time.deltaTime * speedOpen);
 
             // wait for next frame
             yield return null;
         }
-        this.transform.rotation = targetRotation;
+        this.transform.localRotation = targetRotation;
     }
 }
