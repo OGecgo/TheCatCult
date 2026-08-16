@@ -52,7 +52,7 @@ public class PlayerMovement : IPlayerMovement
         bool jump = jumpAction.action.triggered;
         bool run = runAction.action.IsPressed();
 
-        if (gravity.IsGrounded)
+        if (gravity.isGrounded)
         {
             if (jump)jumpControl.doJump = true;
             

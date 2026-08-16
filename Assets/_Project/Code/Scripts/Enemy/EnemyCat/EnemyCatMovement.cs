@@ -28,7 +28,7 @@ public class EnemyCatMovement: IEnemyCatMovement
     public void ManualUpdate()
     {
         // set state
-        if (gravity.IsGrounded)
+        if (gravity.isGrounded)
         {
             if (_typeMovement == TypeMovement.RUN) stateMachineMove.SetState(sRun);
             else if (_typeMovement == TypeMovement.WALK) stateMachineMove.SetState(sWalk);
