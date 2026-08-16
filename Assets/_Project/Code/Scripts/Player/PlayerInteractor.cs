@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerInteractor : MonoBehaviour
+public class PlayerInteractor : MonoBehaviour, IUpdatable
 {
     [Header("Input")]
     [SerializeField] private InputActionReference interactAction;
     [Header("General settings")]
-    [SerializeField] private float range = 5f;
+    [SerializeField] private float _range = 5f;
 
 
   
@@ -16,21 +16,13 @@ public class PlayerInteractor : MonoBehaviour
     // interactions
     private IInteractBullet bulletControl;
     private IInteractHealth healthControl;
-
     
+    public float range {get{return _range;}}
 
-    private void Awake()
-    {
-        playerCemare = GetComponentInChildren<Camera>();
-        bulletControl = GetComponent<IInteractBullet>();
-        healthControl = GetComponent<IInteractHealth>();
-
-    }
-
-    private void Update()
+    public void ManualUpdate()
     {
         // execute interaction
-        if (Physics.Raycast(transform.position, playerCemare.transform.forward, out RaycastHit hit, range))
+        if (Physics.Raycast(playerCemare.transform.position, playerCemare.transform.forward, out RaycastHit hit, range))
         {
             if (hit.collider.TryGetComponent(out ILookedObj lookedObj))
             {
@@ -56,9 +48,21 @@ public class PlayerInteractor : MonoBehaviour
             {
                 interactHealth.Interact(healthControl);
             }
+            else if (hit.collider.TryGetComponent(out IInteractableObjDoor interactableObjDoor))
+            {
+                interactableObjDoor.Interact();
+            }
         }
         // if from looking ojb to nothing
         IsNotLooking();
+    }
+    
+    private void Awake()
+    {
+        playerCemare = GetComponentInChildren<Camera>();
+        bulletControl = GetComponent<IInteractBullet>();
+        healthControl = GetComponent<IInteractHealth>();
+
     }
 
     private void IsNotLooking()

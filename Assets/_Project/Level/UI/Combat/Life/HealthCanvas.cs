@@ -10,7 +10,6 @@ public class HealthCanvas : MonoBehaviour
 
     private IHealthUI attackedUI;
     private Slider sliderHelth;
-    private int damageTaked;
 
 
     private void OnDisable()
@@ -27,7 +26,6 @@ public class HealthCanvas : MonoBehaviour
     {
         sliderHelth = GetComponent<Slider>();
         attackedUI = attacked.GetComponent<IHealthUI>();
-        damageTaked = 0;
         sliderHelth.value = 1;
     }
 

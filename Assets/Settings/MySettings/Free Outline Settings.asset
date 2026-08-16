@@ -20,7 +20,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 134217728
-  renderQueue: 0
+  renderQueue: 2
   occlusion: 2
   maskingStrategy: 0
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -29,7 +29,7 @@ MonoBehaviour:
   blendMode: 0
   extrusionMethod: 0
   scaling: 0
-  width: 20
+  width: 10
   minWidth: 20
   scaleWithResolution: 1
   referenceResolution: 2
@@ -73,17 +73,17 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 268435456
-  renderQueue: 0
-  occlusion: 2
+  renderQueue: 2
+  occlusion: 0
   maskingStrategy: 0
   color: {r: 0.6926227, g: 1, b: 0.6556604, a: 1}
   enableOcclusion: 0
   occludedColor: {r: 1, g: 0, b: 0, a: 1}
   blendMode: 0
-  extrusionMethod: 1
+  extrusionMethod: 0
   scaling: 0
-  width: 20
-  minWidth: 14.8
+  width: 10
+  minWidth: 16.8
   scaleWithResolution: 1
   referenceResolution: 2
   customResolution: 0
