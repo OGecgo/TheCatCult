@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5071016639967384411}
   - component: {fileID: 7932852356541774695}
   - component: {fileID: 5857827165416196911}
-  - component: {fileID: 8210424835794230653}
+  - component: {fileID: 1092291162696376957}
   m_Layer: 30
-  m_Name: ViewDoor
+  m_Name: RealDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8210424835794230653
+--- !u!64 &1092291162696376957
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,8 +126,8 @@ GameObject:
   - component: {fileID: 9205796452177129429}
   - component: {fileID: 5480128786463005590}
   - component: {fileID: 6579742391524328291}
-  m_Layer: 0
-  m_Name: RealDoor
+  m_Layer: 26
+  m_Name: OutlineDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

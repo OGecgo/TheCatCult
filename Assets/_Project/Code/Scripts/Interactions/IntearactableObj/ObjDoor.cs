@@ -7,11 +7,11 @@ public class ObjDoor : MonoBehaviour, IInteractableObjDoor, ILookedObj, IPauseFe
 {
     private enum allowValues {negative = -1, positive = 1}
 
-    [SerializeField] private float speedOpen = 1;
+    [SerializeField] private float speedOpen = 3f;
     [SerializeField] private allowValues directionOpen = allowValues.negative;
     
     private int outlineLayer;
-    private int defaultLayer;
+    private int noOutlineLayer;
 
     private bool isOpen;
     private bool featureIsPaused;
@@ -21,7 +21,7 @@ public class ObjDoor : MonoBehaviour, IInteractableObjDoor, ILookedObj, IPauseFe
 
     public void IsNotLooked()
     {
-        this.gameObject.layer = defaultLayer;
+        this.gameObject.layer = noOutlineLayer;
     }
 
     public void IsLooked()
@@ -43,7 +43,7 @@ public class ObjDoor : MonoBehaviour, IInteractableObjDoor, ILookedObj, IPauseFe
     private void Awake()
     {
         outlineLayer = LayerMask.NameToLayer("OutlineLayer");
-        defaultLayer = LayerMask.NameToLayer("Default"); 
+        noOutlineLayer = LayerMask.NameToLayer("NoOutlineLayer"); 
         isOpen = false;
         featureIsPaused = false;
         closeRotation = transform.localRotation;

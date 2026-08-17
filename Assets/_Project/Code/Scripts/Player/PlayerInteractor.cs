@@ -48,9 +48,13 @@ public class PlayerInteractor : MonoBehaviour, IUpdatable
             {
                 interactHealth.Interact(healthControl);
             }
-            else if (hit.collider.TryGetComponent(out IInteractableObjDoor interactableObjDoor))
+            else if (hit.collider.TryGetComponent(out IInteractableObjDoor interactableDoor))
             {
-                interactableObjDoor.Interact();
+                interactableDoor.Interact();
+            }
+            else if (hit.collider.TryGetComponent(out IInteractableObjButton interactableButton))
+            {
+                interactableButton.Interact();
             }
         }
         // if from looking ojb to nothing
