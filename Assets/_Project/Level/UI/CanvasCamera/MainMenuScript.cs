@@ -12,7 +12,7 @@ public class MainMenuScript : MonoBehaviour
     }
     public void ControlStartGame()
     {
-        SceneManager.LoadSceneAsync("FirstLevel");
+        SceneManager.LoadSceneAsync("World");
     }
 
     public void ControlMainMenu()

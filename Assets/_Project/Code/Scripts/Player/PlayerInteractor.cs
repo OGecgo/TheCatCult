@@ -56,6 +56,10 @@ public class PlayerInteractor : MonoBehaviour, IUpdatable
             {
                 interactableButton.Interact();
             }
+            else if (hit.collider.TryGetComponent(out IInteractableObjEndCollum interactableEndCollum))
+            {
+                interactableEndCollum.Interact();
+            }
         }
         // if from looking ojb to nothing
         IsNotLooking();
