@@ -1,22 +1,22 @@
-using System;
-using UnityEditorInternal;
 using UnityEngine;
+
 
 public class EnemyCatMovement: IEnemyCatMovement
 {
-    private TypeMovement _typeMovement;
 
     private IStateMachineMove stateMachineMove;
     private IStateMove sWalk;
     private IStateMove sRun;
     private ICharacterGravity gravity;
 
-    public TypeMovement typeMovement { set{_typeMovement = value;}}
+    
 
-    public EnemyCatMovement(ICharacterGravity gravity, EnemyCatConfRecord eccr)
+    public IEnemyCatMovement.TypeMovement typeMovement { private get; set;}
+
+    public EnemyCatMovement(ICharacterGravity gravity, EnemyCatMovementConfRecord eccr)
     {
         this.gravity = gravity;
-        _typeMovement = TypeMovement.WHAIT;
+        typeMovement = IEnemyCatMovement.TypeMovement.WHAIT;
 
         // states
         sWalk = new StateWalk(gravity, eccr.walkConf);
@@ -30,14 +30,14 @@ public class EnemyCatMovement: IEnemyCatMovement
         // set state
         if (gravity.isGrounded)
         {
-            if (_typeMovement == TypeMovement.RUN) stateMachineMove.SetState(sRun);
-            else if (_typeMovement == TypeMovement.WALK) stateMachineMove.SetState(sWalk);
+            if (typeMovement == IEnemyCatMovement.TypeMovement.RUN) stateMachineMove.SetState(sRun);
+            else if (typeMovement == IEnemyCatMovement.TypeMovement.WALK) stateMachineMove.SetState(sWalk);
         }
         else
             stateMachineMove.direction = Vector3.zero;
 
         // move
-        if (_typeMovement != TypeMovement.WHAIT) stateMachineMove.direction = Vector3.forward;
+        if (typeMovement != IEnemyCatMovement.TypeMovement.WHAIT) stateMachineMove.direction = Vector3.forward;
         else stateMachineMove.direction = Vector3.zero;
 
         stateMachineMove.ManualUpdate();

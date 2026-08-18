@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class EnemyCatConfRecord
+public class EnemyCatMovementConfRecord
 {
     private WalkConf _walkConf;
     private RunConf _runConf;
@@ -9,7 +9,7 @@ public class EnemyCatConfRecord
     public WalkConf walkConf { get{return _walkConf;} set{_walkConf = value;} }
     public RunConf runConf { get{return _runConf;} set{_runConf = value;} }
 
-    public EnemyCatConfRecord
+    public EnemyCatMovementConfRecord
     (
         WalkConf walkConf,
         RunConf runConf

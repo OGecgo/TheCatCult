@@ -9,7 +9,7 @@ public class DistanceWeapon: IDistanceWeapon
     private int bulletsUsed;
     private int bunchOfBullets;
 
-    public bool isRealoading {get{return timerCountRelaod > 0;}}
+    public bool isReloading {get{return timerCountRelaod > 0;}}
     public int currentBullets {get{return config.bullets - bulletsUsed;}}
     public int currentBunchOfBullets {get{return bunchOfBullets;}}
 
@@ -29,7 +29,7 @@ public class DistanceWeapon: IDistanceWeapon
 
     public void StartReloading()
     {
-        if (isRealoading) return;
+        if (isReloading) return;
 
         if (bunchOfBullets > 0)
         {
@@ -51,7 +51,7 @@ public class DistanceWeapon: IDistanceWeapon
 
     public void Attack(Vector3 position, Vector3 direction)
     {
-        if (isRealoading) return;
+        if (isReloading) return;
 
         if (timerCountAttack <= 0f && bulletsUsed < config.bullets)
         {

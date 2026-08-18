@@ -6,7 +6,7 @@ public interface IDistanceWeapon
     // after ReloadBullets 
     // for time isReloading == true 
     // needed do UpdateReloading untile isReloading == false
-    public bool isRealoading {get;}
+    public bool isReloading {get;}
     public int currentBullets {get;}
     public int currentBunchOfBullets {get;}
     public void ResetTimer();

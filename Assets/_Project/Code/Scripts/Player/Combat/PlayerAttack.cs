@@ -41,7 +41,7 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IInteractBullet, IBulletU
         }
 
         // update reloading
-        if (distanceWeapon.isRealoading)
+        if (distanceWeapon.isReloading)
         {
             distanceWeapon.UpdateIsReloading();
         }

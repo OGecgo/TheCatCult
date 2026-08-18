@@ -67,6 +67,8 @@ public class ObjEndCollum : MonoBehaviour, IInteractableObjEndCollum, IPauseFeat
             {
                 if (dialogShow.isShowedText)
                 {
+                    // if pressed esc game will unposed (we dont want that)
+                    pauseControl.PauseGame();
                     SceneManager.LoadSceneAsync("EndComic");
                     break;
                 }

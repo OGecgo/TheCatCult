@@ -103,9 +103,9 @@ GameObject:
   - component: {fileID: 23380895908210791}
   - component: {fileID: 479892611266382827}
   - component: {fileID: 8299205379077572272}
-  - component: {fileID: 7950106673240316431}
   - component: {fileID: 1203422496663049128}
   - component: {fileID: 682182118826175035}
+  - component: {fileID: 2082768307245014368}
   m_Layer: 29
   m_Name: EnemyCat
   m_TagString: Untagged
@@ -225,21 +225,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FOVDetection
   m_fovConf: {fileID: 11400000, guid: 21f4c726f5b9516cabaea6a755d4ec48, type: 2}
---- !u!114 &7950106673240316431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190442579273531434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eb419325a2869c418b0e60e37bdc106, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyCatActoin
-  walkConf: {fileID: 11400000, guid: 90670c11c0d3c99dd8e1a326fbd87cf2, type: 2}
-  runConf: {fileID: 11400000, guid: 99eeb973fa2bebcf0a65cdf20d77e3f6, type: 2}
-  rotationConf: {fileID: 11400000, guid: 966707c7789095142ab4d699f7bf072e, type: 2}
 --- !u!114 &1203422496663049128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +252,23 @@ MonoBehaviour:
   lifeConf: {fileID: 11400000, guid: f839049156a1456d490397ea516c498f, type: 2}
   timeDamageWillShowed: 0.3
   colorWhenTakedDamage: {r: 0.6603774, g: 0, b: 0, a: 0}
+--- !u!114 &2082768307245014368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190442579273531434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb419325a2869c418b0e60e37bdc106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyCatActoin
+  walkConf: {fileID: 11400000, guid: 90670c11c0d3c99dd8e1a326fbd87cf2, type: 2}
+  runConf: {fileID: 11400000, guid: 99eeb973fa2bebcf0a65cdf20d77e3f6, type: 2}
+  rotationConf: {fileID: 11400000, guid: 966707c7789095142ab4d699f7bf072e, type: 2}
+  patrolPositions: []
+  timeAttacke: 2
 --- !u!1 &2794788012402968695
 GameObject:
   m_ObjectHideFlags: 0

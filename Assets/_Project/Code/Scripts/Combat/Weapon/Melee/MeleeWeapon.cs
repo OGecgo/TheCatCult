@@ -6,6 +6,8 @@ public class MeleeWeapon: IMeleeWeapon
 
     private float timerCount;
 
+    public bool isReload {get {return timerCount > 0f;}}
+
     public MeleeWeapon(MeleeWeaponConf meleeWeaponConf)
     {
         config = meleeWeaponConf;

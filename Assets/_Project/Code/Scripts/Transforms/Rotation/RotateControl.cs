@@ -11,6 +11,14 @@ public class RotationControl : IRotationControl
         transform = objTransform;
     }
 
+    public void UpdateRotation(float angle, Vector3 direction)
+    {
+        Quaternion rotation = Quaternion.Euler(angle * direction);
+        Quaternion temp = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * config.sensitivity);
+        Vector3 tempRotation = temp.eulerAngles;
+        tempRotation = TestDomain(tempRotation);
+        transform.rotation = Quaternion.Euler(tempRotation);
+    }
 
     public void UpdateRotateTo(Vector3 target) 
     { 
