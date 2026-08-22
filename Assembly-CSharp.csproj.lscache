@@ -60,7 +60,7 @@ Assets/Scripts/Class/
   EnemyCat.cs
   EnemyCatMovement.cs
   EnemyCatRotation.cs
-  EnemyCatUpdateManager.cs
+  EnemyCatUpdateContorller.cs
  FOVDetection.cs
  Movement.cs
  Player/
@@ -84,7 +84,7 @@ Assets/Scripts/Interface/
  IFOVDetection.cs
  IMovement.cs
  IRotationControl.cs
- ManagerMonoBehaviour/IUpdateManagerMonoBehaviour.cs
+ ManagerMonoBehaviour/IUpdateContorllerMonoBehaviour.cs
  Player/
   IPlayerHead.cs
   IPlayerMovement.cs

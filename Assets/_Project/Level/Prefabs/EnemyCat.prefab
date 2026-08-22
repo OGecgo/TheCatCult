@@ -268,7 +268,8 @@ MonoBehaviour:
   runConf: {fileID: 11400000, guid: 99eeb973fa2bebcf0a65cdf20d77e3f6, type: 2}
   rotationConf: {fileID: 11400000, guid: 966707c7789095142ab4d699f7bf072e, type: 2}
   patrolPositions: []
-  timeAttacke: 2
+  timeRandomWalk: 2
+  timeThinking: 1.5
 --- !u!1 &2794788012402968695
 GameObject:
   m_ObjectHideFlags: 0
