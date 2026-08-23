@@ -3,6 +3,7 @@ using UnityEngine;
 public class PauseController : MonoBehaviour, IPauseController
 {
     private IPauseUpdate[] pauseUpdate;
+    private IPauseFeatures[] pauseFeatures;
 
     public bool isPaused {get; private set;} 
     public void PauseGame()
@@ -12,7 +13,12 @@ public class PauseController : MonoBehaviour, IPauseController
         // pose the world
         foreach(IPauseUpdate m in pauseUpdate)
         {
-            m.ObjIsPaused(true);
+            m.UpdateIsPaused(true);
+        }
+
+        foreach (IPauseFeatures feature in pauseFeatures)
+        {
+            feature.FeatureIsPaused(true);
         }
 
         // free mouse
@@ -28,7 +34,12 @@ public class PauseController : MonoBehaviour, IPauseController
         // run the game
         foreach(IPauseUpdate m in pauseUpdate)
         {
-            m.ObjIsPaused(false);
+            m.UpdateIsPaused(false);
+        }
+
+        foreach (IPauseFeatures feature in pauseFeatures)
+        {
+            feature.FeatureIsPaused(false);
         }
 
         // locked mouse
@@ -41,5 +52,6 @@ public class PauseController : MonoBehaviour, IPauseController
     private void Awake()
     {
         pauseUpdate = GetComponentsInChildren<IPauseUpdate>();
+        pauseFeatures = GetComponentsInChildren<IPauseFeatures>();
     }
 }

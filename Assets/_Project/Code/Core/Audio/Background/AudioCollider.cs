@@ -1,13 +1,16 @@
 using UnityEngine;
 
-public class AudioForestCollider : MonoBehaviour, IPauseFeatures
+public class audioCollider : MonoBehaviour, IPauseFeatures
 {
+    [SerializeField] private string soundName;
+    [SerializeField] private string channelName;
     [SerializeField] private MonoBehaviour _audioController;
     [SerializeField] private float timeToPlay = 5f;
     [SerializeField] private float timeToPause = 3f;
 
     private IAudioController audioController;
     private bool featureIsPaused;
+    private LayerMask playerLayers;
 
     public void FeatureIsPaused(bool value)
     {
@@ -18,13 +21,14 @@ public class AudioForestCollider : MonoBehaviour, IPauseFeatures
     {
         audioController = _audioController.GetComponent<IAudioController>();
         featureIsPaused = false;
+        playerLayers = LayerMask.GetMask("PlayerLayer", "PlayerInvisibleLayer");
     }
     private void OnTriggerEnter(Collider other)
     {
         // only if player enter to collider
-        if (LayerMask.NameToLayer("PlayerLayer") == other.gameObject.layer)
+        if (((1 << other.gameObject.layer) & playerLayers) != 0)
         {
-            audioController.SetBackground("AudioMusicChannel", "Forest_Day");
+            audioController.SetBackground("AudioMusicChannel", soundName);
             audioController.PlayBackground("AudioMusicChannel", timeToPlay);
         }
     }
@@ -32,11 +36,11 @@ public class AudioForestCollider : MonoBehaviour, IPauseFeatures
     private void OnTriggerStay(Collider other)
     {
         // only if player stay in collider
-        if (LayerMask.NameToLayer("PlayerLayer") == other.gameObject.layer)
+        if (((1 << other.gameObject.layer) & playerLayers) != 0)
         {
             if (!featureIsPaused)
             {
-                audioController.SetBackground("AudioMusicChannel", "Forest_Day");
+                audioController.SetBackground("AudioMusicChannel", soundName);
                 audioController.PlayBackground("AudioMusicChannel", timeToPlay);
             }
             else
@@ -49,7 +53,7 @@ public class AudioForestCollider : MonoBehaviour, IPauseFeatures
     private void OnTriggerExit(Collider other)
     {
         // only if player exit from collider
-        if (LayerMask.NameToLayer("PlayerLayer") == other.gameObject.layer)
+        if (((1 << other.gameObject.layer) & playerLayers) != 0)
         {
             audioController.PauseBackground("AudioMusicChannel", timeToPause);
         }

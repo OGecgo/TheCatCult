@@ -102,7 +102,7 @@ public class PlayerLife : MonoBehaviour,
     private void SetInvincible()
     {
         // 0 is default
-        this.gameObject.layer = 0;
+        this.gameObject.layer = LayerMask.NameToLayer("PlayerInvisibleLayer");
     }
     private void UnsetInvincible()
     {
