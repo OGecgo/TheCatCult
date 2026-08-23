@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Σελίδα-1" id="RHhtozIAqVEN69dNCovi">
-        <mxGraphModel dx="2753" dy="989" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
+        <mxGraphModel dx="1740" dy="568" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -861,9 +861,6 @@
                             <mxPoint x="2120" y="160"/>
                         </Array>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="730" value="&lt;div&gt;Music:&lt;/div&gt;&lt;div&gt;- Pixabay: freesound_community: Dr.Macak(Freesound):&amp;nbsp;Forest wind and birds&lt;br&gt;&lt;/div&gt;&lt;div&gt;-&lt;/div&gt;&lt;div class=&quot;layout--JZpqG row--WOeiJ gap_8--tT8LQ align-center--fgDUV justify-start--fJwIv&quot;&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;div data-reactid=&quot;322&quot; class=&quot;_35I9i&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f5f5f5;strokeColor=#666666;fillStyle=solid;direction=west;gradientDirection=north;shadow=1;size=34;pointerEvents=1;fontColor=#333333;verticalAlign=top;fontSize=15;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="-330" y="35" width="290" height="185" as="geometry"/>
                 </mxCell>
                 <mxCell id="731" value="&lt;div&gt;Dont forget clean assets&lt;/div&gt;&lt;div class=&quot;layout--JZpqG row--WOeiJ gap_8--tT8LQ align-center--fgDUV justify-start--fJwIv&quot;&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;div data-reactid=&quot;322&quot; class=&quot;_35I9i&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f5f5f5;strokeColor=#666666;fillStyle=solid;direction=west;gradientDirection=north;shadow=1;size=34;pointerEvents=1;fontColor=#333333;verticalAlign=top;fontSize=15;align=left;" parent="1" vertex="1">
                     <mxGeometry x="-540" y="142" width="180" height="92.25" as="geometry"/>

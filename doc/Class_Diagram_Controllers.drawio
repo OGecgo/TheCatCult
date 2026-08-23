@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="RePGQ3kOqE9VC8m0xXN6" name="Page-1">
-        <mxGraphModel dx="-1503" dy="-432" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="-1808" dy="473" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -598,7 +598,7 @@
                 <mxCell id="72" value="" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;container=0;" parent="71" vertex="1">
                     <mxGeometry y="40" width="120" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="194" style="html=1;endSize=12;endArrow=open;endFill=0;rounded=0;edgeStyle=elbowEdgeStyle;" edge="1" parent="1" source="75" target="106">
+                <mxCell id="194" style="html=1;endSize=12;endArrow=open;endFill=0;rounded=0;edgeStyle=elbowEdgeStyle;" parent="1" source="75" target="106" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="4115" y="2577" as="sourcePoint"/>
                         <mxPoint x="4115" y="2600" as="targetPoint"/>
@@ -606,6 +606,15 @@
                             <mxPoint x="4210" y="2640"/>
                         </Array>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="195" value="&lt;div&gt;Music background:&lt;/div&gt;&lt;div&gt;- Pixabay: freesound_community: Dr.Macak(Freesound):&amp;nbsp;Forest wind and birds&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Pixabay: SimpleSounds: Dark Horror Opener&lt;/div&gt;&lt;div class=&quot;layout--JZpqG row--WOeiJ gap_8--tT8LQ align-center--fgDUV justify-start--fJwIv&quot;&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;div data-reactid=&quot;322&quot; class=&quot;_35I9i&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f5f5f5;strokeColor=#666666;fillStyle=solid;direction=west;gradientDirection=north;shadow=1;size=34;pointerEvents=1;fontColor=#333333;verticalAlign=top;fontSize=15;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="2870" y="1210" width="290" height="185" as="geometry"/>
+                </mxCell>
+                <mxCell id="196" value="&lt;div&gt;Music sfx:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;-&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;layout--JZpqG row--WOeiJ gap_8--tT8LQ align-center--fgDUV justify-start--fJwIv&quot;&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;div data-reactid=&quot;322&quot; class=&quot;_35I9i&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f5f5f5;strokeColor=#666666;fillStyle=solid;direction=west;gradientDirection=north;shadow=1;size=34;pointerEvents=1;fontColor=#333333;verticalAlign=top;fontSize=15;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="3210" y="1140" width="290" height="185" as="geometry"/>
+                </mxCell>
+                <mxCell id="197" value="&lt;div&gt;Music on obj:&lt;/div&gt;&lt;div&gt;- Pixabay: freesound_community:&amp;nbsp;lua lua (Freesound): Blah Blah Female&lt;br&gt;&lt;/div&gt;&lt;div&gt;-&lt;/div&gt;&lt;div class=&quot;layout--JZpqG row--WOeiJ gap_8--tT8LQ align-center--fgDUV justify-start--fJwIv&quot;&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;div data-reactid=&quot;322&quot; class=&quot;_35I9i&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f5f5f5;strokeColor=#666666;fillStyle=solid;direction=west;gradientDirection=north;shadow=1;size=34;pointerEvents=1;fontColor=#333333;verticalAlign=top;fontSize=15;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="2840" y="900" width="350" height="135" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
