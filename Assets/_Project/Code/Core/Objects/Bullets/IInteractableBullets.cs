@@ -1,4 +1,4 @@
-public interface IInteractableObjBullets
+public interface IInteractableBullets
 {
     public void Interact(IInteractBullet interactBullet);
 }

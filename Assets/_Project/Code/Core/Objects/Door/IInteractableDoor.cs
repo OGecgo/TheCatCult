@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IInteractableObjDoor
+public interface IInteractableDoor
 {
     public void Interact();
 }

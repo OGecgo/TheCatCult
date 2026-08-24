@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjBullets : MonoBehaviour, IInteractableObjBullets, ILookedObj, IPauseFeatures
+public class ObjBullets : MonoBehaviour, IInteractableBullets, ILookedObj, IPauseFeatures
 {
     private int outlineLayer;
     private int interactLayer;

@@ -11,14 +11,14 @@ public class PauseController : MonoBehaviour, IPauseController
         isPaused = true;
 
         // pose the world
-        foreach(IPauseUpdate m in pauseUpdate)
+        foreach(IPauseUpdate update in pauseUpdate)
         {
-            m.UpdateIsPaused(true);
+            if ((UnityEngine.Object)update != null) update.UpdateIsPaused(true);
         }
 
         foreach (IPauseFeatures feature in pauseFeatures)
         {
-            feature.FeatureIsPaused(true);
+            if ((UnityEngine.Object)feature != null) feature.FeatureIsPaused(true);
         }
 
         // free mouse
@@ -32,14 +32,14 @@ public class PauseController : MonoBehaviour, IPauseController
         isPaused = false;
 
         // run the game
-        foreach(IPauseUpdate m in pauseUpdate)
+        foreach(IPauseUpdate update in pauseUpdate)
         {
-            m.UpdateIsPaused(false);
+            if ((UnityEngine.Object)update != null) update.UpdateIsPaused(false);
         }
 
         foreach (IPauseFeatures feature in pauseFeatures)
         {
-            feature.FeatureIsPaused(false);
+            if ((UnityEngine.Object)feature != null) feature.FeatureIsPaused(false);
         }
 
         // locked mouse

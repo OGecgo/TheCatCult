@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class ObjButton : MonoBehaviour, IInteractableObjButton, ILookedObj, IPauseFeatures
+public class ObjButton : MonoBehaviour, IInteractableButton, ILookedObj, IPauseFeatures
 {
     [SerializeField] private MonoBehaviour _eventObj;
     [SerializeField] private MeshRenderer meshRenderer_On;

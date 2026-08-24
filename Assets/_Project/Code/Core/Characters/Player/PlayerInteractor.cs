@@ -15,7 +15,7 @@ public class PlayerInteractor : MonoBehaviour, IUpdatable
     private ILookedObj lastLookedObj;
     // interactions
     private IInteractBullet bulletControl;
-    private IInteractHealth healthControl;
+    private IInteractHealingPack healthControl;
     
     public float range {get{return _range;}}
 
@@ -40,23 +40,23 @@ public class PlayerInteractor : MonoBehaviour, IUpdatable
             
             if (!interactAction.action.triggered) return;
 
-            if (hit.collider.TryGetComponent(out IInteractableObjBullets interactBullet))
+            if (hit.collider.TryGetComponent(out IInteractableBullets interactBullet))
             {
                 interactBullet.Interact(bulletControl) ;
             }
-            else if (hit.collider.TryGetComponent(out IInteractableObjHeal interactHealth))
+            else if (hit.collider.TryGetComponent(out IInteractableHealingPack interactHealth))
             {
                 interactHealth.Interact(healthControl);
             }
-            else if (hit.collider.TryGetComponent(out IInteractableObjDoor interactableDoor))
+            else if (hit.collider.TryGetComponent(out IInteractableDoor interactableDoor))
             {
                 interactableDoor.Interact();
             }
-            else if (hit.collider.TryGetComponent(out IInteractableObjButton interactableButton))
+            else if (hit.collider.TryGetComponent(out IInteractableButton interactableButton))
             {
                 interactableButton.Interact();
             }
-            else if (hit.collider.TryGetComponent(out IInteractableObjEndCollum interactableEndCollum))
+            else if (hit.collider.TryGetComponent(out IInteractableEndCollum interactableEndCollum))
             {
                 interactableEndCollum.Interact();
             }
@@ -69,7 +69,7 @@ public class PlayerInteractor : MonoBehaviour, IUpdatable
     {
         playerCemare = GetComponentInChildren<Camera>();
         bulletControl = GetComponent<IInteractBullet>();
-        healthControl = GetComponent<IInteractHealth>();
+        healthControl = GetComponent<IInteractHealingPack>();
 
     }
 

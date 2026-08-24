@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerLife : MonoBehaviour, 
     IUpdatable, IPauseFeatures, 
     IDamageable, 
-    IInteractHealth,
+    IInteractHealingPack,
     IDamageUI, IHealingPackUI, IHealthUI, ILowHealthUI
 
 {   

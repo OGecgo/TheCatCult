@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class ObjEndCollum : MonoBehaviour, IInteractableObjEndCollum, IPauseFeatures, ILookedObj
+public class ObjEndCollum : MonoBehaviour, IInteractableEndCollum, IPauseFeatures, ILookedObj
 {
     [SerializeField] private InputActionReference endGame;
     [SerializeField] private MonoBehaviour _gameController;

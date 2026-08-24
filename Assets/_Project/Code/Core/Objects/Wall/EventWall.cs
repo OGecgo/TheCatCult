@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
 
-public class EventObjWall : MonoBehaviour, IEvent, IPauseFeatures
+public class EventWall : MonoBehaviour, IEvent, IPauseFeatures
 {
     [SerializeField] private float speedOpen = 3f;
 

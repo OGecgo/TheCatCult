@@ -1,4 +1,4 @@
-public interface IInteractHealth
+public interface IInteractHealingPack
 {
     public void GetHealingPack();
 }

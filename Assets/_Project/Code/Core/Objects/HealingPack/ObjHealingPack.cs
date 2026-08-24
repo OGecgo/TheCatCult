@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class ObjHealingPack : MonoBehaviour, IInteractableObjHeal, ILookedObj, IPauseFeatures
+public class ObjHealingPack : MonoBehaviour, IInteractableHealingPack, ILookedObj, IPauseFeatures
 {
 
     private int outlineLayer;
     private int interactLayer;
 
     private bool featureIsPaused;
-    public void Interact(IInteractHealth interactHealth)
+    public void Interact(IInteractHealingPack interactHealth)
     {
         if (featureIsPaused) return;
 

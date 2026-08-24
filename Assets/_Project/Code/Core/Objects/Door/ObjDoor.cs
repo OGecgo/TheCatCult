@@ -3,7 +3,7 @@ using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ObjDoor : MonoBehaviour, IInteractableObjDoor, ILookedObj, IPauseFeatures
+public class ObjDoor : MonoBehaviour, IInteractableDoor, ILookedObj, IPauseFeatures
 {
     private enum allowValues {negative = -1, positive = 1}
 
