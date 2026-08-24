@@ -2574,6 +2574,9 @@ GameObject:
   - component: {fileID: 438485740}
   - component: {fileID: 438485739}
   - component: {fileID: 438485741}
+  - component: {fileID: 438485743}
+  - component: {fileID: 438485742}
+  - component: {fileID: 438485744}
   m_Layer: 31
   m_Name: Player
   m_TagString: Untagged
@@ -2688,10 +2691,6 @@ MonoBehaviour:
   healAction: {fileID: -7743805479477625291, guid: c73c28d90eb22cd87997cbe7f3c07159, type: 3}
   lifeConf: {fileID: 11400000, guid: 82ce310a30c7b1cf2a4b2c0649d716ea, type: 2}
   healingPackConf: {fileID: 11400000, guid: c041e5fa4b66da0e39f34c443fded701, type: 2}
-  pushUp: 2
-  pushBack: 5
-  timerInvincible: 1
-  precentShowLowHealth: 0.3
 --- !u!114 &438485741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2706,6 +2705,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   interactAction: {fileID: 3558806375073776140, guid: c73c28d90eb22cd87997cbe7f3c07159, type: 3}
   _range: 5
+--- !u!114 &438485742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438485728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ff9697788ae596dbc4ebedd1fa7389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLifeUI
+  precentShowLowHealth: 0.3
+  timerAttackShow: 1
+--- !u!114 &438485743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438485728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29cbde45ecd4575429e65c98c3fe5279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLifeReaction
+  pushUp: 3.5
+  pushBack: 3
+  timerInvincible: 1
+--- !u!114 &438485744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438485728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb56677621e4ff75fa697ac417f96fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackUI
 --- !u!1 &472058655
 GameObject:
   m_ObjectHideFlags: 0

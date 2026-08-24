@@ -6,10 +6,10 @@ public class PlayerRotation: IPlayerRotation
     private InputActionReference rotationAction;
     private IRotationControl playerRotationControl;
 
-    public PlayerRotation(InputActionReference rotation, RotationConf rotationConf, Transform playerTransform)
+    public PlayerRotation(InputActionReference rotation, RotationConf rotationConf, Transform PlayerControlTransform)
     {
         rotationAction = rotation;
-        playerRotationControl = new RotationControl(rotationConf, playerTransform);
+        playerRotationControl = new RotationControl(rotationConf, PlayerControlTransform);
     }
 
     public void ManualUpdate()

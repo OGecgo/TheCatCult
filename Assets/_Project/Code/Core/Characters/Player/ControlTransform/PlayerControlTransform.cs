@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerTransform : MonoBehaviour, IUpdatable
+public class PlayerControlTransform : MonoBehaviour, IUpdatable
 {
     [Header("Input")]
     [SerializeField] private InputActionReference moveAction;

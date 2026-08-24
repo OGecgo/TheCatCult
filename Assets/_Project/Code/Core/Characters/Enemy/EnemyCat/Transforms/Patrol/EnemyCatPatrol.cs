@@ -23,7 +23,7 @@ public class EnemyCatPatrol : MonoBehaviour, IUpdatable
     private IUpdatable randomWalks;
     private IUpdatable lookAround;
     
-    private IIsAttaked isAttakedObj; 
+    private ILifeAction enemyCatLife; 
 
     private IFOVDetection fovD;
     private IEnemyCatRotation rotation;
@@ -56,12 +56,12 @@ public class EnemyCatPatrol : MonoBehaviour, IUpdatable
 
     private void OnEnable()
     {
-        isAttakedObj.OnIsAttaked += IsAttacked;
+        enemyCatLife.OnIsAttacked += IsAttacked;
     }
 
     private void OnDisable()
     {
-        isAttakedObj.OnIsAttaked -= IsAttacked;
+        enemyCatLife.OnIsAttacked -= IsAttacked;
     }
 
     private void Awake()
@@ -73,7 +73,7 @@ public class EnemyCatPatrol : MonoBehaviour, IUpdatable
             new EnemyCatMovementConfRecord(walkConf, runConf)
         );
         rotation = new EnemyCatRotation(rotationConf, gameObject.GetComponent<Transform>());
-        isAttakedObj = this.GetComponent<IIsAttaked>();
+        enemyCatLife = this.GetComponent<ILifeAction>();
 
 
         // initialization state machin

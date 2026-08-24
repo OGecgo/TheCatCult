@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
  
-public class PlayerAttack : MonoBehaviour, IUpdatable, IInteractBullet, IBulletUI
+public class PlayerAttack : MonoBehaviour, IUpdatable, IInteractBullet, IBulletsAction
 {
     [Header("Input")]
     [SerializeField] private InputActionReference attackAction;
@@ -15,6 +15,8 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IInteractBullet, IBulletU
 
     public event Action<int, int> OnSetBullets;
     public event Action<int> OnSetBunchOfBullets;
+    // will be used for animation and sounds
+    public event Action OnReloadBullets; 
 
     public void ManualUpdate()
     {
@@ -24,7 +26,7 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IInteractBullet, IBulletU
             // shoot
             distanceWeapon.Attack(playerCamera.transform.position, playerCamera.transform.forward);
             // show on screen bullets
-            OnSetBullets.Invoke(distanceWeapon.currentBullets, distanceWeaponConf.bullets);
+            OnSetBullets?.Invoke(distanceWeapon.currentBullets, distanceWeaponConf.bullets);
         } 
         else
         { 
@@ -36,8 +38,9 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IInteractBullet, IBulletU
         {
             distanceWeapon.StartReloading();
             distanceWeapon.ResetTimer();
-            OnSetBunchOfBullets.Invoke(distanceWeapon.currentBunchOfBullets);
-            OnSetBullets.Invoke(distanceWeapon.currentBullets, distanceWeaponConf.bullets);
+            OnSetBunchOfBullets?.Invoke(distanceWeapon.currentBunchOfBullets);
+            OnSetBullets?.Invoke(distanceWeapon.currentBullets, distanceWeaponConf.bullets);
+            OnReloadBullets?.Invoke();
         }
 
         // update reloading
@@ -61,8 +64,8 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IInteractBullet, IBulletU
 
     private void Start()
     {
-        OnSetBullets.Invoke(distanceWeapon.currentBullets, distanceWeaponConf.bullets);
-        OnSetBunchOfBullets.Invoke(distanceWeapon.currentBunchOfBullets);
+        OnSetBullets?.Invoke(distanceWeapon.currentBullets, distanceWeaponConf.bullets);
+        OnSetBunchOfBullets?.Invoke(distanceWeapon.currentBunchOfBullets);
     }
 
 }
