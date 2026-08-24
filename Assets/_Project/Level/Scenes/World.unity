@@ -2717,6 +2717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ff9697788ae596dbc4ebedd1fa7389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLifeUI
+  lifeConf: {fileID: 11400000, guid: 82ce310a30c7b1cf2a4b2c0649d716ea, type: 2}
   precentShowLowHealth: 0.3
   timerAttackShow: 1
 --- !u!114 &438485743

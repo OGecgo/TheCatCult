@@ -6,7 +6,6 @@ public class Life : ILife
     private LifeConf config;
     public event Action OnDie;
 
-    public float healthPrecent {get{return (config.health - damageTaked)/(float)config.health;}}
     public int health { get{return config.health - damageTaked;} }
     
     public Life(LifeConf lifeConf)

@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class EnemyCatPatrol : MonoBehaviour, IUpdatable
+public class EnemyCatAction : MonoBehaviour, IUpdatable
 {
     [Header("General settings")]
     [SerializeField] private WalkConf walkConf;

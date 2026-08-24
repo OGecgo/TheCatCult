@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerLifeUI : MonoBehaviour, IDamageUI, IHealingPackUI, IHealthUI, ILowHealthUI
 {
     [Header("Player added life settings")]
+    [SerializeField] private LifeConf lifeConf;
     [SerializeField] [Range (0, 1)] private float precentShowLowHealth = 0.3f;
     [SerializeField] private float timerAttackShow = 1f;
 
@@ -51,7 +52,7 @@ public class PlayerLifeUI : MonoBehaviour, IDamageUI, IHealingPackUI, IHealthUI,
         // update health UI
         if (OnSetLife != null) OnSetLife.Invoke(health);
         // update low health UI
-        if (health <= precentShowLowHealth)
+        if (health/lifeConf.health <= precentShowLowHealth)
         {
             if (OnIsLowHealth != null) OnIsLowHealth.Invoke();
         }
