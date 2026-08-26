@@ -27,6 +27,7 @@ public class WorldPauseMenu : MonoBehaviour
     {
         canvasController = _canvasController.GetComponent<ICanvasController>();
         worldPauseMenuUI = _worldPauseMenuUI.GetComponent<IWorldPauseMenuUI>();
+        ClosePause();
     }
 
     private void ClosePause()
