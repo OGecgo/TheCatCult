@@ -11,11 +11,17 @@ public class EnemyCatLifeReaction : MonoBehaviour
 
     private ILifeAction enemyCatLife;
     private Coroutine coroutine;
+    private Color originalColor;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         enemyCatLife = this.GetComponent<ILifeAction>();
+    }
+
+    private void Start()
+    {
+        originalColor = meshRenderer.material.color;
     }
 
     private void OnEnable()
@@ -30,15 +36,18 @@ public class EnemyCatLifeReaction : MonoBehaviour
 
     private void UpdateMeshAttaked()
     {
-        if (coroutine != null)StopCoroutine(coroutine);
+        if (coroutine != null) 
+        {
+            StopCoroutine(coroutine);
+            meshRenderer.material.color = originalColor;
+        }
         coroutine = StartCoroutine(ShowDamageTaked());        
     }
 
     private IEnumerator ShowDamageTaked()
     {
-        Color tempColor = meshRenderer.material.color;
         meshRenderer.material.color = colorWhenTakedDamage;
         yield return new WaitForSeconds(timeDamageWillShowed);
-        meshRenderer.material.color = tempColor;
+        meshRenderer.material.color = originalColor;
     }
 }
