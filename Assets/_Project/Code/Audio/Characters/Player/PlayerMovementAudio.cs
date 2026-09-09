@@ -44,7 +44,8 @@ public class PlayerMovementAudio : MonoBehaviour
     
     private void PlayRunAudio()
     {
-        if  ( audioController.IsPlayedBackground(channelName) && audioController.GetClipBackground(channelName) == soundRunName)
+        // dont play again run if it played
+        if  ( audioController.IsPlayedBackground(channelName) && audioController.GetPlayedClipBackground(channelName) == soundRunName)
         {
             return;
         }
@@ -56,7 +57,7 @@ public class PlayerMovementAudio : MonoBehaviour
     private void StopRunAudio()
     {
         // stop only if its run
-        if  ( audioController.IsPlayedBackground(channelName) && audioController.GetClipBackground(channelName) == soundRunName)
+        if  ( audioController.IsPlayedBackground(channelName) && audioController.GetPlayedClipBackground(channelName) == soundRunName)
         {
             audioController.PauseBackground(channelName);
         }        
@@ -64,7 +65,8 @@ public class PlayerMovementAudio : MonoBehaviour
 
     private void PlayWalkAudio()
     {
-        if  ( audioController.IsPlayedBackground(channelName) && audioController.GetClipBackground(channelName) == soundWalkName)
+        // dont play again walk if it played
+        if  ( audioController.IsPlayedBackground(channelName) && audioController.GetPlayedClipBackground(channelName) == soundWalkName)
         {
             return;
         }
@@ -74,7 +76,7 @@ public class PlayerMovementAudio : MonoBehaviour
     private void StopWalkAudio()
     {
         // stop only if its walk
-        if  ( audioController.IsPlayedBackground(channelName) && audioController.GetClipBackground(channelName) == soundWalkName)
+        if  ( audioController.IsPlayedBackground(channelName) && audioController.GetPlayedClipBackground(channelName) == soundWalkName)
         {
             audioController.PauseBackground(channelName);
         }      

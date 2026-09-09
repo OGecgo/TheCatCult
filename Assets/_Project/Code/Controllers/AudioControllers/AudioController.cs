@@ -24,8 +24,7 @@ public class AudioController : MonoBehaviour, IAudioController
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private SourceData[] backgroundSource;
 
-    [SerializeField] private ClipData[] sfxClip;
-    [SerializeField] private ClipData[] backgroundClips;
+    [SerializeField] private ClipData[] clips;
 
     // class because i needed pointer to data
     private class SourceDataExtended
@@ -44,15 +43,14 @@ public class AudioController : MonoBehaviour, IAudioController
 
     // using dictionary fast find sound O(1)
     private Dictionary<string, SourceDataExtended> backgroundSourceDict;
-    private Dictionary<string, AudioClip> sfxClipDict;
-    private Dictionary<string, AudioClip> backgroundClipDict;
+    private Dictionary<string, AudioClip> clipDict;
 
 
     public void SetBackground(string nameSource, string nameClip)
     {
         if (backgroundSourceDict.TryGetValue(nameSource, out SourceDataExtended source))
         {
-            if (backgroundClipDict.TryGetValue(nameClip, out AudioClip clip))
+            if (clipDict.TryGetValue(nameClip, out AudioClip clip))
             {
                 source.source.clip = clip;
                 source.currentClip = nameClip;
@@ -71,7 +69,7 @@ public class AudioController : MonoBehaviour, IAudioController
 
     public void PlayOneShotSFX(string nameClip)
     {
-        if (sfxClipDict.TryGetValue(nameClip, out AudioClip clip))
+        if (clipDict.TryGetValue(nameClip, out AudioClip clip))
         {
             sfxSource.PlayOneShot(clip);            
         }
@@ -112,7 +110,7 @@ public class AudioController : MonoBehaviour, IAudioController
         }
     }
 
-    public string GetClipBackground(string nameSource)
+    public string GetPlayedClipBackground(string nameSource)
     {
        if (backgroundSourceDict.TryGetValue(nameSource, out SourceDataExtended sourceExtended))
         {
@@ -120,7 +118,7 @@ public class AudioController : MonoBehaviour, IAudioController
         }
         else
         {
-            Debug.LogError("AudioController Error:: GetClipBackground:\n Source with name=" + nameSource + " not exist");
+            Debug.LogError("AudioController Error:: GetPlayedClipBackground:\n Source with name=" + nameSource + " not exist");
             return "";
         }
     }
@@ -159,19 +157,33 @@ public class AudioController : MonoBehaviour, IAudioController
         }
     }
 
+    public AudioClip GetClip(string nameClip)
+    {
+        if (clipDict.TryGetValue(nameClip, out AudioClip clip))
+        {
+            return clip;
+        }
+        else
+        {
+            Debug.LogWarning("AudioController Warning:: GetClip:\n Source with name=" + nameClip + " not exist");
+            return null;
+        }
+    }
+
+
     private void Awake()
     {
         // clips save to dictionary
-        backgroundClipDict = new Dictionary<string, AudioClip>();
-        foreach (ClipData c in backgroundClips)
+        clipDict = new Dictionary<string, AudioClip>();
+        foreach (ClipData c in clips)
         {
-            backgroundClipDict.Add(c.name, c.clip);
+            clipDict.Add(c.name, c.clip);
         }
 
-        sfxClipDict = new Dictionary<string, AudioClip>();
-        foreach (ClipData s in sfxClip)
+        clipDict = new Dictionary<string, AudioClip>();
+        foreach (ClipData s in clips)
         {
-            sfxClipDict.Add(s.name, s.clip);
+            clipDict.Add(s.name, s.clip);
         }
         // sources
         backgroundSourceDict = new Dictionary<string, SourceDataExtended>();

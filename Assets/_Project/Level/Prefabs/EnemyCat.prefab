@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 2082768307245014368}
   - component: {fileID: 6408405798758122373}
   - component: {fileID: 2318619948489677014}
+  - component: {fileID: 6696546130074672102}
   - component: {fileID: 2226963845633182149}
   m_Layer: 29
   m_Name: EnemyCat
@@ -317,6 +318,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCatMovement
   walkConf: {fileID: 11400000, guid: 90670c11c0d3c99dd8e1a326fbd87cf2, type: 2}
   runConf: {fileID: 11400000, guid: 99eeb973fa2bebcf0a65cdf20d77e3f6, type: 2}
+--- !u!114 &6696546130074672102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190442579273531434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c1051b4767298c790de7d6403741ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyCatSoundMovement
+  _audioController: {fileID: 0}
+  enemyAudiotSource: {fileID: 369216726476236300}
+  soundRunName: Run
+  soundWalkName: Walk
+  soundTouchGroundName: FallLand
 --- !u!114 &2226963845633182149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,7 +517,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8029823084589171706, guid: 9111fe7032e92e99fa64d091a1c515f1, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 6616f80db7978c6fd9f212fc57b75679, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

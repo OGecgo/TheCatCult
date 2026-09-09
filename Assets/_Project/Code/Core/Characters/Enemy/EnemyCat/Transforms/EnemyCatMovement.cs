@@ -41,6 +41,11 @@ public class EnemyCatMovement: MonoBehaviour, IEnemyCatMovement, IUpdatable
                 OnStopWalk?.Invoke();
                 OnRun?.Invoke();
             } 
+            else
+            {
+                OnStopWalk?.Invoke();
+                OnStopRun?.Invoke();
+            }
         }
         else
         {
