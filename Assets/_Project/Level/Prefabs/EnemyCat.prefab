@@ -108,6 +108,8 @@ GameObject:
   - component: {fileID: 2487301417498341299}
   - component: {fileID: 2082768307245014368}
   - component: {fileID: 6408405798758122373}
+  - component: {fileID: 2318619948489677014}
+  - component: {fileID: 2226963845633182149}
   m_Layer: 29
   m_Name: EnemyCat
   m_TagString: Untagged
@@ -301,6 +303,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioPaused
   audioSources:
   - {fileID: 369216726476236300}
+--- !u!114 &2318619948489677014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190442579273531434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d479b964c8347d0da906c70d04c458d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyCatMovement
+  walkConf: {fileID: 11400000, guid: 90670c11c0d3c99dd8e1a326fbd87cf2, type: 2}
+  runConf: {fileID: 11400000, guid: 99eeb973fa2bebcf0a65cdf20d77e3f6, type: 2}
+--- !u!114 &2226963845633182149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190442579273531434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb365ac1f21c1ed783dab8daaaea9b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyCatRotation
+  rotationConf: {fileID: 11400000, guid: 966707c7789095142ab4d699f7bf072e, type: 2}
 --- !u!1 &2794788012402968695
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +467,7 @@ GameObject:
   - component: {fileID: 7098140678309677323}
   - component: {fileID: 369216726476236300}
   m_Layer: 29
-  m_Name: AudioSource
+  m_Name: EnemyAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

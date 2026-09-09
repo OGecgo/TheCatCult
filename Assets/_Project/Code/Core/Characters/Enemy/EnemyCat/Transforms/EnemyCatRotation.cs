@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
-public class EnemyCatRotation : IEnemyCatRotation
+public class EnemyCatRotation : MonoBehaviour, IEnemyCatRotation, IUpdatable
 {
+    [SerializeField] private RotationConf rotationConf;
+
     private enum UpdateState {STATE_POSTARGET, STATE_ANGLE}
 
     private Vector3 _posTarget;
@@ -22,15 +25,6 @@ public class EnemyCatRotation : IEnemyCatRotation
         }
     }
 
-
-    public EnemyCatRotation(RotationConf rotationConf, Transform transform)
-    {
-        controle = new RotationControl(rotationConf, transform);
-        angle = 0f;
-        posTarget = Vector3.zero;        
-    }
- 
-
     public void ManualUpdate()
     {
         switch (state)
@@ -43,4 +37,12 @@ public class EnemyCatRotation : IEnemyCatRotation
                 break;
         }
     }
+
+    private void Awake()
+    {
+        controle = new RotationControl(rotationConf, this.transform);
+        angle = 0f;
+        posTarget = Vector3.zero;        
+    }
+ 
 }

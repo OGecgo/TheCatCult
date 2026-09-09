@@ -50,8 +50,6 @@ public class EnemyCatAction : MonoBehaviour, IUpdatable
             countTimeLookAround -= Time.deltaTime;
         }
         patrolMachin.ManualUpdate();
-        rotation.ManualUpdate();
-        movement.ManualUpdate();
     }
 
     private void OnEnable()
@@ -67,14 +65,16 @@ public class EnemyCatAction : MonoBehaviour, IUpdatable
     private void Awake()
     {
         fovD = this.GetComponent<IFOVDetection>();
-        movement = new EnemyCatMovement
-        (
-            gameObject.GetComponent<ICharacterGravity>(),
-            new EnemyCatMovementConfRecord(walkConf, runConf)
-        );
-        rotation = new EnemyCatRotation(rotationConf, gameObject.GetComponent<Transform>());
+        movement = this.GetComponent<IEnemyCatMovement>();
+        rotation = this.GetComponent<IEnemyCatRotation>();
         enemyCatLife = this.GetComponent<ILifeAction>();
 
+        isLostPath = false;
+        countTimeLookAround = 0f;
+    }    
+
+    private void Start()
+    {
 
         // initialization state machin
         followPlayer = new StateEnemyCatFollowPlayer(fovD, movement, rotation);
@@ -85,12 +85,7 @@ public class EnemyCatAction : MonoBehaviour, IUpdatable
         patrolMachin = new UpdatableStateMachine<IUpdatable>();
         patrolMachin.SetState(pathWalks);
 
-        isLostPath = false;
-        countTimeLookAround = 0f;
-    }    
-
-    private void Start()
-    {
+        // fov detection
         fovD.StartDetection();
     }
 
