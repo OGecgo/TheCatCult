@@ -32,12 +32,12 @@ public class AudioController : MonoBehaviour, IAudioController
     {
         public AudioSource source;
         public Coroutine coroutine;
-        public bool isRunning;
+        public string currentClip;
         public SourceDataExtended(AudioSource source)
         {
             this.source = source;
             this.coroutine = null;
-            this.isRunning = false;
+            this.currentClip = "";
         }
     }
 
@@ -55,11 +55,16 @@ public class AudioController : MonoBehaviour, IAudioController
             if (backgroundClipDict.TryGetValue(nameClip, out AudioClip clip))
             {
                 source.source.clip = clip;
+                source.currentClip = nameClip;
+            }
+            else
+            {
+                Debug.LogError("AudioController Error:: SetBackground:\n Clip with name=" + nameClip + " not exist");
             }
         }
         else
         {
-            Debug.LogWarning("AudioManager Error: Sound with name=" + name + " not exist");
+            Debug.LogError("AudioController Error:: SetBackground:\n Source with name=" + nameSource + " not exist");
         }
     }
 
@@ -70,20 +75,53 @@ public class AudioController : MonoBehaviour, IAudioController
         {
             sfxSource.PlayOneShot(clip);            
         }
+        else
+        {
+            Debug.LogError("AudioController Error:: PlayOneShotSFX:\n Clip with name=" + nameClip + " not exist");
+        }
     }
 
     public void PlayBackground(string nameSource, float timeToPlay = 0f)
     {
         if (backgroundSourceDict.TryGetValue(nameSource, out SourceDataExtended sourceExtended))
         {
-            if (sourceExtended.coroutine == null || !sourceExtended.isRunning)
+            if (sourceExtended.coroutine == null || !sourceExtended.source.isPlaying)
             {
                 // if not running and coroutine is not null (stop or pause coroutine is running or nothing is running)
                 if (sourceExtended.coroutine != null) StopCoroutine(sourceExtended.coroutine);
 
                 sourceExtended.coroutine = StartCoroutine(CoroutinePlayMusic(sourceExtended, timeToPlay));
-                sourceExtended.isRunning = true;
             }
+        }
+        else
+        {
+            Debug.LogError("AudioController Error:: PlayBackground:\n Source with name=" + nameSource + " not exist");
+        }
+    }
+
+    public bool IsPlayedBackground(string nameSource)
+    {
+       if (backgroundSourceDict.TryGetValue(nameSource, out SourceDataExtended sourceExtended))
+        {
+            return sourceExtended.source.isPlaying;
+        }
+        else
+        {
+            Debug.LogWarning("AudioController Warning:: IsPlayedBackground:\n Source with name=" + nameSource + " not exist");
+            return false;
+        }
+    }
+
+    public string GetClipBackground(string nameSource)
+    {
+       if (backgroundSourceDict.TryGetValue(nameSource, out SourceDataExtended sourceExtended))
+        {
+            return sourceExtended.currentClip;
+        }
+        else
+        {
+            Debug.LogError("AudioController Error:: GetClipBackground:\n Source with name=" + nameSource + " not exist");
+            return "";
         }
     }
 
@@ -91,13 +129,16 @@ public class AudioController : MonoBehaviour, IAudioController
     {
         if (backgroundSourceDict.TryGetValue(nameSource, out SourceDataExtended sourceExtended))
         {
-            if (sourceExtended.coroutine != null && sourceExtended.isRunning)
+            if (sourceExtended.coroutine != null && sourceExtended.source.isPlaying)
             {
                 // that will execute only if is running. (play coroutine is running or nothing is runnning)
                 StopCoroutine(sourceExtended.coroutine);
-                sourceExtended.coroutine = StartCoroutine(CoroutineCloseMusic(sourceExtended, timeToStop, sourceExtended.source.Stop));
-                sourceExtended.isRunning = false;  
             } 
+            sourceExtended.coroutine = StartCoroutine(CoroutineCloseMusic(sourceExtended, timeToStop, sourceExtended.source.Stop));
+        }
+        else
+        {
+            Debug.LogError("AudioController Error:: StopBackground:\n Source with name=" + nameSource + " not exist");
         }
     }
 
@@ -105,19 +146,22 @@ public class AudioController : MonoBehaviour, IAudioController
     {
         if (backgroundSourceDict.TryGetValue(nameSource, out SourceDataExtended sourceExtended))
         {
-            if (sourceExtended.coroutine != null && sourceExtended.isRunning)
+            if (sourceExtended.coroutine != null && sourceExtended.source.isPlaying)
             {
                 // that will execute only if is running. (play coroutine is running or nothing is runnning)
                 StopCoroutine(sourceExtended.coroutine);
-                sourceExtended.coroutine = StartCoroutine(CoroutineCloseMusic(sourceExtended, timeToPause, sourceExtended.source.Pause));
-                sourceExtended.isRunning = false;  
             } 
+            sourceExtended.coroutine = StartCoroutine(CoroutineCloseMusic(sourceExtended, timeToPause, sourceExtended.source.Pause));
+        }
+        else
+        {
+            Debug.LogError("AudioController Error:: PauseBackground:\n Source with name=" + nameSource + " not exist");
         }
     }
 
     private void Awake()
     {
-        // clips
+        // clips save to dictionary
         backgroundClipDict = new Dictionary<string, AudioClip>();
         foreach (ClipData c in backgroundClips)
         {
@@ -138,7 +182,7 @@ public class AudioController : MonoBehaviour, IAudioController
             s.source.volume = 0f;
         }
 
-        sfxSource.volume = 0f;
+        sfxSource.volume = 1f;
     } 
 
     private IEnumerator CoroutinePlayMusic(SourceDataExtended source, float timeToPlay)

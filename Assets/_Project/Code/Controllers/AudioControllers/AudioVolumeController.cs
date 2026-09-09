@@ -24,10 +24,7 @@ public class AudioVolumController : MonoBehaviour, IAudioVolumeController
             dB = 20f * (float)Math.Log10(volumePrecent);
         }
 
-        if (!audioMixer.SetFloat(exposedParameterAudioMixer, dB)) Debug.LogWarning("AudioVolumeController:: Dont find parameter");
-
-        if (audioMixer.GetFloat(exposedParameterAudioMixer, out float dB2)) Debug.Log( "volume::" + dB2 + "  " + "gived::" + dB);
-        
+        if (!audioMixer.SetFloat(exposedParameterAudioMixer, dB)) Debug.LogWarning("AudioVolumeController:: Dont find parameter");        
     }
 
     private void Awake()
