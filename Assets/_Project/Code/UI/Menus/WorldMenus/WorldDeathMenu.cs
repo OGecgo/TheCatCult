@@ -2,31 +2,31 @@ using UnityEngine;
 
 public class WorldDeathMenu: MonoBehaviour
 {
-    [SerializeField] private MonoBehaviour _CanvasController;
-    [SerializeField] private MonoBehaviour _worldDeathMenuUI;
+    [SerializeField] private MonoBehaviour _canvasController;
+    [SerializeField] private MonoBehaviour _gameController;
 
-    private ICanvasController CanvasController;
-    private IWorldDeathMenuUI worldDeathMenuUI;
+    private ICanvasController canvasController;
+    private IGameController gameController;
 
     private void OnEnable()
     {
-        worldDeathMenuUI.OnDeath += Death;
+        gameController.OnDeath += Death;
     }
 
     private void OnDisable()
     {
-        worldDeathMenuUI.OnDeath += Death;
+        gameController.OnDeath -= Death;
     }
 
     private void Awake()
     {
-        CanvasController = _CanvasController.GetComponent<ICanvasController>();
-        worldDeathMenuUI = _worldDeathMenuUI.GetComponent<IWorldDeathMenuUI>();
+        canvasController = _canvasController.GetComponent<ICanvasController>();
+        gameController = _gameController.GetComponent<IGameController>();
     }
 
     private void Death()
     {
-        CanvasController.TurnOnCanvas("CanvasDeath");
+        canvasController.TurnOnCanvas("CanvasDeath");
     }
 
 

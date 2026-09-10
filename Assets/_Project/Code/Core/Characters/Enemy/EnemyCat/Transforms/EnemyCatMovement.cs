@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-public class EnemyCatMovement: MonoBehaviour, IEnemyCatMovement, IUpdatable
+public class EnemyCatMovement: MonoBehaviour, IEnemyCatMovement, IUpdatable, IPauseFeatures
 {
     [SerializeField] private WalkConf walkConf;
     [SerializeField] private RunConf runConf;
@@ -14,6 +14,7 @@ public class EnemyCatMovement: MonoBehaviour, IEnemyCatMovement, IUpdatable
     private ICharacterGravity gravity;
 
     private bool previousIsGrounded;
+    private bool featureIsPaused;
 
     public event Action OnWalk;
     public event Action OnStopWalk;
@@ -24,8 +25,17 @@ public class EnemyCatMovement: MonoBehaviour, IEnemyCatMovement, IUpdatable
 
     public IEnemyCatMovement.TypeMovement typeMovement { private get; set;}
 
+    public void FeatureIsPaused(bool value)
+    {
+        featureIsPaused = value;
+        OnStopRun?.Invoke();
+        OnStopWalk?.Invoke();
+    }
+
     public void ManualUpdate()
     {
+        if (featureIsPaused) return;
+
         // set state
         if (gravity.isGrounded)
         {

@@ -35,18 +35,13 @@ public class audioCollider : MonoBehaviour, IPauseFeatures
 
     private void OnTriggerStay(Collider other)
     {
+        if (featureIsPaused) return;
+
         // only if player stay in collider
         if (((1 << other.gameObject.layer) & playerLayers) != 0)
         {
-            if (!featureIsPaused)
-            {
-                audioController.SetBackground("AudioMusicChannel", soundName);
-                audioController.PlayBackground("AudioMusicChannel", timeToPlay);
-            }
-            else
-            {
-                audioController.PauseBackground("AudioMusicChannel");
-            }
+            audioController.SetBackground("AudioMusicChannel", soundName);
+            audioController.PlayBackground("AudioMusicChannel", timeToPlay);
         }
     }
 

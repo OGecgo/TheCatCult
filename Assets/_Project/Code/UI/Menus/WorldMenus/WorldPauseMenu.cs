@@ -5,28 +5,28 @@ public class WorldPauseMenu : MonoBehaviour
 {
 
     [SerializeField] private MonoBehaviour _canvasController;
-    [SerializeField] private MonoBehaviour _worldPauseMenuUI;
+    [SerializeField] private MonoBehaviour _gameController;
 
     private ICanvasController canvasController;
-    private IWorldPauseMenuUI worldPauseMenuUI;
+    private IGameController gameController;
 
 
     private void OnEnable()
     {
-        worldPauseMenuUI.OnUnpause += ClosePause;
-        worldPauseMenuUI.OnPause += Pause;
+        gameController.OnUnpause += ClosePause;
+        gameController.OnPause += Pause;
     }
     
     private void OnDisable()
     {
-        worldPauseMenuUI.OnUnpause -= ClosePause;
-        worldPauseMenuUI.OnPause -= Pause;
+        gameController.OnUnpause -= ClosePause;
+        gameController.OnPause -= Pause;
     }
     
     private void Awake()
     {
         canvasController = _canvasController.GetComponent<ICanvasController>();
-        worldPauseMenuUI = _worldPauseMenuUI.GetComponent<IWorldPauseMenuUI>();
+        gameController = _gameController.GetComponent<IGameController>();
         ClosePause();
     }
 
