@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class GameController : 
-MonoBehaviour, IGameController,
-IWorldDeathMenuUI, IWorldPauseMenuUI, IEffectUI
+MonoBehaviour, IGameController, IEffectUI
 {
     [SerializeField] private InputActionReference pauseAction;
 

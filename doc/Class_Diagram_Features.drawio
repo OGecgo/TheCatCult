@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Σελίδα-1" id="RHhtozIAqVEN69dNCovi">
-        <mxGraphModel dx="2162" dy="568" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
+        <mxGraphModel dx="1683" dy="458" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -435,7 +435,7 @@
                 <mxCell id="720" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;ILifeAction&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="-391.25" y="525.38" width="190" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="721" value="&lt;div&gt;&lt;div&gt;+ event Action OnIsAttacked;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+ event Action&amp;lt;int&amp;gt; OnSetHealth;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="720" vertex="1">
+                <mxCell id="721" value="&lt;div&gt;&lt;div&gt;+ event Action OnIsHit;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+ event Action&amp;lt;int&amp;gt; OnSetHealth;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="720" vertex="1">
                     <mxGeometry y="40" width="190" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="727" value="" style="group" parent="1" vertex="1" connectable="0">
@@ -522,9 +522,6 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="731" value="&lt;div&gt;Dont forget clean assets&lt;/div&gt;&lt;div class=&quot;layout--JZpqG row--WOeiJ gap_8--tT8LQ align-center--fgDUV justify-start--fJwIv&quot;&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;div data-reactid=&quot;322&quot; class=&quot;_35I9i&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f5f5f5;strokeColor=#666666;fillStyle=solid;direction=west;gradientDirection=north;shadow=1;size=34;pointerEvents=1;fontColor=#333333;verticalAlign=top;fontSize=15;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="-790" y="554.13" width="180" height="92.25" as="geometry"/>
-                </mxCell>
                 <mxCell id="732" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;" parent="1" source="752" target="736" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
@@ -600,7 +597,7 @@
                 <mxCell id="761" value="+ event Action&amp;lt;int, int&amp;gt; OnSetBullets;&lt;div&gt;+ event Action&amp;lt;int&amp;gt; OnSetBunchOfBullets;&lt;/div&gt;&lt;div&gt;+ event Actino OnReloadBullets;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="760" vertex="1">
                     <mxGeometry y="40" width="240" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="427" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;IIsAttacked&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
+                <mxCell id="427" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;IHittable&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="590" y="740.5" width="170" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="428" value="&lt;div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ void OnAttack(float power&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="427" vertex="1">

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class EnemyCatLife : MonoBehaviour, IPauseFeatures, IIsAttacked, ILifeAction
+public class EnemyCatLife : MonoBehaviour, IPauseFeatures, IHittable, ILifeAction
 {
     [Header("General settings")]
     [SerializeField] private LifeConf lifeConf;
@@ -10,7 +10,7 @@ public class EnemyCatLife : MonoBehaviour, IPauseFeatures, IIsAttacked, ILifeAct
     private bool featureIsPaused;
     private ILife life;
 
-    public event Action OnIsAttacked;
+    public event Action OnIsHit;
     public event Action<int> OnSetHealth;
     public void FeatureIsPaused(bool value)
     {
@@ -22,7 +22,7 @@ public class EnemyCatLife : MonoBehaviour, IPauseFeatures, IIsAttacked, ILifeAct
         if (featureIsPaused) return;
         
         life.Attack(power);
-        OnIsAttacked?.Invoke();
+        OnIsHit?.Invoke();
     }
 
     private void OnDestroy()

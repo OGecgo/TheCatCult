@@ -18,11 +18,11 @@ public class PlayerLifeReaction : MonoBehaviour
 
     private void OnEnable()
     {
-        playerAttacked.OnIsAttacked += UpdateReactionAttacked;
+        playerAttacked.OnIsHit += UpdateReactionAttacked;
     }
     private void OnDisable()
     {
-        playerAttacked.OnIsAttacked -= UpdateReactionAttacked;
+        playerAttacked.OnIsHit -= UpdateReactionAttacked;
     }
 
     private void Awake()

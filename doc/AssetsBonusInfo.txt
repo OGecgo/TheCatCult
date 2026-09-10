@@ -1,0 +1,26 @@
+Music on obj:
+-
+
+
+Music Characters:
+
+- Pixabay: Universfield: Sad Trumpet                                        -> Death
+
+
+
+- Pixabay: freesound_community: DasDeer: Sand Walk                          -> Walk
+- Pixabay: spinopel: Run away                                               -> Run
+- Pixabay: freesound_community: deleted_user_10023915: land2                -> FallLand
+- Pixabay: u_qqkrn9bn55: JumpLanding                                        -> Jump
+
+
+
+- Pixabay: Virtual_Vibes: Cat Meow Sound                                    -> CatWasHit
+- Pixabay: freesound_community: locontrario23 (Freesound): Very angry cat   -> CatFollowPlayer
+- Pixabay: freesound_community: lua lua (Freesound): Blah Blah Female       -> BlaBlaBla
+
+
+
+Music background:
+- Pixabay: freesound_community: Dr.Macak(Freesound): Forest wind and birds  -> Forest_Day
+- Pixabay: SimpleSounds: Dark Horror Opener                                 -> Menu
