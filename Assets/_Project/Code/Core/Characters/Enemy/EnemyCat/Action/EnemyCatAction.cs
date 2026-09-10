@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class EnemyCatAction : MonoBehaviour, IUpdatable
 {
-    [Header("General settings")]
-    [SerializeField] private WalkConf walkConf;
-    [SerializeField] private RunConf runConf;
-    [SerializeField] private RotationConf rotationConf;  
     [Header("Patrol settings")]
     [SerializeField] private Vector3[] patrolPositions;
     [SerializeField] private float timeRandomWalk = 2f;
@@ -54,12 +50,12 @@ public class EnemyCatAction : MonoBehaviour, IUpdatable
 
     private void OnEnable()
     {
-        enemyCatLife.OnIsAttacked += IsAttacked;
+        enemyCatLife.OnIsHit += IsAttacked;
     }
 
     private void OnDisable()
     {
-        enemyCatLife.OnIsAttacked -= IsAttacked;
+        enemyCatLife.OnIsHit -= IsAttacked;
     }
 
     private void Awake()

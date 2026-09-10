@@ -26,12 +26,12 @@ public class EnemyCatLifeReaction : MonoBehaviour
 
     private void OnEnable()
     {
-        enemyCatLife.OnIsAttacked += UpdateMeshAttaked;
+        enemyCatLife.OnIsHit += UpdateMeshAttaked;
     }
 
     private void OnDisable()
     {
-        enemyCatLife.OnIsAttacked -= UpdateMeshAttaked; 
+        enemyCatLife.OnIsHit -= UpdateMeshAttaked; 
     }
 
     private void UpdateMeshAttaked()

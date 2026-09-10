@@ -30,7 +30,7 @@ public class MeleeWeapon: IMeleeWeapon
     {
         if (timerCount <= 0f)
         {
-            IIsAttacked d = colliderTarget.GetComponent<IIsAttacked>();
+            IHittable d = colliderTarget.GetComponent<IHittable>();
             d.OnAttack(config.damage);
 
             timerCount = config.timerCountAttack;

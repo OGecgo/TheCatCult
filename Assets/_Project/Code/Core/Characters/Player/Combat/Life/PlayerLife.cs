@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, 
-    IIsAttacked, ILifeAction, IHealingPackAction,
+    IHittable, ILifeAction, IHealingPackAction,
     IInteractHealingPack
 {   
     [SerializeField] private MonoBehaviour _gameController;
@@ -19,7 +19,7 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures,
     private IHealingPack healingPack;
     private bool featureIsPaused;
 
-    public event Action OnIsAttacked;
+    public event Action OnIsHit;
     public event Action<int> OnSetHealth;
     public event Action<int> OnUpdateHealibngPack;
 
@@ -45,7 +45,7 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures,
         if (featureIsPaused) return;
         
         life.Attack(power);
-        OnIsAttacked();
+        OnIsHit?.Invoke();
         OnSetHealth(life.health);
     }
 

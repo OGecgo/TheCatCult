@@ -58,7 +58,7 @@ public class DistanceWeapon: IDistanceWeapon
             if (Physics.Raycast(position, direction, out RaycastHit hit, config.range, config.targetMask))
             {
                 // do damage if is hitable mask
-                if (hit.collider.TryGetComponent(out IIsAttacked damageable))
+                if (hit.collider.TryGetComponent(out IHittable damageable))
                 {
                     damageable.OnAttack(config.damage);
                 }

@@ -1,4 +1,4 @@
-public interface IIsAttacked
+public interface IHittable
 {
     public void OnAttack(int power);
 }

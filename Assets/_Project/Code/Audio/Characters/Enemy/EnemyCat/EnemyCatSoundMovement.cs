@@ -67,7 +67,6 @@ public class EnemyCatSoundMovement : MonoBehaviour
 
     private void PlayWalkAudio()
     {
-        Debug.Log("hellow ??");
         // dont play again walk if it played
         if (enemyAudiotSource.isPlaying && enemyAudiotSource.clip == soundWalk)
         {

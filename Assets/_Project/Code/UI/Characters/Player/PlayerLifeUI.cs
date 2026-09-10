@@ -22,13 +22,13 @@ public class PlayerLifeUI : MonoBehaviour, IDamageUI, IHealingPackUI, IHealthUI,
 
     private void OnEnable()
     {
-        playerLife.OnIsAttacked += UpdateUIAttacked;
+        playerLife.OnIsHit += UpdateUIAttacked;
         playerLife.OnSetHealth += UpdateUIHealth;
         playerHealingPack.OnUpdateHealibngPack += UpdateUIHelingPack;
     }
     private void OnDisable()
     {
-        playerLife.OnIsAttacked -= UpdateUIAttacked;
+        playerLife.OnIsHit -= UpdateUIAttacked;
         playerLife.OnSetHealth -= UpdateUIHealth;
         playerHealingPack.OnUpdateHealibngPack -= UpdateUIHelingPack;
     }
