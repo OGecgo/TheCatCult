@@ -1,7 +1,8 @@
 
+using System;
 using UnityEngine;
 
-public class EnemyCatAction : MonoBehaviour, IUpdatable
+public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPauseFeatures
 {
     [Header("Patrol settings")]
     [SerializeField] private Vector3[] patrolPositions;
@@ -24,27 +25,51 @@ public class EnemyCatAction : MonoBehaviour, IUpdatable
     private IFOVDetection fovD;
     private IEnemyCatRotation rotation;
     private IEnemyCatMovement movement;
+    private bool featureIsPaused;
     
+    public event Action<IEnemyCatAction.ActionType> OnAction;
+
+    public void FeatureIsPaused(bool value)
+    {
+        featureIsPaused = value;
+        OnAction?.Invoke(IEnemyCatAction.ActionType.NONE);
+    }
+
     public void ManualUpdate()
     {
+        if (featureIsPaused) return;
+
+        IEnemyCatAction.ActionType type;
         if (fovD.isTarget)
         {
             patrolMachin.SetState(followPlayer);
+            type = IEnemyCatAction.ActionType.FOLLOW_PLAYER;
             isLostPath = true;
         }
         else 
         {
-            if (!isLostPath) patrolMachin.SetState(pathWalks);
+            if (!isLostPath)
+            {
+                patrolMachin.SetState(pathWalks);
+                type = IEnemyCatAction.ActionType.PATH_WALKS;
+            } 
             // if player targeted. enemy lost they path and start random walks
-            else patrolMachin.SetState(randomWalks);
+            else
+            {
+                patrolMachin.SetState(randomWalks);
+                type = IEnemyCatAction.ActionType.RANDOM_WALKS;
+            } 
         }
 
         // if hit cat. they start look around
         if (countTimeLookAround > 0f && !fovD.isTarget)
         {
             patrolMachin.SetState(lookAround);
+            type = IEnemyCatAction.ActionType.LOOK_AROUND;
             countTimeLookAround -= Time.deltaTime;
         }
+
+        OnAction?.Invoke(type);
         patrolMachin.ManualUpdate();
     }
 
@@ -67,6 +92,7 @@ public class EnemyCatAction : MonoBehaviour, IUpdatable
 
         isLostPath = false;
         countTimeLookAround = 0f;
+        featureIsPaused = false;
     }    
 
     private void Start()
