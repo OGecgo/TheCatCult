@@ -6230,6 +6230,7 @@ GameObject:
   - component: {fileID: 891285424}
   - component: {fileID: 891285423}
   - component: {fileID: 891285426}
+  - component: {fileID: 891285427}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -6368,6 +6369,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerView
   winConf: {fileID: 11400000, guid: 8d4e4979f0bf70ba88da557495cd0b39, type: 2}
+--- !u!192 &891285427
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891285421}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_IsViewVolume: 1
 --- !u!43 &913485970
 Mesh:
   m_ObjectHideFlags: 0
@@ -11282,7 +11294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1954184553
 Transform:
   m_ObjectHideFlags: 0
