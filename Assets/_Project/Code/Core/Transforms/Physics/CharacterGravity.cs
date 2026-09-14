@@ -101,8 +101,6 @@ public class CharacterGravity: MonoBehaviour, ICharacterGravity, IUpdatable
             _velocity.y = actualVelocityY;
         }
 
-        Debug.Log(_velocity);
-
         if (controller.isGrounded && _velocity.y < 0)
         {
             // make sure is grounded when on object (for onHitCollider)

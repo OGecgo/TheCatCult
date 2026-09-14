@@ -3,7 +3,7 @@ using System.IO;
 using System.Net.Http.Headers;
 using UnityEngine;
 
-public class StateEnemyCatPathWalk: IUpdatable
+public class StateEnemyCatPathWalk: IStateEnemyCatAction
 {
 
     private IEnemyCatMovement movement;
@@ -29,6 +29,13 @@ public class StateEnemyCatPathWalk: IUpdatable
         posPathPoints = 0;
         directionMove = 1;
     }
+
+    public void Enter()
+    {
+        posPathPoints = 0;
+        directionMove = 1;
+    }
+
 
     public void ManualUpdate()
     {

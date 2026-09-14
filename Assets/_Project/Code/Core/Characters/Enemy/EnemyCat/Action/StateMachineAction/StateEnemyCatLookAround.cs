@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class StateEnemyCatLookAround : IUpdatable
+public class StateEnemyCatLookAround : IStateEnemyCatAction
 {
     private float timeUpdateRotation;
     private float countTimeUpdateRotation;
@@ -20,6 +20,12 @@ public class StateEnemyCatLookAround : IUpdatable
         directionsAngle = 360f / directoinsCount;
         rand = new System.Random();
     }
+
+    public void Enter()
+    {
+        countTimeUpdateRotation = 0f;
+    }
+
     public void ManualUpdate()
     {
         if (countTimeUpdateRotation <= 0f)

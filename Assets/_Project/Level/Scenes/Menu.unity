@@ -145,7 +145,7 @@ AudioSource:
   m_GameObject: {fileID: 25166572}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8029823084589171706, guid: 9111fe7032e92e99fa64d091a1c515f1, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -1015,7 +1015,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 753845400}
-  - component: {fileID: 753845399}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1023,26 +1022,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &753845399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753845398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f28beefb4df1ca4801d4da4ca6ee3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioController
-  sfxSource: {fileID: 25166573}
-  backgroundSource:
-  - name: AudioMusicChannel
-    source: {fileID: 1579901670}
-  sfxClip: []
-  backgroundClips:
-  - name: Menu
-    clip: {fileID: 8300000, guid: eacba4c3df91cf98892976f42d6f563f, type: 3}
 --- !u!4 &753845400
 Transform:
   m_ObjectHideFlags: 0
@@ -1813,9 +1792,9 @@ AudioSource:
   m_GameObject: {fileID: 1579901669}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6258159647171302226, guid: 9111fe7032e92e99fa64d091a1c515f1, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: eacba4c3df91cf98892976f42d6f563f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
