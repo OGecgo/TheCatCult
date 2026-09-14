@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -57,12 +58,19 @@ public class ButtonsWorldMenu : MonoBehaviour
 
     private void MainMenu()
     {
-        SceneManager.LoadSceneAsync("Menu");
+        StartCoroutine(WaitCoroutine());
     }
 
     private void LevelRestart()
     {
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadSceneAsync(buildIndex);
+    }
+
+    // wait before change scene
+    private IEnumerator WaitCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadSceneAsync("Menu");
     }
 }

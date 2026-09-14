@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,12 @@ public class EndComicMenu : MonoBehaviour
     }
     public void MainMenu()
     {
+        StartCoroutine(WaitCoroutine());
+    }
+
+    private IEnumerator WaitCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadSceneAsync("Menu");
     }
 }
