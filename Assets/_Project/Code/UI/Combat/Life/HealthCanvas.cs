@@ -5,11 +5,11 @@ public class HealthCanvas : MonoBehaviour
 {
     [Header("Links")]
     [SerializeField] private MonoBehaviour attacked;
+    [SerializeField] private Image imageHealth;
     [Header("General settings")]
     [SerializeField] private LifeConf lifeConf;
 
     private IHealthUI attackedUI;
-    private Slider sliderHelth;
 
 
     private void OnDisable()
@@ -24,14 +24,13 @@ public class HealthCanvas : MonoBehaviour
     }
     private void Awake()
     {
-        sliderHelth = GetComponent<Slider>();
         attackedUI = attacked.GetComponent<IHealthUI>();
-        sliderHelth.value = 1;
+        imageHealth.fillAmount = 1;
     }
 
     private void SetLife(int health)
     {
-        sliderHelth.value = (float)health / lifeConf.health;
+        imageHealth.fillAmount = (float)health / lifeConf.health;
     }
 
 }
