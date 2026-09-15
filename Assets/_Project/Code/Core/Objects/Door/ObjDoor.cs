@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using NUnit.Framework;
 using Unity.VisualScripting;
@@ -19,6 +20,9 @@ public class ObjDoor : MonoBehaviour, IInteractableDoor, ILookedObj, IPauseFeatu
     private Quaternion openRotation;
     private Coroutine coroutine;
 
+    public event Action OnInteracted;
+
+
     public void IsNotLooked()
     {
         this.gameObject.layer = noOutlineLayer;
@@ -37,6 +41,7 @@ public class ObjDoor : MonoBehaviour, IInteractableDoor, ILookedObj, IPauseFeatu
     public void Interact()
     {        
         if (coroutine != null) StopCoroutine(coroutine);
+        OnInteracted?.Invoke();
         coroutine = StartCoroutine(CorutineMoveDoor());
     }
 
