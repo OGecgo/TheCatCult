@@ -2742,6 +2742,8 @@ GameObject:
   - component: {fileID: 438485740}
   - component: {fileID: 438485749}
   - component: {fileID: 438485739}
+  - component: {fileID: 438485750}
+  - component: {fileID: 438485751}
   - component: {fileID: 438485741}
   - component: {fileID: 438485743}
   - component: {fileID: 438485742}
@@ -2982,6 +2984,34 @@ MonoBehaviour:
   _audioController: {fileID: 625018352}
   playerHit: PlayerDamage
   playerHeal: Heal
+--- !u!114 &438485750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438485728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829e2c7dab99ab1f890430886b6e0bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerShootSound
+  _audioController: {fileID: 625018352}
+  shootSoundName: Shoot
+--- !u!114 &438485751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438485728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ef441df14f2b057bae7c0bdabe25eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerReloadSound
+  _audioController: {fileID: 625018352}
+  reloadSoundName: Reload
 --- !u!1 &452688780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4910,6 +4940,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6b5479a4be15742129885854d5d122cb, type: 3}
   - name: Heal
     clip: {fileID: 8300000, guid: 337181422bd821f7b8f71ecfb88cadd3, type: 3}
+  - name: PlayerDamage
+    clip: {fileID: 8300000, guid: 7dc23bd80fa74f1ad902b30dec4eedc8, type: 3}
+  - name: Shoot
+    clip: {fileID: 8300000, guid: ac86c9d16d9d038459f665fbcf90d9b5, type: 3}
+  - name: Reload
+    clip: {fileID: 8300000, guid: b1028759162cfaa959cfe4b7584b21ce, type: 3}
   - name: FallLand
     clip: {fileID: 8300000, guid: 036e2d5c81bbf71a5b6d1309261898de, type: 3}
   - name: Jump
@@ -4930,8 +4966,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: fb19e8532e96e9c74b2757e5a870c9aa, type: 3}
   - name: Door
     clip: {fileID: 8300000, guid: be88280f467d5145fb5ab0667f5b8c48, type: 3}
-  - name: PlayerDamage
-    clip: {fileID: 8300000, guid: 7dc23bd80fa74f1ad902b30dec4eedc8, type: 3}
 --- !u!114 &625018353
 MonoBehaviour:
   m_ObjectHideFlags: 0

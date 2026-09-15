@@ -16,6 +16,9 @@ Music Characters:
 - Pixabay: spinopel: Run away                                               -> Run
 - Pixabay: freesound_community: deleted_user_10023915: land2                -> FallLand
 - Pixabay: u_qqkrn9bn55: JumpLanding                                        -> Jump
+- Pixabay: linhmitto: Bubble                                                -> Reload
+- Pixabay: Universfield: Bubble Pop 06                                      -> Shoot
+
 
 
 

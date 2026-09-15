@@ -10,6 +10,7 @@ public class DistanceWeapon: IDistanceWeapon
     private int bunchOfBullets;
 
     public bool isReloading {get{return timerCountRelaod > 0;}}
+    public bool isAttacking {get{return timerCountAttack > 0;}}
     public int currentBullets {get{return config.bullets - bulletsUsed;}}
     public int currentBunchOfBullets {get{return bunchOfBullets;}}
 
@@ -67,6 +68,10 @@ public class DistanceWeapon: IDistanceWeapon
             timerCountAttack = config.timerCountAttack;
             return;
         }
+    }
+
+    public void UpdateIsAttacking()
+    {
         timerCountAttack -= Time.deltaTime;
     }
 }
