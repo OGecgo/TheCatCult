@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="fIXOdNchauMUXSfByhlN" name="Page-1">
-        <mxGraphModel dx="2191" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1742" dy="458" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -229,7 +229,13 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="154" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;EnemyCatLife&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;container=0;" parent="351" vertex="1">
-                    <mxGeometry x="102.43" y="160" width="210" height="240" as="geometry"/>
+                    <mxGeometry x="102.43" y="160" width="210" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="155" value="&lt;div&gt;- LifeConf lifeConf;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- bool featurIsPaused;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- ILife life;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ event Action OnIsHit;&lt;/div&gt;&lt;div&gt;+ event Action OnIsHeal;&lt;/div&gt;&lt;div&gt;+ event Action&amp;lt;int&amp;gt; OnSetHealth;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;container=0;" parent="154" vertex="1">
+                    <mxGeometry y="40" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="156" value="&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ void FeatureIsPosed(bool value);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ void Attack(int power);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- void OnDestroy();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- void Awake();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- void EnemyDie();&lt;/span&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;container=0;" parent="154" vertex="1">
+                    <mxGeometry y="160" width="210" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="167" style="edgeStyle=elbowEdgeStyle;html=1;endSize=12;endArrow=block;endFill=0;dashed=1;rounded=0;" parent="351" source="154" target="340" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -296,12 +302,6 @@
                         <mxPoint x="271.63" y="440" as="sourcePoint"/>
                         <mxPoint x="271.63" y="475" as="targetPoint"/>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="155" value="&lt;div&gt;- LifeConf lifeConf;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;- bool featurIsPaused;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- ILife life;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ event Action OnIsHit;&lt;/div&gt;&lt;div&gt;+ event Action&amp;lt;int&amp;gt; OnSetHealth;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;container=0;" parent="351" vertex="1">
-                    <mxGeometry x="102.43" y="200" width="210" height="110" as="geometry"/>
-                </mxCell>
-                <mxCell id="156" value="&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ void FeatureIsPosed(bool value);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;+ void Attack(int power);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;- void OnDestroy();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- void Awake();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- void EnemyDie();&lt;/span&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;container=0;" parent="351" vertex="1">
-                    <mxGeometry x="102.43" y="310" width="210" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="340" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;container=0;" parent="351" vertex="1">
                     <mxGeometry x="6.6299999999999955" width="370" height="80" as="geometry"/>
@@ -802,25 +802,25 @@
                         <mxPoint x="-416.38" y="730" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="415" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;rounded=0;" edge="1" parent="1" source="273" target="279">
+                <mxCell id="415" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;rounded=0;" parent="1" source="273" target="279" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-254" y="1480" as="sourcePoint"/>
                         <mxPoint x="-254" y="1400" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="416" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;IUpdatable&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="416" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;IUpdatable&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="-30.00000000000002" y="1250" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="417" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="416">
+                <mxCell id="417" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="416" vertex="1">
                     <mxGeometry y="40" width="120" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="418" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;rounded=0;" edge="1" parent="1" source="276" target="279">
+                <mxCell id="418" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;rounded=0;" parent="1" source="276" target="279" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-120" y="1610" as="sourcePoint"/>
                         <mxPoint x="-194" y="1370" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="419" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;rounded=0;" edge="1" parent="1" source="305" target="279">
+                <mxCell id="419" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;rounded=0;" parent="1" source="305" target="279" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="120" y="1625" as="sourcePoint"/>
                         <mxPoint x="-194" y="1370" as="targetPoint"/>
@@ -829,31 +829,31 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="420" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;IEnterable&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="420" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;IEnterable&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="109.99999999999997" y="1250" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="421" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="420">
+                <mxCell id="421" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="420" vertex="1">
                     <mxGeometry y="40" width="120" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="422" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;rounded=0;" edge="1" parent="1" source="279" target="420">
+                <mxCell id="422" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;rounded=0;" parent="1" source="279" target="420" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="470" y="1480" as="sourcePoint"/>
                         <mxPoint x="215" y="1405" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="423" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;rounded=0;" edge="1" parent="1" source="279" target="416">
+                <mxCell id="423" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;rounded=0;" parent="1" source="279" target="416" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="162" y="1375" as="sourcePoint"/>
                         <mxPoint x="162" y="1320" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="426" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;IStateEnemyCatAction&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="426" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;IStateEnemyCatAction&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="-600" y="550" width="169.87" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="427" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="426">
+                <mxCell id="427" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="426" vertex="1">
                     <mxGeometry y="40" width="169.87" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="428" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;endSize=12;elbow=vertical;" edge="1" parent="1" source="141" target="426">
+                <mxCell id="428" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;endSize=12;elbow=vertical;" parent="1" source="141" target="426" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-377" y="880" as="sourcePoint"/>
                         <mxPoint x="-413" y="880" as="targetPoint"/>

@@ -20,6 +20,7 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures,
     private bool featureIsPaused;
 
     public event Action OnIsHit;
+    public event Action OnIsHeal;
     public event Action<int> OnSetHealth;
     public event Action<int> OnUpdateHealibngPack;
 
@@ -29,6 +30,7 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures,
         if (healAction.action.triggered)
         {
             healingPack.Heal(life);
+            OnIsHeal?.Invoke();
             OnUpdateHealibngPack(healingPack.healingPacks);
             OnSetHealth(life.health);
             

@@ -8,6 +8,8 @@ Music Characters:
 
 - Pixabay: Universfield: Sad Trumpet                                        -> Death
 - Pixabay: freesound_community: thenudo (Freesound): Heart Beat             -> LowLife
+- Pixabay: freesound_community: UGILA (Freesound): Item Pickup              -> Heal
+- Pixabay: freesound_community: BlingeeG (Freesound): Hand Clap 1           -> PlayerDamage
 
 
 - Pixabay: freesound_community: DasDeer: Sand Walk                          -> Walk
