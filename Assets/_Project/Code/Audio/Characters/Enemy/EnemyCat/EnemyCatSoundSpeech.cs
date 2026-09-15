@@ -71,13 +71,13 @@ public class EnemyCatSoundSpeech : MonoBehaviour
                 }
                 break;
             case IEnemyCatAction.ActionType.RANDOM_WALKS:
-                audioPlayer.Pause();
+                audioPlayer.Stop();
                 break;
             case IEnemyCatAction.ActionType.LOOK_AROUND:
-                audioPlayer.Pause();
+                audioPlayer.Stop();
                 break;
             default:
-                audioPlayer.Pause();
+                audioPlayer.Stop();
             break;
         }
     }
