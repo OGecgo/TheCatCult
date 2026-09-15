@@ -169,6 +169,8 @@ MonoBehaviour:
   clips:
   - name: Button
     clip: {fileID: 8300000, guid: fb19e8532e96e9c74b2757e5a870c9aa, type: 3}
+  - name: Paper
+    clip: {fileID: 8300000, guid: d23b29f78ba1d1595b75592d67eb3b69, type: 3}
 --- !u!1 &270024809
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndComicScript
   mainMenu: {fileID: 1109828166}
+  _audioController: {fileID: 32169692}
+  clipName: Paper
 --- !u!1 &1109828164
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +770,7 @@ AudioSource:
   m_GameObject: {fileID: 1876756924}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8029823084589171706, guid: 9111fe7032e92e99fa64d091a1c515f1, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
