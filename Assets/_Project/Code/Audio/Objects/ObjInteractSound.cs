@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class ObjDoorSound : MonoBehaviour, IPauseFeatures
+public class ObjInteractSound : MonoBehaviour, IPauseFeatures
 {
     [SerializeField] private MonoBehaviour _audioController;
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private string doorSoundName;
+    [SerializeField] private string clipName;
 
-    private IInteractableDoor objDoor;
+    private IInteracted interact;
     private IAudioController audioController;
-    private AudioClip doorSound;
+    private AudioClip clip;
 
     public void FeatureIsPaused(bool value)
     {
@@ -20,27 +20,27 @@ public class ObjDoorSound : MonoBehaviour, IPauseFeatures
 
     private void Awake()
     {
-        objDoor = this.GetComponent<IInteractableDoor>();
+        interact = this.GetComponent<IInteracted>();
         audioController = _audioController.GetComponent<IAudioController>();
     }
 
     private void Start()
     {
-        doorSound = audioController.GetClip(doorSoundName);
+        clip = audioController.GetClip(clipName);
     }
 
     private void OnEnable()
     {
-        objDoor.OnInteracted += OnInteractedSound;
+        interact.OnInteracted += OnInteractedSound;
     }
 
     private void OnDisable()
     {
-        objDoor.OnInteracted -= OnInteractedSound;
+        interact.OnInteracted -= OnInteractedSound;
     }
 
     private void OnInteractedSound()
     {
-        audioSource.PlayOneShot(doorSound);
+        audioSource.PlayOneShot(clip);
     }
 }

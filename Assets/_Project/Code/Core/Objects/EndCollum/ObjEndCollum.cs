@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,6 +16,8 @@ public class ObjEndCollum : MonoBehaviour, IInteractableEndCollum, IPauseFeature
     private bool featureIsPaused;
     private IDialogShow dialogShow;
     private IGameController gameController;
+
+    public event Action OnInteracted;
 
     public void IsNotLooked()
     {
@@ -36,6 +39,7 @@ public class ObjEndCollum : MonoBehaviour, IInteractableEndCollum, IPauseFeature
 
         dialogShow.ShowSmoothText(textForView);
         gameController.WaitMode();
+        OnInteracted?.Invoke();
 
         StartCoroutine(CoroutineEnd());
     }

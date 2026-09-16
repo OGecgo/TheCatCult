@@ -1,4 +1,4 @@
-public interface IInteractableEndCollum
+public interface IInteractableEndCollum: IInteracted
 {
     public void Interact();
 }

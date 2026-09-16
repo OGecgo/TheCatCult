@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjHealingPack : MonoBehaviour, IInteractableHealingPack, ILookedObj, IPauseFeatures
@@ -7,12 +10,19 @@ public class ObjHealingPack : MonoBehaviour, IInteractableHealingPack, ILookedOb
     private int interactLayer;
 
     private bool featureIsPaused;
+    private bool isInteracted;
+
+    public event Action OnInteracted;
+
     public void Interact(IInteractHealingPack interactHealth)
     {
         if (featureIsPaused) return;
+        if (isInteracted) return;
 
         interactHealth.GetHealingPack();
-        Destroy(this.gameObject);
+        isInteracted = true;
+        OnInteracted?.Invoke();
+        StartCoroutine(WaitCoroutine());
     }
 
     public void IsLooked()
@@ -35,6 +45,12 @@ public class ObjHealingPack : MonoBehaviour, IInteractableHealingPack, ILookedOb
         outlineLayer = LayerMask.NameToLayer("OutlineLayer");
         interactLayer = LayerMask.NameToLayer("InteractLayer"); 
         featureIsPaused = false;
+        isInteracted = false;
     }
 
+    private IEnumerator WaitCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
+    }
 }

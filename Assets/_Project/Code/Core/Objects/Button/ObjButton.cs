@@ -1,3 +1,4 @@
+using System;
 using LineworkLite.Editor.FreeOutline;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class ObjButton : MonoBehaviour, IInteractableButton, ILookedObj, IPauseF
     private bool featureIsPaused;
 
     private IEvent eventObj;
+
+    public event Action OnInteracted;
 
     public void FeatureIsPaused(bool value)
     {
@@ -45,6 +48,7 @@ public class ObjButton : MonoBehaviour, IInteractableButton, ILookedObj, IPauseF
             meshRenderer_Off.enabled = false;
             meshRenderer_On.enabled = true;
             isOn = true;
+            OnInteracted?.Invoke();
         }
     }
 

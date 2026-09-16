@@ -18,6 +18,7 @@ Music Characters:
 - Pixabay: u_qqkrn9bn55: JumpLanding                                        -> Jump
 - Pixabay: linhmitto: Bubble                                                -> Reload
 - Pixabay: Universfield: Bubble Pop 06                                      -> Shoot
+- Pixabay: freesound_community: mrickey13 (Freesound): Item Equip           -> PickUpItem
 
 
 

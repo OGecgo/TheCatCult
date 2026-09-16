@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-public interface IInteractableDoor
+public interface IInteractableDoor: IInteracted
 {
     public void Interact();
-    public event Action OnInteracted;
 }
