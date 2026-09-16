@@ -1,15 +1,19 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
 
-public class EventWall : MonoBehaviour, IEvent, IPauseFeatures
+public class EventWall : MonoBehaviour, IEvent, IEventAction, IPauseFeatures
 {
     [SerializeField] private float speedOpen = 3f;
 
     private Coroutine coroutine;
     private bool featureIsPaused;
     private Vector3 openPosition;
+
+    public event Action<float> OnEventTriggered;
+
     public void FeatureIsPaused(bool value)
     {
         featureIsPaused = value;
@@ -17,6 +21,7 @@ public class EventWall : MonoBehaviour, IEvent, IPauseFeatures
     public void OnTriggerEvent()
     {
         if (coroutine != null) StopCoroutine(coroutine);
+        OnEventTriggered?.Invoke(speedOpen);
         coroutine = StartCoroutine(CoroutineMoveWall());
     }
 
