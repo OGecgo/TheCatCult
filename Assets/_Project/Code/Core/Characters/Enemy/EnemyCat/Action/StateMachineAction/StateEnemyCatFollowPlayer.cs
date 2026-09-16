@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class StateEnemyCatFollowPlayer: IUpdatable
+public class StateEnemyCatFollowPlayer: IStateEnemyCatAction
 {
     private IFOVDetection fovD;
     private IEnemyCatMovement movement;
     private IEnemyCatRotation rotation;
+    private float waitBeforeAttack;
 
     public StateEnemyCatFollowPlayer(
         IFOVDetection fovD, 
@@ -16,10 +17,19 @@ public class StateEnemyCatFollowPlayer: IUpdatable
         this.movement = movement;
         this.rotation = rotation;
     }
+    public void Enter()
+    {
+        waitBeforeAttack = 1f;
+    }
 
     public void ManualUpdate()
     {
         rotation.posTarget = fovD.posTarget;
+        if (waitBeforeAttack > 0f)
+        {
+            waitBeforeAttack -= Time.deltaTime;
+            return;
+        }
         movement.typeMovement = IEnemyCatMovement.TypeMovement.RUN;
     }
 }

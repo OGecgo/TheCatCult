@@ -14,11 +14,11 @@ public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPause
     private bool isLostPath;
     private float countTimeLookAround;
 
-    private IUpdatableStateMachine<IUpdatable> patrolMachin;
-    private IUpdatable followPlayer;
-    private IUpdatable pathWalks;
-    private IUpdatable randomWalks;
-    private IUpdatable lookAround;
+    private IUpdatableStateMachine<IStateEnemyCatAction> patrolMachin;
+    private IStateEnemyCatAction followPlayer;
+    private IStateEnemyCatAction pathWalks;
+    private IStateEnemyCatAction randomWalks;
+    private IStateEnemyCatAction lookAround;
     
     private ILifeAction enemyCatLife; 
 
@@ -104,7 +104,7 @@ public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPause
         randomWalks = new StateEnemyCatRandomWalk(rotation, movement, timeRandomWalk, timeThinking); // for now do noting
         lookAround = new StateEnemyCatLookAround(rotation, movement);
 
-        patrolMachin = new UpdatableStateMachine<IUpdatable>();
+        patrolMachin = new UpdatableStateMachine<IStateEnemyCatAction>();
         patrolMachin.SetState(pathWalks);
 
         // fov detection

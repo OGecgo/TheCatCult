@@ -175,12 +175,6 @@ public class AudioController : MonoBehaviour, IAudioController
     {
         // clips save to dictionary
         clipDict = new Dictionary<string, AudioClip>();
-        foreach (ClipData c in clips)
-        {
-            clipDict.Add(c.name, c.clip);
-        }
-
-        clipDict = new Dictionary<string, AudioClip>();
         foreach (ClipData s in clips)
         {
             clipDict.Add(s.name, s.clip);
@@ -191,7 +185,7 @@ public class AudioController : MonoBehaviour, IAudioController
         {
             backgroundSourceDict.Add(s.name, new SourceDataExtended(s.source));
         // reset volume
-            s.source.volume = 0f;
+            s.source.volume = 1f;
         }
 
         sfxSource.volume = 1f;
@@ -218,7 +212,7 @@ public class AudioController : MonoBehaviour, IAudioController
 
             yield return null;
         }
-        source.source.volume = 1f;
+        source.source.volume = 1f; 
         yield return null;
     }
 

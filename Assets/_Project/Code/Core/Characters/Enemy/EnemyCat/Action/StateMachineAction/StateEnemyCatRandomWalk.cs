@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 // for now nothing
-public class StateEnemyCatRandomWalk: IUpdatable
+public class StateEnemyCatRandomWalk: IStateEnemyCatAction
 {
     private float timeDistance;
     // think == wait
@@ -33,6 +33,12 @@ public class StateEnemyCatRandomWalk: IUpdatable
         countTimeThinnk = timeThink;
         directoinsCount = 8;
         directionsAngle = 360f / directoinsCount;
+    }
+
+    public void Enter()
+    {
+        countTimeDistance = timeDistance;
+        countTimeThinnk = timeThink;
     }
 
     public void ManualUpdate()

@@ -73,11 +73,33 @@ public class CharacterGravity: MonoBehaviour, ICharacterGravity, IUpdatable
         {
             normalGroundedObj = Vector3.up;
         }
-
+ 
         // gravity
         _velocity.y += g * Time.deltaTime;
-        
+        Vector3 oldVelocity = controller.transform.position;
         controller.Move(_velocity * Time.deltaTime);
+
+        // object will have velocity base on movement. not on move they wanted to do
+        // _velocity = Vector3. old_velocity - new_velocity; 
+        float x = (transform.position.x - oldVelocity.x) / Time.deltaTime;
+        float z = (transform.position.z - oldVelocity.z) / Time.deltaTime;
+        Vector2 actualVelocityXZ = new Vector2(x, z);
+        Vector2 _velocityXZ = new Vector2(_velocity.x, _velocity.z);
+
+
+        // if different between speed is not small. reset speed
+        if (_velocityXZ.sqrMagnitude - actualVelocityXZ.sqrMagnitude > 0.05f)
+        {
+            _velocity.x = actualVelocityXZ.x;
+            _velocity.z = actualVelocityXZ.y; 
+        }
+
+        float actualVelocityY = (transform.position.y - oldVelocity.y) / Time.deltaTime;
+        float _velocityY = _velocity.y;
+        if (_velocityY - actualVelocityY > 0.05f)
+        {
+            _velocity.y = actualVelocityY;
+        }
 
         if (controller.isGrounded && _velocity.y < 0)
         {

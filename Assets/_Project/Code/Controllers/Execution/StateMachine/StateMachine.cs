@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class StateMachine<T>: IStateMachine<T>
@@ -6,6 +7,8 @@ public class StateMachine<T>: IStateMachine<T>
 
     public void SetState(T state)
     {
+        if (EqualityComparer<T>.Default.Equals(state, currentState)) return;
+        
         if (currentState is IExitable exit)
         {
             exit.Exit();

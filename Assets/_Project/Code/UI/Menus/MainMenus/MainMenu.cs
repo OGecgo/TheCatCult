@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,7 +28,7 @@ public class MainMenuScript : MonoBehaviour
     }
     private void StartGame()
     {
-        SceneManager.LoadSceneAsync("World");
+        StartCoroutine(WaitCoroutine());
     }
 
     private void Settings()
@@ -45,6 +46,13 @@ public class MainMenuScript : MonoBehaviour
     {
         settings.enabled = false;
         mainMenu.enabled = true;
+    }
+
+    // wait before change scene
+    private IEnumerator WaitCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadSceneAsync("World");
     }
 
 }

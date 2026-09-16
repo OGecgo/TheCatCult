@@ -11,6 +11,7 @@ public class EnemyCatLife : MonoBehaviour, IPauseFeatures, IHittable, ILifeActio
     private ILife life;
 
     public event Action OnIsHit;
+    public event Action OnIsHeal;
     public event Action<int> OnSetHealth;
     public void FeatureIsPaused(bool value)
     {

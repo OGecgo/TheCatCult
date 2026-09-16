@@ -75,7 +75,7 @@ public class PlayerInteractor : MonoBehaviour, IUpdatable
 
     private void IsNotLooking()
     {
-        if(lastLookedObj != null)
+        if((UnityEngine.Object)lastLookedObj != null)
         {
             lastLookedObj.IsNotLooked();
             lastLookedObj = null;

@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class ObjBullets : MonoBehaviour, IInteractableBullets, ILookedObj, IPauseFeatures
@@ -6,13 +8,19 @@ public class ObjBullets : MonoBehaviour, IInteractableBullets, ILookedObj, IPaus
     private int interactLayer;
 
     public bool featureIsPaused;
+    public bool isInteracted;
  
+    public event Action OnInteracted;
+
     public void Interact(IInteractBullet interactBullet)
     {
         if (featureIsPaused) return;
+        if (isInteracted) return;
 
         interactBullet.GetBunchOfBullets();
-        Destroy(this.gameObject);
+        OnInteracted?.Invoke();
+        isInteracted = true;
+        StartCoroutine(WaitCoroutine());
     }
 
     public void IsLooked()
@@ -34,7 +42,13 @@ public class ObjBullets : MonoBehaviour, IInteractableBullets, ILookedObj, IPaus
         outlineLayer = LayerMask.NameToLayer("OutlineLayer");
         interactLayer = LayerMask.NameToLayer("InteractLayer"); 
         featureIsPaused = false;
+        isInteracted = false;
     }
     
+    private IEnumerator WaitCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
+    }
 
 }

@@ -10,7 +10,6 @@ public class EnemyCatSoundSpeech : MonoBehaviour
     [SerializeField] private string wasHitSoundName;
     [SerializeField] private string followPlayerSoundName;
     [SerializeField] private string pathWalksSoundName;
-    [SerializeField] private string randomWalksSoundName;
     
 
     private ILifeAction enemyCatLife;
@@ -34,7 +33,6 @@ public class EnemyCatSoundSpeech : MonoBehaviour
         wasHitSound = audioController.GetClip(wasHitSoundName);
         followPlayerSound = audioController.GetClip(followPlayerSoundName);
         pathWalksSound = audioController.GetClip(pathWalksSoundName);
-        randomWalksSound = audioController.GetClip(randomWalksSoundName);
     }
 
     private void OnEnable()
@@ -73,17 +71,13 @@ public class EnemyCatSoundSpeech : MonoBehaviour
                 }
                 break;
             case IEnemyCatAction.ActionType.RANDOM_WALKS:
-                if (audioPlayer.clip != randomWalksSound || !audioPlayer.isPlaying)
-                {
-                    audioPlayer.clip = randomWalksSound;
-                    audioPlayer.Play();                    
-                }
+                audioPlayer.Stop();
                 break;
             case IEnemyCatAction.ActionType.LOOK_AROUND:
-                audioPlayer.Pause();
+                audioPlayer.Stop();
                 break;
             default:
-                audioPlayer.Pause();
+                audioPlayer.Stop();
             break;
         }
     }

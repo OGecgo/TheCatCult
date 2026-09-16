@@ -35,7 +35,7 @@ public class AudioMenu : MonoBehaviour
     private void OnMenuSound()
     {
         audioController.SetBackground(menuSourceName, menuClipName);
-        audioController.PlayBackground(menuSourceName, 1f);
+        audioController.PlayBackground(menuSourceName, 2f);
     }
 
     private void OnExitMenuSound()
