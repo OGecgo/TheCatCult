@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DistanceWeapon: IDistanceWeapon
 {
-    [SerializeField] private DistanceWeaponConf config;
+    private DistanceWeaponConf config;
 
     private float timerCountAttack;
     private float timerCountRelaod;

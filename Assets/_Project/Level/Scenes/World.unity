@@ -2835,7 +2835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   attackAction: {fileID: -405575423572668149, guid: c73c28d90eb22cd87997cbe7f3c07159, type: 3}
   reloadAction: {fileID: 7316498360488655286, guid: c73c28d90eb22cd87997cbe7f3c07159, type: 3}
-  distanceWeaponConf: {fileID: 11400000, guid: 12946ed2b8ff75098844fb681d71c0af, type: 2}
+  distanceWeaponConf: {fileID: 11400000, guid: e6058431c6771ba8ea09e39d794474a7, type: 2}
 --- !u!114 &438485740
 MonoBehaviour:
   m_ObjectHideFlags: 0
