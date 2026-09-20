@@ -6273,6 +6273,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 891285425}
+    - target: {fileID: 5688710919766222444, guid: bb8ab72abad277a2c905461be948417d, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6533475201339749060, guid: bb8ab72abad277a2c905461be948417d, type: 3}
       propertyPath: _effectsUI
       value: 
@@ -6581,13 +6585,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bbe078157dd97b5a330c69a0081aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsModelManager
-  _gameController: {fileID: 628049264}
   _slidersGame: {fileID: 3520359921248192986}
   _sliderBackground: {fileID: 3520359921248192985}
   _sliderSound: {fileID: 3520359921248192984}
   defaultSettingsConf: {fileID: 11400000, guid: 1a6098137020c7560bfbf531ca3a797c, type: 2}
   buttonAply: {fileID: 722550167}
-  fileName: settings
+  _gameController: {fileID: 628049264}
 --- !u!1001 &4096303485173880058
 PrefabInstance:
   m_ObjectHideFlags: 0
