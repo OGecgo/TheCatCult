@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IPauseUpdate,
+public class PlayerLife : MonoBehaviour, IUpdatable, IPauseUpdate,
     IHittable, ILifeAction, IHealingPackAction,
     IInteractHealingPack
 {   
