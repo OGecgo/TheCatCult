@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4697184007254852378}
   - component: {fileID: 7083810732122570130}
   - component: {fileID: 9137840900074713072}
-  - component: {fileID: 7920805881755596200}
+  - component: {fileID: 3614235782520985208}
   m_Layer: 0
   m_Name: PP_Bridge_15_Middle
   m_TagString: Untagged
@@ -114,7 +114,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3655752684864740055, guid: 21ad16b9e87118343a38a231037b1c11, type: 3}
---- !u!205 &7920805881755596200
+--- !u!205 &3614235782520985208
 LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,14 +122,19 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4105503895706498325}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: -0.9956065, y: 0.46538132, z: 0.051208615}
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
   m_Size: 1
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.05
+  - screenRelativeHeight: 0.6
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 7083810732122570130}
+    renderers: []
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers: []
   m_Enabled: 1

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 141208132512195567}
   - component: {fileID: 2743074002302523173}
   - component: {fileID: 4400482160171448049}
-  - component: {fileID: -1194368769286729970}
+  - component: {fileID: 3133683590662002071}
   m_Layer: 0
   m_Name: PP_Sunflower_04
   m_TagString: Untagged
@@ -114,7 +114,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6364478861242937035, guid: 5374e258aa8b0a54b9ad017e47f849ec, type: 3}
---- !u!205 &-1194368769286729970
+--- !u!205 &3133683590662002071
 LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,13 +128,13 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.4
+  - screenRelativeHeight: 0.6
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0
+  - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0
+  - screenRelativeHeight: 0.1
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1

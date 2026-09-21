@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 243457709739175057}
   - component: {fileID: 2631254705330034779}
   - component: {fileID: 4577034113271871887}
-  - component: {fileID: -2206991143551682347}
+  - component: {fileID: -4283184230257147903}
   m_Layer: 0
   m_Name: PP_Rock_Moss_Grown_09
   m_TagString: Untagged
@@ -114,7 +114,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1090956746362370221, guid: 3184c8a016da6e34abff1686da99650b, type: 3}
---- !u!205 &-2206991143551682347
+--- !u!205 &-4283184230257147903
 LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,13 +128,13 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.4
+  - screenRelativeHeight: 0.6
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0
+  - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0
+  - screenRelativeHeight: 0.1
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1

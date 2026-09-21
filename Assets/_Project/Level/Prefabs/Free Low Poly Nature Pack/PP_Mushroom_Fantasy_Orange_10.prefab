@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4657178902612786994}
   - component: {fileID: 7441469134950190072}
   - component: {fileID: 8954726919292774954}
-  - component: {fileID: -1060483178829448272}
+  - component: {fileID: 6797298404972630150}
   m_Layer: 0
   m_Name: PP_Mushroom_Fantasy_Orange_10
   m_TagString: Untagged
@@ -114,7 +114,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5362160847727887206, guid: 769bcb364254fc84f86c3bde2b625a9f, type: 3}
---- !u!205 &-1060483178829448272
+--- !u!205 &6797298404972630150
 LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,13 +128,13 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.4
+  - screenRelativeHeight: 0.6
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0
+  - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0
+  - screenRelativeHeight: 0.1
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1

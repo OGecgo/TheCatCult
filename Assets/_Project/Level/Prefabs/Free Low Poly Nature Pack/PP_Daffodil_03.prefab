@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5503181911353710195}
   - component: {fileID: 7763024347283268281}
   - component: {fileID: 8123141273917358959}
-  - component: {fileID: -6908676155645799916}
+  - component: {fileID: -361694448245651349}
   m_Layer: 0
   m_Name: PP_Daffodil_03
   m_TagString: Untagged
@@ -114,7 +114,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5902438668197411763, guid: 4e40842238bcca046a7c50ffff32b019, type: 3}
---- !u!205 &-6908676155645799916
+--- !u!205 &-361694448245651349
 LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,13 +128,13 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.4
+  - screenRelativeHeight: 0.6
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0
+  - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0
+  - screenRelativeHeight: 0.1
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
