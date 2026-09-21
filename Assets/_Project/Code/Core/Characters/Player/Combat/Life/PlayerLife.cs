@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, 
+public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IPauseUpdate,
     IHittable, ILifeAction, IHealingPackAction,
     IInteractHealingPack
 {   
@@ -17,15 +17,22 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures,
     private IGameController gameController;
     private ILife life;
     private IHealingPack healingPack;
-    private bool featureIsPaused;
+    private bool updateIsPaused;
+
 
     public event Action OnIsHit;
     public event Action OnIsHeal;
     public event Action<int> OnSetHealth;
     public event Action<int> OnUpdateHealibngPack;
 
+    public void UpdateIsPaused(bool value)
+    {
+        updateIsPaused = value;
+    }
+
     public void ManualUpdate()
     {
+        if (updateIsPaused) return;
         // use healing pack
         if (healAction.action.triggered)
         {
@@ -37,10 +44,6 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures,
         }
     }
 
-    public void FeatureIsPaused(bool value)
-    {
-        featureIsPaused = value;
-    }
 
     public void OnAttack(int power)
     {

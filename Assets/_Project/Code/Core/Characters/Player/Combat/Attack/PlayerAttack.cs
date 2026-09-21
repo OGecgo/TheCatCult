@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
  
-public class PlayerAttack : MonoBehaviour, IUpdatable, 
+public class PlayerAttack : MonoBehaviour, IUpdatable, IPauseUpdate,
     IInteractBullet, IBulletsAction,
     IAttackAction
 {
@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour, IUpdatable,
 
     private Camera playerCamera;
     private IDistanceWeapon distanceWeapon;
+    private bool updateIsPaused;
 
     public event Action OnAttack;
     public event Action<int, int> OnSetBullets;
@@ -21,8 +22,14 @@ public class PlayerAttack : MonoBehaviour, IUpdatable,
     // will be used for animation and sounds
     public event Action OnReloadBullets; 
 
+    public void UpdateIsPaused(bool value)
+    {
+        updateIsPaused = value;
+    }
+
     public void ManualUpdate()
     {   
+        if (updateIsPaused) return;
         // shooting
         if (attackAction.action.IsPressed() && !distanceWeapon.isReloading && !distanceWeapon.isAttacking)
         {

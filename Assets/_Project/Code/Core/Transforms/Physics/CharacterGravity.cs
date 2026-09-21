@@ -4,8 +4,9 @@ using UnityEngine;
 
 // charachter gravity work only if someone calls the update
 // (that need for ease controll update)
-public class CharacterGravity: MonoBehaviour, ICharacterGravity, IUpdatable
+public class CharacterGravity: MonoBehaviour, ICharacterGravity, IUpdatable, IPauseUpdate
 {
+    private bool updateIsPaused;
     private float _g = -9.81f;
 
     private CharacterController controller;
@@ -16,6 +17,13 @@ public class CharacterGravity: MonoBehaviour, ICharacterGravity, IUpdatable
     public Vector3 groundNormal { get{ return normalGroundedObj; }}
     public Vector3 velocity { get{ return _velocity; }}
     public float g { get { return _g; }}
+    
+    public void UpdateIsPaused(bool value)
+    {
+        updateIsPaused = value;
+    }
+
+    
     public void PushForwardGraundedDirection(Vector3 desiredSpeed, float acceleration)
     {
         // rotation * direction + (dont lost _velocity.y)
@@ -68,6 +76,7 @@ public class CharacterGravity: MonoBehaviour, ICharacterGravity, IUpdatable
 
     public void ManualUpdate()
     {
+        if (updateIsPaused) return;
         // reset
         if (!controller.isGrounded)
         {

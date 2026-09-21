@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 6696546130074672102}
   - component: {fileID: 2226963845633182149}
   - component: {fileID: 4059952018893666246}
+  - component: {fileID: 4038306687951970250}
   m_Layer: 29
   m_Name: EnemyCat
   m_TagString: Untagged
@@ -351,6 +352,29 @@ MonoBehaviour:
   wasHitSoundName: CatWasHit
   followPlayerSoundName: CatFollowPlayer
   pathWalksSoundName: BlaBlaBla
+--- !u!136 &4038306687951970250
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190442579273531434}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2794788012402968695
 GameObject:
   m_ObjectHideFlags: 0

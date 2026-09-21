@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPauseFeatures
+public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPauseUpdate
 {
     [Header("Patrol settings")]
     [SerializeField] private Vector3[] patrolPositions;
@@ -25,19 +25,21 @@ public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPause
     private IFOVDetection fovD;
     private IEnemyCatRotation rotation;
     private IEnemyCatMovement movement;
-    private bool featureIsPaused;
+    private bool updateIsPaused;
+
     
     public event Action<IEnemyCatAction.ActionType> OnAction;
 
-    public void FeatureIsPaused(bool value)
+
+    public void UpdateIsPaused(bool value)
     {
-        featureIsPaused = value;
+        updateIsPaused = value;
         OnAction?.Invoke(IEnemyCatAction.ActionType.NONE);
     }
 
     public void ManualUpdate()
     {
-        if (featureIsPaused) return;
+        if (updateIsPaused) return;
 
         IEnemyCatAction.ActionType type;
         if (fovD.isTarget)
@@ -109,8 +111,10 @@ public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPause
 
         isLostPath = false;
         countTimeLookAround = 0f;
-        featureIsPaused = false;
+        updateIsPaused = false;
     }    
+
+
 
     private void Start()
     {

@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: d721af70c8ba1ab4daa81f30de0dbb54
+AssetOrigin:
+  serializedVersion: 1
+  productId: 205742
+  packageName: Free Low Poly Nature Forest
+  packageVersion: 3.0
+  assetPath: Assets/_Project/Art/Models/Free Low Poly Nature Pack/PP_Birch_Tree_05.fbx
+  uploadId: 802378
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -108,10 +115,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 205742
-  packageName: Free Low Poly Nature Forest
-  packageVersion: 3.0
-  assetPath: Assets/_Project/Art/Models/Free Low Poly Nature Pack/PP_Birch_Tree_05.fbx
-  uploadId: 802378

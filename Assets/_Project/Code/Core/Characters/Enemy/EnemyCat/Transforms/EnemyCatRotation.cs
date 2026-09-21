@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EnemyCatRotation : MonoBehaviour, IEnemyCatRotation, IUpdatable
+public class EnemyCatRotation : MonoBehaviour, IEnemyCatRotation, IUpdatable, IPauseUpdate
 {
     [SerializeField] private RotationConf rotationConf;
 
@@ -12,6 +12,14 @@ public class EnemyCatRotation : MonoBehaviour, IEnemyCatRotation, IUpdatable
     private UpdateState state;
 
     private IRotationControl controle;
+    
+    private bool updateIsPaused;
+
+    public void UpdateIsPaused(bool value)
+    {
+        updateIsPaused = value;
+    }
+
     public Vector3 posTarget {get{return _posTarget;} set
         {
             _posTarget = value;
@@ -27,6 +35,7 @@ public class EnemyCatRotation : MonoBehaviour, IEnemyCatRotation, IUpdatable
 
     public void ManualUpdate()
     {
+        if (updateIsPaused) return;
         switch (state)
         {
             case UpdateState.STATE_ANGLE:
@@ -44,5 +53,6 @@ public class EnemyCatRotation : MonoBehaviour, IEnemyCatRotation, IUpdatable
         angle = 0f;
         posTarget = Vector3.zero;        
     }
+
  
 }
