@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class PlayerLife : MonoBehaviour, IUpdatable, IPauseUpdate,
+public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IPauseUpdate,
     IHittable, ILifeAction, IHealingPackAction,
     IInteractHealingPack
 {   
@@ -18,6 +18,7 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseUpdate,
     private ILife life;
     private IHealingPack healingPack;
     private bool updateIsPaused;
+    private bool featureIsPaused;
 
 
     public event Action OnIsHit;
@@ -25,6 +26,10 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseUpdate,
     public event Action<int> OnSetHealth;
     public event Action<int> OnUpdateHealibngPack;
 
+    public void FeatureIsPaused(bool value)
+    {
+        featureIsPaused = value;
+    }
     public void UpdateIsPaused(bool value)
     {
         updateIsPaused = value;
