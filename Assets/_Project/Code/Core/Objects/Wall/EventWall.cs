@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
 
+// always right
 public class EventWall : MonoBehaviour, IEvent, IEventAction, IPauseFeatures
 {
     [SerializeField] private float speedOpen = 3f;
@@ -20,6 +21,8 @@ public class EventWall : MonoBehaviour, IEvent, IEventAction, IPauseFeatures
     }
     public void OnTriggerEvent()
     {
+        if (featureIsPaused) return;
+
         if (coroutine != null) StopCoroutine(coroutine);
         OnEventTriggered?.Invoke(speedOpen);
         coroutine = StartCoroutine(CoroutineMoveWall());

@@ -40,6 +40,7 @@ public class ObjDoor : MonoBehaviour, IInteractableDoor, ILookedObj, IPauseFeatu
 
     public void Interact()
     {        
+        if (featureIsPaused) return;
         if (coroutine != null) StopCoroutine(coroutine);
         OnInteracted?.Invoke();
         coroutine = StartCoroutine(CorutineMoveDoor());
@@ -52,11 +53,11 @@ public class ObjDoor : MonoBehaviour, IInteractableDoor, ILookedObj, IPauseFeatu
         isOpen = false;
         featureIsPaused = false;
         closeRotation = transform.localRotation;
-        openRotation = Quaternion.Euler(transform.localEulerAngles + new Vector3(0f, 0f, (int)directionOpen * 90f));
+        openRotation = Quaternion.Euler(transform.localEulerAngles + new Vector3(0f, (int)directionOpen * 90f, 0f));
     }
 
     private IEnumerator CorutineMoveDoor()
-    {
+    {        
         Quaternion targetRotation = isOpen ? closeRotation : openRotation;
         isOpen = !isOpen;
         while (Quaternion.Angle(this.transform.localRotation, targetRotation) > 0.01f)
@@ -68,7 +69,6 @@ public class ObjDoor : MonoBehaviour, IInteractableDoor, ILookedObj, IPauseFeatu
                 continue;
             }
             this.transform.localRotation = Quaternion.Lerp(this.transform.localRotation, targetRotation, Time.deltaTime * speedOpen);
-
             // wait for next frame
             yield return null;
         }

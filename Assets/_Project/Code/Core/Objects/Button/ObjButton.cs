@@ -1,12 +1,13 @@
 using System;
 using LineworkLite.Editor.FreeOutline;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class ObjButton : MonoBehaviour, IInteractableButton, ILookedObj, IPauseFeatures
 {
-    [SerializeField] private MonoBehaviour _eventObj;
+    [SerializeField] private MonoBehaviour[] _eventObj; 
     [SerializeField] private MeshRenderer meshRenderer_On;
     [SerializeField] private MeshRenderer meshRenderer_Off;
 
@@ -15,7 +16,7 @@ public class ObjButton : MonoBehaviour, IInteractableButton, ILookedObj, IPauseF
     private bool isOn;
     private bool featureIsPaused;
 
-    private IEvent eventObj;
+    private IEvent[] eventObj;
 
     public event Action OnInteracted;
 
@@ -44,7 +45,10 @@ public class ObjButton : MonoBehaviour, IInteractableButton, ILookedObj, IPauseF
         
         if (!isOn)
         {
-            eventObj.OnTriggerEvent();
+            for (int i = 0; i < eventObj.Length; i ++)
+            {
+                eventObj[i]?.OnTriggerEvent();
+            }
             meshRenderer_Off.enabled = false;
             meshRenderer_On.enabled = true;
             isOn = true;
@@ -56,7 +60,12 @@ public class ObjButton : MonoBehaviour, IInteractableButton, ILookedObj, IPauseF
     {
         outlineLayer = LayerMask.NameToLayer("OutlineLayer");
         noOutlineLayer = LayerMask.NameToLayer("NoOutlineLayer"); 
-        eventObj = _eventObj.GetComponent<IEvent>();
+
+        eventObj = new IEvent[_eventObj.Length];
+        for (int i = 0; i < _eventObj.Length; i++)
+        {
+            eventObj[i] = _eventObj[i].GetComponent<IEvent>();   
+        }
         meshRenderer_Off.enabled = true;
         meshRenderer_On.enabled = false;
         isOn = false;
