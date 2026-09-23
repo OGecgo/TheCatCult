@@ -11,7 +11,7 @@ using UnityEngine.InputSystem;
 // move same direction grounded == notgrounded
 
 
-public class PlayerMovement: MonoBehaviour, IPlayerMovement, IUpdatable, IPauseFeatures
+public class PlayerMovement: MonoBehaviour, IPlayerMovement, IUpdatable, IPauseUpdate
 {
     [SerializeField] private InputActionReference jumpAction;
     [SerializeField] private InputActionReference runAction;
@@ -32,6 +32,7 @@ public class PlayerMovement: MonoBehaviour, IPlayerMovement, IUpdatable, IPauseF
     private IJumpControl jumpControl;
     // player fall to ground
     private bool previousIsGrounded;
+    private bool updateIsPaused;
 
 
     public event Action OnWalk;
@@ -41,18 +42,19 @@ public class PlayerMovement: MonoBehaviour, IPlayerMovement, IUpdatable, IPauseF
     public event Action OnJump;
     public event Action OnTouchGround;
 
-
-
-    public void FeatureIsPaused(bool value)
+    public void UpdateIsPaused(bool value)
     {
+        updateIsPaused = value;
         if (value)
         {
             OnStopRun?.Invoke();
             OnStopWalk?.Invoke();
         }
     }
+
     public void ManualUpdate()
     {
+        if (updateIsPaused) return;
 
         // take input
         bool isJump = jumpAction.action.triggered;

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class VolumeSoundSlider : MonoBehaviour
+public class VolumeSoundSlider : MonoBehaviour, IVolumeSoundSliderUIValues
 {
 
     [SerializeField] private MonoBehaviour _audioVolumeController; 
@@ -11,6 +11,8 @@ public class VolumeSoundSlider : MonoBehaviour
     private IAudioVolumeController audioVolumeController;
 
     private Slider sliderVolume;
+
+    public float volume {get{ return sliderVolume.value;} set{sliderVolume.value = value;}}
 
     private void OnEnable()
     {

@@ -2,25 +2,31 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerInteractor : MonoBehaviour, IUpdatable
+public class PlayerInteractor : MonoBehaviour, IUpdatable, IPauseUpdate
 {
     [Header("Input")]
     [SerializeField] private InputActionReference interactAction;
     [Header("General settings")]
     [SerializeField] private float _range = 5f;
-
-
   
     private Camera playerCemare;
     private ILookedObj lastLookedObj;
     // interactions
     private IInteractBullet bulletControl;
     private IInteractHealingPack healthControl;
+
+    private bool updateIsPaused;
     
     public float range {get{return _range;}}
 
+    public void UpdateIsPaused(bool value)
+    {
+        updateIsPaused = value;
+    }
+
     public void ManualUpdate()
     {
+        if (updateIsPaused) return;
         // execute interaction
         if (Physics.Raycast(playerCemare.transform.position, playerCemare.transform.forward, out RaycastHit hit, range))
         {

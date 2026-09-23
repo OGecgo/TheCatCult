@@ -28,12 +28,11 @@ public class PlayerView : MonoBehaviour
     {
         // after resize change the window proportions 
         float newWindowSpect = (float)Screen.width / (float)Screen.height;
-        if (newWindowSpect != lastWindowSpect)
+        if (!Mathf.Approximately(newWindowSpect, lastWindowSpect))
         {
             lastWindowSpect = newWindowSpect;
             AdjustCamera();
         }
-        objCamera.fieldOfView = winConf.FOV; 
     }
  
 
@@ -43,30 +42,26 @@ public class PlayerView : MonoBehaviour
         float targetSpect = winConf.cameraDimensions.x / winConf.cameraDimensions.y;
         float scaleHeight = lastWindowSpect / targetSpect;
 
+        Rect rect = new Rect(0, 0, 1.0f, 1.0f);
+
         if (scaleHeight < 1.0f)
         {
-            Rect rect = objCamera.rect;
- 
             rect.width = 1.0f;
             rect.height = scaleHeight;
             rect.x = 0;
             rect.y = (1.0f - scaleHeight) / 2.0f; 
- 
-            objCamera.rect = rect;
         }
         else if (scaleHeight > 1.0f)
         {
             float scalewidth = 1.0f / scaleHeight;
- 
-            Rect rect = objCamera.rect;
- 
+  
             rect.width = scalewidth;
             rect.height = 1.0f;
             rect.x = (1.0f - scalewidth) / 2.0f;
             rect.y = 0;
- 
-            objCamera.rect = rect;
         }
+
+        objCamera.rect = rect;
 
     }
 }

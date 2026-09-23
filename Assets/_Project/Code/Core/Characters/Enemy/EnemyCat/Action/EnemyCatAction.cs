@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPauseFeatures
+public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPauseUpdate
 {
     [Header("Patrol settings")]
     [SerializeField] private Vector3[] patrolPositions;
@@ -25,24 +25,25 @@ public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPause
     private IFOVDetection fovD;
     private IEnemyCatRotation rotation;
     private IEnemyCatMovement movement;
-    private bool featureIsPaused;
+    private bool updateIsPaused;
+
     
     public event Action<IEnemyCatAction.ActionType> OnAction;
 
-    public void FeatureIsPaused(bool value)
+
+    public void UpdateIsPaused(bool value)
     {
-        featureIsPaused = value;
+        updateIsPaused = value;
         OnAction?.Invoke(IEnemyCatAction.ActionType.NONE);
     }
 
     public void ManualUpdate()
     {
-        if (featureIsPaused) return;
+        if (updateIsPaused) return;
 
         IEnemyCatAction.ActionType type;
         if (fovD.isTarget)
         {
-            patrolMachin.SetState(followPlayer);
             type = IEnemyCatAction.ActionType.FOLLOW_PLAYER;
             isLostPath = true;
         }
@@ -50,13 +51,11 @@ public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPause
         {
             if (!isLostPath)
             {
-                patrolMachin.SetState(pathWalks);
                 type = IEnemyCatAction.ActionType.PATH_WALKS;
             } 
             // if player targeted. enemy lost they path and start random walks
             else
             {
-                patrolMachin.SetState(randomWalks);
                 type = IEnemyCatAction.ActionType.RANDOM_WALKS;
             } 
         }
@@ -64,15 +63,35 @@ public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPause
         // if hit cat. they start look around
         if (countTimeLookAround > 0f && !fovD.isTarget)
         {
-            patrolMachin.SetState(lookAround);
             type = IEnemyCatAction.ActionType.LOOK_AROUND;
             countTimeLookAround -= Time.deltaTime;
         }
+
+        SetStateValue(type);
 
         OnAction?.Invoke(type);
         patrolMachin.ManualUpdate();
     }
 
+    private void SetStateValue(IEnemyCatAction.ActionType type)
+    {
+        switch (type)
+        {
+            case IEnemyCatAction.ActionType.FOLLOW_PLAYER:
+                patrolMachin.SetState(followPlayer);
+                break;
+            case IEnemyCatAction.ActionType.PATH_WALKS:
+                patrolMachin.SetState(pathWalks);
+                break;
+            case IEnemyCatAction.ActionType.RANDOM_WALKS:
+                patrolMachin.SetState(randomWalks);
+                break;
+            case IEnemyCatAction.ActionType.LOOK_AROUND:
+                patrolMachin.SetState(lookAround);
+                break;
+        }
+    }
+    
     private void OnEnable()
     {
         enemyCatLife.OnIsHit += IsAttacked;
@@ -92,8 +111,10 @@ public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPause
 
         isLostPath = false;
         countTimeLookAround = 0f;
-        featureIsPaused = false;
+        updateIsPaused = false;
     }    
+
+
 
     private void Start()
     {

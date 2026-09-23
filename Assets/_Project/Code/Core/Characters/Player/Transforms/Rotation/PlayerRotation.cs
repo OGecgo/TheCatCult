@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerRotation: MonoBehaviour, IUpdatable
+public class PlayerRotation: MonoBehaviour, IUpdatable, IPauseUpdate
 {
     [SerializeField] private InputActionReference rotationAction;
 
@@ -13,9 +13,16 @@ public class PlayerRotation: MonoBehaviour, IUpdatable
 
     private IRotationControl rotationControlHead;
     private IRotationControl rotationControlBody;
+    private bool updateIsPaused;
+    
+    public void UpdateIsPaused(bool value)
+    {
+        updateIsPaused = value;
+    }
 
     public void ManualUpdate()
     {
+        if (updateIsPaused) return;
         Vector2 rotationDelta = rotationAction.action.ReadValue<Vector2>();
         rotationControlHead.UpdateLocalRotation(rotationDelta);
         rotationControlBody.UpdateLocalRotation(rotationDelta);
