@@ -56,17 +56,22 @@ public class DistanceWeapon: IDistanceWeapon
 
         if (timerCountAttack <= 0f && bulletsUsed < config.bullets)
         {
+            // check for between blocks
+
             if (Physics.Raycast(position, direction, out RaycastHit hit, config.range, config.targetMask))
             {
-                // do damage if is hitable mask
-                if (hit.collider.TryGetComponent(out IHittable damageable))
+                float distanceToTarget = hit.distance;
+                if (!Physics.Raycast(position, direction, distanceToTarget, config.obstructionMask))
                 {
-                    damageable.OnAttack(config.damage);
-                }
+                    // do damage if is hitable mask
+                    if (hit.collider.TryGetComponent(out IHittable damageable))
+                    {
+                        damageable.OnAttack(config.damage);
+                    }
+                }   
             }
             bulletsUsed += 1;
             timerCountAttack = config.timerCountAttack;
-            return;
         }
     }
 

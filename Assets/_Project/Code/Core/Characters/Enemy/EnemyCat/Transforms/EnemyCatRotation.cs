@@ -50,8 +50,7 @@ public class EnemyCatRotation : MonoBehaviour, IEnemyCatRotation, IUpdatable, IP
     private void Awake()
     {
         controle = new RotationControl(rotationConf, this.transform);
-        angle = 0f;
-        posTarget = Vector3.zero;        
+        angle = this.transform.eulerAngles.y;
     }
 
  

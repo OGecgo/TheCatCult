@@ -11,4 +11,5 @@ public class DistanceWeaponConf : ScriptableObject
     public float timerReload = 3f;
 
     public LayerMask targetMask;
+    public LayerMask obstructionMask;
 }

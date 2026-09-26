@@ -1,10 +1,11 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class EnemyCatLifeReaction : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private SkinnedMeshRenderer meshRenderer;
     [Header("Enemy take damage")]
     [SerializeField] private float timeDamageWillShowed = 0.3f;
     [SerializeField] private Color colorWhenTakedDamage = Color.red;
