@@ -40,7 +40,6 @@ public class StateEnemyCatPathWalk: IStateEnemyCatAction
     public void ManualUpdate()
     {
         if (pathPoints.Length == 0) return;
-
         rotation.posTarget = pathPoints[posPathPoints];
         movement.typeMovement = IEnemyCatMovement.TypeMovement.WALK;
 
