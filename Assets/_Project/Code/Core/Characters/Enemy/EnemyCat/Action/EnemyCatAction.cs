@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPauseUpdate
 {
     [Header("Patrol settings")]
-    [SerializeField] private Vector3[] patrolPositions;
+    [SerializeField] public Vector3[] patrolPositions;
     [SerializeField] private float timeRandomWalk = 2f;
     [SerializeField] private float timeThinking = 2f;
     [Header("If enemycat take damage")]
