@@ -48,9 +48,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3174809930608181063, guid: 3144444d4dca80c21854c406f37934c5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3144444d4dca80c21854c406f37934c5, type: 3}
       propertyPath: m_Name
       value: PP_Daffodil_03LOD
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3144444d4dca80c21854c406f37934c5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863013918203420436, guid: 3144444d4dca80c21854c406f37934c5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7833419866720329574, guid: 3144444d4dca80c21854c406f37934c5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

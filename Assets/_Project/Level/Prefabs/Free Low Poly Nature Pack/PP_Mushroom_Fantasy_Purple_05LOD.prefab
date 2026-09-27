@@ -48,9 +48,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5377256818768496683, guid: 7d105283305a65714aab90815b7c669e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -2573279178051480766, guid: 7d105283305a65714aab90815b7c669e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7d105283305a65714aab90815b7c669e, type: 3}
       propertyPath: m_Name
       value: PP_Mushroom_Fantasy_Purple_05LOD
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7d105283305a65714aab90815b7c669e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504302927445205356, guid: 7d105283305a65714aab90815b7c669e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

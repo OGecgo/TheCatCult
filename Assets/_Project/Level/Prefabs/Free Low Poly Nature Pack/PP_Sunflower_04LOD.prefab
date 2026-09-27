@@ -48,9 +48,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2600112144392725333, guid: 691f8a2cde7304bc0853a08e644a0d6e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1185634852085207475, guid: 691f8a2cde7304bc0853a08e644a0d6e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 691f8a2cde7304bc0853a08e644a0d6e, type: 3}
       propertyPath: m_Name
       value: PP_Sunflower_04LOD
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 691f8a2cde7304bc0853a08e644a0d6e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5537241197096362950, guid: 691f8a2cde7304bc0853a08e644a0d6e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

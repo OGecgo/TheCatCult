@@ -48,9 +48,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5552487356358508246, guid: a9f6c1fc29c274f809a77c04e9bdb2b3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -4368686395958784284, guid: a9f6c1fc29c274f809a77c04e9bdb2b3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a9f6c1fc29c274f809a77c04e9bdb2b3, type: 3}
       propertyPath: m_Name
       value: PP_Grass_15LOD
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a9f6c1fc29c274f809a77c04e9bdb2b3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643721821437027597, guid: a9f6c1fc29c274f809a77c04e9bdb2b3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

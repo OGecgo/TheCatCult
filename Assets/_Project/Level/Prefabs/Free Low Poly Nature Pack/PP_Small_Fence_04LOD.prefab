@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3626707735320050582, guid: 39f6c4769141bb6138121679d9d9b4c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -2023446315667553817, guid: 39f6c4769141bb6138121679d9d9b4c4, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -64,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Small_Fence_04LOD
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39f6c4769141bb6138121679d9d9b4c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3361391260279186773, guid: 39f6c4769141bb6138121679d9d9b4c4, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -75,6 +83,14 @@ PrefabInstance:
     - target: {fileID: 3361391260279186773, guid: 39f6c4769141bb6138121679d9d9b4c4, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911804491632925586, guid: 39f6c4769141bb6138121679d9d9b4c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052267360240278637, guid: 39f6c4769141bb6138121679d9d9b4c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8487642582892116500, guid: 39f6c4769141bb6138121679d9d9b4c4, type: 3}
       propertyPath: m_LocalRotation.w
