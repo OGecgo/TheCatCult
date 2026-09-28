@@ -7,7 +7,7 @@ OcclusionCullingSettings:
   m_OcclusionBakeSettings:
     smallestOccluder: 5
     smallestHole: 0.25
-    backfaceThreshold: 5
+    backfaceThreshold: 100
   m_SceneGUID: 99c9720ab356a0642a771bea13969a05
   m_OcclusionCullingData: {fileID: 36300000, guid: 75048bd053755a79a8589fdda20f274f, type: 2}
 --- !u!104 &2
@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
-  m_FogMode: 2
-  m_FogDensity: 0.03
+  m_FogColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -12434,7 +12434,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -18499,7 +18499,6 @@ GameObject:
   - component: {fileID: 628049263}
   - component: {fileID: 628049264}
   - component: {fileID: 628049262}
-  - component: {fileID: 628049265}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -18551,23 +18550,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   pauseAction: {fileID: 1554036119984555178, guid: c73c28d90eb22cd87997cbe7f3c07159, type: 3}
---- !u!114 &628049265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628049261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57b1dcea88607aa1d89a8deafe48e162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMenuAudio
-  _audioController: {fileID: 625018352}
-  _gameController: {fileID: 628049264}
-  deathClipName: Death
-  menuSourceName: AudioMusicChannel
-  menuClipName: Menu
 --- !u!1 &630333999
 GameObject:
   m_ObjectHideFlags: 0
@@ -24976,7 +24958,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 90
   orthographic: 0
   orthographic size: 5
@@ -47196,6 +47178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1719517031}
+  - component: {fileID: 1719517036}
   - component: {fileID: 1719517032}
   - component: {fileID: 1719517033}
   - component: {fileID: 1719517034}
@@ -47293,6 +47276,23 @@ MonoBehaviour:
   pauseMenuButton: {fileID: 722550167}
   restartButton: {fileID: 573678729}
   goMainMenuButton: {fileID: 663476298}
+--- !u!114 &1719517036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719517030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b1dcea88607aa1d89a8deafe48e162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMenuAudio
+  _audioController: {fileID: 625018352}
+  _gameController: {fileID: 628049264}
+  deathClipName: Death
+  menuSourceName: AudioMusicChannel
+  menuClipName: Menu
 --- !u!1001 &1720351951
 PrefabInstance:
   m_ObjectHideFlags: 0
