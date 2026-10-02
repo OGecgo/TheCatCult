@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Σελίδα-1" id="RHhtozIAqVEN69dNCovi">
-        <mxGraphModel dx="1471" dy="414" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
+        <mxGraphModel dx="1973" dy="1015" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0" adaptiveColors="simple">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -270,7 +270,7 @@
                 <mxCell id="604" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#e1d5e7;strokeColor=#9673a6;fillStyle=solid;direction=west;gradientDirection=north;shadow=1;size=20;pointerEvents=1;" value="2 Bugs&lt;div&gt;1. if obj move and meet something. velocity not reset&lt;/div&gt;&lt;div&gt;2. issue with wall with hug angle (the obj with physic not slide from it)&lt;/div&gt;" vertex="1">
                     <mxGeometry height="160" width="140" x="1192.5" y="886.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="605" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;CharacterGravity: Editor&lt;/div&gt;" vertex="1">
+                <mxCell id="605" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;CharacterGravityEditor&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;: Editor&lt;/span&gt;&lt;/div&gt;" vertex="1">
                     <mxGeometry height="70" width="200" x="1975" y="1165.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="607" parent="605" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;- void OnSceneGUI();&lt;/div&gt;" vertex="1">
@@ -578,81 +578,6 @@
                         <mxPoint x="-225" y="320.5" as="sourcePoint"/>
                         <mxPoint x="-225" y="282.5" as="targetPoint"/>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="767" connectable="0" parent="1" style="group" value="" vertex="1">
-                    <mxGeometry height="490" width="520" x="-360" y="1208.5" as="geometry"/>
-                </mxCell>
-                <mxCell id="752" parent="767" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;container=0;" value="" vertex="1">
-                    <mxGeometry height="300" width="480" x="40" y="100" as="geometry"/>
-                </mxCell>
-                <mxCell id="732" edge="1" parent="767" source="752" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;" target="736">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="733" parent="767" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;container=0;" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;AudioCollider&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="270" width="210" x="60" y="115" as="geometry"/>
-                </mxCell>
-                <mxCell id="734" parent="733" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;div&gt;&lt;font color=&quot;#333333&quot;&gt;- string channelName;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#333333&quot;&gt;- string soundName;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#333333&quot;&gt;- MonoBehaviour _audioController;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#333333&quot;&gt;- float timeToPlay;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#333333&quot;&gt;- float timeToPause;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#333333&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#333333&quot;&gt;- IAudioController audioController;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#333333&quot;&gt;- bool featureIsPaused;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#333333&quot;&gt;- LayerMask playerLayers;&lt;/font&gt;&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="140" width="210" y="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="735" parent="733" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="+ void FeatureIsPaused(bool value);&lt;div&gt;- void Awake();&lt;/div&gt;&lt;div&gt;- void OnTriggerEnter(Collider other);&lt;/div&gt;&lt;div&gt;- void OnTriggerStay(Collider other);&lt;/div&gt;&lt;div&gt;- void OnTriggerExit(Collider other);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="90" width="210" y="180" as="geometry"/>
-                </mxCell>
-                <mxCell id="736" parent="767" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;container=0;" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;MonoBehaviour&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="50" width="120" x="150" as="geometry"/>
-                </mxCell>
-                <mxCell id="737" parent="767" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;container=0;" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;IPauseFeatures&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="60" width="150" x="280" as="geometry"/>
-                </mxCell>
-                <mxCell id="738" parent="737" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="" vertex="1">
-                    <mxGeometry height="20" width="150" y="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="739" parent="767" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;container=0;" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;IAudioController&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="60" width="150" y="430" as="geometry"/>
-                </mxCell>
-                <mxCell id="740" parent="739" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="" vertex="1">
-                    <mxGeometry height="20" width="150" y="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="741" edge="1" parent="767" source="752" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=block;endFill=0;endSize=12;dashed=1;" target="737">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="175" y="125" as="sourcePoint"/>
-                        <mxPoint x="175" y="85" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="742" edge="1" parent="767" source="733" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=open;endFill=0;endSize=12;" target="739">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="120" y="125" as="sourcePoint"/>
-                        <mxPoint x="120" y="80" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="743" parent="767" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;container=0;" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;LeyerMask&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="50" width="120" x="170" y="430" as="geometry"/>
-                </mxCell>
-                <mxCell id="744" parent="767" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;container=0;" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;AudioPaused&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="100" width="210" x="290" y="115" as="geometry"/>
-                </mxCell>
-                <mxCell id="745" parent="744" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;div&gt;&lt;font color=&quot;#333333&quot;&gt;- AudioSource[] audioSources;&lt;/font&gt;&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="30" width="210" y="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="746" parent="744" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;div&gt;+ FeatursIsPaused(bool value);&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="30" width="210" y="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="755" edge="1" parent="767" source="733" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=open;endFill=0;endSize=12;" target="743">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="115" y="395" as="sourcePoint"/>
-                        <mxPoint x="115" y="425" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="757" parent="767" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;container=0;" value="&lt;div&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;AudioSourcee&lt;/div&gt;" vertex="1">
-                    <mxGeometry height="50" width="120" x="400" y="430" as="geometry"/>
-                </mxCell>
-                <mxCell id="758" edge="1" parent="767" source="744" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=open;endFill=0;endSize=12;" target="757">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="460" y="225" as="sourcePoint"/>
-                        <mxPoint x="460" y="440" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="759" parent="767" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;fontSize=30;" value="&lt;font&gt;Audio&lt;/font&gt;" vertex="1">
-                    <mxGeometry height="48" width="110" x="308.75" y="337" as="geometry"/>
                 </mxCell>
                 <mxCell id="608" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
                     <mxGeometry height="168" width="460" x="-520" y="990.5" as="geometry"/>
