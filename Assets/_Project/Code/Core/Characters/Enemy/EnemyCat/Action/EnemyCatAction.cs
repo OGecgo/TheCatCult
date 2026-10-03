@@ -1,11 +1,12 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPauseUpdate
 {
     [Header("Patrol settings")]
-    [SerializeField] private Vector3[] patrolPositions;
+    [SerializeField] public Vector3[] patrolPositions;
     [SerializeField] private float timeRandomWalk = 2f;
     [SerializeField] private float timeThinking = 2f;
     [Header("If enemycat take damage")]
@@ -51,7 +52,8 @@ public class EnemyCatAction : MonoBehaviour, IEnemyCatAction, IUpdatable, IPause
         {
             if (!isLostPath)
             {
-                type = IEnemyCatAction.ActionType.PATH_WALKS;
+                if (patrolPositions.Length == 0) type = IEnemyCatAction.ActionType.NONE;
+                else type = IEnemyCatAction.ActionType.PATH_WALKS;
             } 
             // if player targeted. enemy lost they path and start random walks
             else

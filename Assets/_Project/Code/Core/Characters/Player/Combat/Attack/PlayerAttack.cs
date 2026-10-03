@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour, IUpdatable, IPauseUpdate,
     {   
         if (updateIsPaused) return;
         // shooting
-        if (attackAction.action.IsPressed() && !distanceWeapon.isReloading && !distanceWeapon.isAttacking)
+        if (attackAction.action.IsPressed() && !distanceWeapon.isReloading && !distanceWeapon.isAttacking && distanceWeapon.currentBullets > 0)
         {
             // shoot
             distanceWeapon.Attack(playerCamera.transform.position, playerCamera.transform.forward);

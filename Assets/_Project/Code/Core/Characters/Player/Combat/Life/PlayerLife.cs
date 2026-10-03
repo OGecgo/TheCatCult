@@ -41,11 +41,13 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IPauseUpdat
         // use healing pack
         if (healAction.action.triggered)
         {
-            healingPack.Heal(life);
-            OnIsHeal?.Invoke();
-            OnUpdateHealibngPack(healingPack.healingPacks);
-            OnSetHealth(life.health);
-            
+            if (healingPack.healingPacks > 0)
+            {
+                healingPack.Heal(life);
+                OnIsHeal?.Invoke();
+                OnUpdateHealibngPack(healingPack.healingPacks);
+                OnSetHealth(life.health);   
+            }
         }
     }
 
@@ -83,6 +85,10 @@ public class PlayerLife : MonoBehaviour, IUpdatable, IPauseFeatures, IPauseUpdat
         featureIsPaused = false;
     }
 
+    private void Start()
+    {
+        OnUpdateHealibngPack?.Invoke(healingPack.healingPacks);
+    }
 
     private void Die()
     {

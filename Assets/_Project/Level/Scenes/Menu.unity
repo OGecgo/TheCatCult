@@ -508,6 +508,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8330154378126645894, guid: 9a1b3bcffef4bbd6e82dd3ce6b82d0f1, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8650533746031127483, guid: 9a1b3bcffef4bbd6e82dd3ce6b82d0f1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1023,6 +1027,10 @@ PrefabInstance:
     - target: {fileID: 2332863652586881313, guid: 4efa35012416bdfdf924c503f7243c12, type: 3}
       propertyPath: m_PlaneDistance
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685920807013563661, guid: 4efa35012416bdfdf924c503f7243c12, type: 3}
+      propertyPath: m_text
+      value: The CultCat
       objectReference: {fileID: 0}
     - target: {fileID: 5917535733426427419, guid: 4efa35012416bdfdf924c503f7243c12, type: 3}
       propertyPath: _audioController

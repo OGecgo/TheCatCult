@@ -19,7 +19,7 @@ public class StateEnemyCatFollowPlayer: IStateEnemyCatAction
     }
     public void Enter()
     {
-        waitBeforeAttack = 1f;
+        waitBeforeAttack = 0.5f;
     }
 
     public void ManualUpdate()

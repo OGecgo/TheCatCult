@@ -14,7 +14,7 @@ public class StateEnemyCatLookAround : IStateEnemyCatAction
     {
         this.rotation = rotation;
         this.movement = movement;
-        timeUpdateRotation = 1f; // every 1 sec enemy update look
+        timeUpdateRotation = 0.5f; // every 1 sec enemy update look
         countTimeUpdateRotation = 0f;
         directoinsCount = 5; 
         directionsAngle = 360f / directoinsCount;
