@@ -1,9 +1,6 @@
 using System;
-using LineworkLite.Editor.FreeOutline;
-using Unity.Mathematics;
-using Unity.VisualScripting;
+
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class ObjButton : MonoBehaviour, IInteractableButton, ILookedObj, IPauseFeatures
 {
