@@ -1036,6 +1036,10 @@ PrefabInstance:
       propertyPath: _audioController
       value: 
       objectReference: {fileID: 753845401}
+    - target: {fileID: 5919863053299038414, guid: 4efa35012416bdfdf924c503f7243c12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6211500196240214043, guid: 4efa35012416bdfdf924c503f7243c12, type: 3}
       propertyPath: m_Name
       value: CanvasMenu
